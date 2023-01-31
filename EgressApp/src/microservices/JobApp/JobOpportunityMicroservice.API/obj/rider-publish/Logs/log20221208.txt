@@ -1,0 +1,36 @@
+2022-12-08 03:08:17.492 +00:00 [INF] Now listening on: http://[::]:80
+2022-12-08 03:08:17.553 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-08 03:08:17.554 +00:00 [INF] Hosting environment: Development
+2022-12-08 03:08:17.555 +00:00 [INF] Content root path: /app/
+2022-12-08 03:08:43.031 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:9050/api/v1/opportunity?page_size=5&page_number=2 - -
+2022-12-08 03:08:43.095 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-12-08 03:08:43.121 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.GetPaginationAsync (JobOpportunityMicroservice.API)'
+2022-12-08 03:08:43.153 +00:00 [INF] Route matched with {action = "GetPagination", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginationAsync(JobOpportunityMicroservice.Application.Queries.GetAllJobOpportunity.GetAllJobOpportunityQuery) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-12-08 03:08:43.205 +00:00 [INF] Handling GetAllJobOpportunityQuery, TraceId: 00-d8f43935fd0a6d1283d1907efbc6d2c3-cd889ed6b145a901-00, PageNumber: 2, PageSize: 5
+2022-12-08 03:08:43.733 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-12-08 03:08:43.733 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-12-08 03:08:43.837 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-12-08 03:08:44.774 +00:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [JobAdvertisement] AS [j]
+2022-12-08 03:08:44.925 +00:00 [INF] Executed DbCommand (22ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[benefit], [t].[company], [t].[created_at], [t].[date_limit], [t].[description], [t].[email], [t].[is_active], [t].[link], [t].[max_payrange], [t].[min_payrange], [t].[modality], [t].[monthly_hours], [t].[phone_number], [t].[requerements], [t].[title], [t].[updated_at], [t].[user_id], [a].[id], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[created_at0], [t0].[name], [t0].[updated_at0], [a].[city], [a].[country], [a].[created_at], [a].[district], [a].[job_advertisement_id], [a].[state], [a].[street], [a].[updated_at]
+FROM (
+    SELECT [j].[id], [j].[benefit], [j].[company], [j].[created_at], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at], [j].[user_id]
+    FROM [JobAdvertisement] AS [j]
+    ORDER BY [j].[id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+) AS [t]
+LEFT JOIN [Address] AS [a] ON [t].[id] = [a].[job_advertisement_id]
+LEFT JOIN (
+    SELECT [c].[id], [c].[category_id], [c].[created_at], [c].[job_advertisement_id], [c].[updated_at], [c0].[id] AS [id0], [c0].[created_at] AS [created_at0], [c0].[name], [c0].[updated_at] AS [updated_at0]
+    FROM [CategoryJob] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[category_id] = [c0].[id]
+) AS [t0] ON [t].[id] = [t0].[job_advertisement_id]
+ORDER BY [t].[id], [a].[id], [t0].[id]
+2022-12-08 03:08:45.020 +00:00 [INF] Performance GetAllJobOpportunityQuery, TraceId: 00-d8f43935fd0a6d1283d1907efbc6d2c3-cd889ed6b145a901-00, Duration: 1813ms
+2022-12-08 03:08:45.085 +00:00 [INF] Handled PagedList`1, TraceId: 00-d8f43935fd0a6d1283d1907efbc6d2c3-cd889ed6b145a901-00, CurrentPage: 2, TotalPages: 2, PageSize: 5, TotalCount: 9, HasPrevious: True, HasNext: False, Capacity: 4, Count: 4, Item: 
+2022-12-08 03:08:45.167 +00:00 [INF] Executing OkObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Infra.Data.Models.PagedList`1[[JobOpportunityMicroservice.Application.Commands.JobOpportunity.JobOpportunityCommandResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], JobOpportunityMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-08 03:08:45.205 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.GetPaginationAsync (JobOpportunityMicroservice.API) in 2047.1907ms
+2022-12-08 03:08:45.206 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.GetPaginationAsync (JobOpportunityMicroservice.API)'
+2022-12-08 03:08:45.212 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:9050/api/v1/opportunity?page_size=5&page_number=2 - - - 200 3363 application/json;+charset=utf-8;+ver=1 2181.3227ms

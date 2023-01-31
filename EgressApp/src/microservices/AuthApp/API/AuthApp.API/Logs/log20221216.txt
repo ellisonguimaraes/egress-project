@@ -1,0 +1,89 @@
+2022-12-16 02:23:56.046 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-16 02:23:56.114 +00:00 [WRN] No XML encryptor configured. Key {593c7d74-6396-44a0-ae26-14a4825ef8a8} may be persisted to storage in unencrypted form.
+2022-12-16 02:24:18.088 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-12-16 02:24:18.761 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-3aea93e4e5e3dd8e5b67c17fb63e2f2b-9ecbcdc2e20a342f-00, Email: ellison.guimaraes@gmail.com
+AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-3aea93e4e5e3dd8e5b67c17fb63e2f2b-9ecbcdc2e20a342f-00
+2022-12-16 02:24:20.456 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-f4e14ba0ccd96707dd060a2a77c2d480-22ec67d2efc88c0b-00, Email: ellison.guimaraes@gmail.com
+AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-f4e14ba0ccd96707dd060a2a77c2d480-22ec67d2efc88c0b-00
+2022-12-16 02:24:21.824 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-0dd3452a7fd8c40b1bec5529b6f98d29-cf8c640bea754b25-00, Email: ellison.guimaraes@gmail.com
+AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-0dd3452a7fd8c40b1bec5529b6f98d29-cf8c640bea754b25-00
+2022-12-16 02:24:22.787 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-5f91e7b1faa80b46b426ed829053a3a2-bffbb1b0fd46919c-00, Email: ellison.guimaraes@gmail.com
+AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-5f91e7b1faa80b46b426ed829053a3a2-bffbb1b0fd46919c-00
+2022-12-16 02:28:06.707 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-16 02:28:09.065 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-12-16 02:28:09.692 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-43de92345be131663414e2f995acbfc5-1150aa7c513cdb0c-00, Email: ellison.guimaraes@gmail.com
+AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-43de92345be131663414e2f995acbfc5-1150aa7c513cdb0c-00
+2022-12-16 02:30:45.143 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-16 02:31:01.742 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-12-16 02:31:02.384 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-51db2bf8010460a693cf6a82a310007b-de455bca9aeeb4a2-00, Email: ellison.guimaraes@gmail.com
+AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-51db2bf8010460a693cf6a82a310007b-de455bca9aeeb4a2-00
+2022-12-16 02:31:08.542 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0003: Confirm your account
+   at AuthApp.Application.Services.Users.UserServices.AuthenticateAsync(String email, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 143
+   at AuthApp.API.Controllers.UserController.AuthenticateAsync(AuthRequest authRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 95, TraceId: 00-8e701e11c49f17d6cc42e3c5d28f6bf1-5c465e05313792fd-00, Email: ellison.guimaraes@gmail.com
+AuthApp.Application.Exceptions.AuthException: AUTH0003: Confirm your account
+   at AuthApp.Application.Services.Users.UserServices.AuthenticateAsync(String email, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 143
+   at AuthApp.API.Controllers.UserController.AuthenticateAsync(AuthRequest authRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 95, TraceId: 00-8e701e11c49f17d6cc42e3c5d28f6bf1-5c465e05313792fd-00
+2022-12-16 02:35:56.733 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-16 02:36:34.252 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-12-16 02:36:34.736 +00:00 [WRN] VerifyUserTokenAsync() failed with purpose: EmailConfirmation for user.
+2022-12-16 02:36:34.806 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0007: Could not confirm account
+   at AuthApp.Application.Services.Users.UserServices.ConfirmEmailAsync(String email, String token) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 227
+   at AuthApp.API.Controllers.UserController.ConfirmEmailAsync(String email, String token) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 172, TraceId: 00-b4c10193239df7e4b0267cf852176106-a1cfda010170d05f-00, Email: ellison.guimaraes@gmail.com, Token: Q2ZESjhHTFlTQXdGTXE1TGpwSFErdDJCMk83ZkhFdk5NYW9QaXZ6dWl6TmhVa2tqYjRKbzlBVUxvMUtyTEJFMC9yUmdFajNUWmRDQmVYMlVuRWRCWGpzRllpMVB5QnRLTWdCRTlZQ09zSG94Y2xndlNOamEwYllBaHpNN1ZveFVFTlhpT0V5bHNweVd3SmFNdkgrN25wSUZBMXFrM0EwTVdwdG1INWxRUGF4WlExbGUvQ1NlTUpSUlJ4U0FUL2dic29CbmJ2Nm5CcVlkSXRDWHF6VXR4dFFhenpqd0ZReE9td3ZVajRVRytqTEIyZkF1MVkvSGRvS0pyb2lKb0dWVTE0Zzk1dz09
+AuthApp.Application.Exceptions.AuthException: AUTH0007: Could not confirm account
+   at AuthApp.Application.Services.Users.UserServices.ConfirmEmailAsync(String email, String token) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 227
+   at AuthApp.API.Controllers.UserController.ConfirmEmailAsync(String email, String token) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 172, TraceId: 00-b4c10193239df7e4b0267cf852176106-a1cfda010170d05f-00
+2022-12-16 02:36:36.781 +00:00 [WRN] VerifyUserTokenAsync() failed with purpose: EmailConfirmation for user.
+2022-12-16 02:36:36.808 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0007: Could not confirm account
+   at AuthApp.Application.Services.Users.UserServices.ConfirmEmailAsync(String email, String token) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 227
+   at AuthApp.API.Controllers.UserController.ConfirmEmailAsync(String email, String token) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 172, TraceId: 00-fa7aa26dc3bb2b6ff64a708d8936fee3-119be7af3c2a228b-00, Email: ellison.guimaraes@gmail.com, Token: Q2ZESjhHTFlTQXdGTXE1TGpwSFErdDJCMk83ZkhFdk5NYW9QaXZ6dWl6TmhVa2tqYjRKbzlBVUxvMUtyTEJFMC9yUmdFajNUWmRDQmVYMlVuRWRCWGpzRllpMVB5QnRLTWdCRTlZQ09zSG94Y2xndlNOamEwYllBaHpNN1ZveFVFTlhpT0V5bHNweVd3SmFNdkgrN25wSUZBMXFrM0EwTVdwdG1INWxRUGF4WlExbGUvQ1NlTUpSUlJ4U0FUL2dic29CbmJ2Nm5CcVlkSXRDWHF6VXR4dFFhenpqd0ZReE9td3ZVajRVRytqTEIyZkF1MVkvSGRvS0pyb2lKb0dWVTE0Zzk1dz09
+AuthApp.Application.Exceptions.AuthException: AUTH0007: Could not confirm account
+   at AuthApp.Application.Services.Users.UserServices.ConfirmEmailAsync(String email, String token) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 227
+   at AuthApp.API.Controllers.UserController.ConfirmEmailAsync(String email, String token) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 172, TraceId: 00-fa7aa26dc3bb2b6ff64a708d8936fee3-119be7af3c2a228b-00
+2022-12-16 02:53:30.999 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-16 02:53:35.635 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-12-16 02:53:36.174 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0016: Invalid refresh token
+   at AuthApp.Application.Services.Users.UserServices.RefreshTokenAsync(String refreshToken) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 187
+   at AuthApp.API.Controllers.UserController.RefreshTokenAsync(String refreshToken) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 134, TraceId: 00-6e3a2edf8881f5230ed46dd37f857951-0e8766b43a2edacf-00, RefreshToken: /g2Xg3pk2nWhXKtmqRBn5lTQPYbLVGp/5e2ouJ6IabY=
+AuthApp.Application.Exceptions.AuthException: AUTH0016: Invalid refresh token
+   at AuthApp.Application.Services.Users.UserServices.RefreshTokenAsync(String refreshToken) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 187
+   at AuthApp.API.Controllers.UserController.RefreshTokenAsync(String refreshToken) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 134, TraceId: 00-6e3a2edf8881f5230ed46dd37f857951-0e8766b43a2edacf-00
+2022-12-16 02:53:56.146 +00:00 [ERR] MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials e11-20020a9d560b000000b00661ac688285sm339768oti.0 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials e11-20020a9d560b000000b00661ac688285sm339768oti.0 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, Boolean doAsync, CancellationToken cancellationToken)
+   at AuthApp.Application.Utils.EmailSender.EmailSender.SendAsync(MimeMessage mailMessage) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Utils\EmailSender\EmailSender.cs:line 41, MAIL0001: There was an error sending the email, TraceId: 00-27ae5101b65b36b4f2659c918da5bd00-274724c892765c1b-00
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials e11-20020a9d560b000000b00661ac688285sm339768oti.0 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials e11-20020a9d560b000000b00661ac688285sm339768oti.0 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, Boolean doAsync, CancellationToken cancellationToken)
+   at AuthApp.Application.Utils.EmailSender.EmailSender.SendAsync(MimeMessage mailMessage) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Utils\EmailSender\EmailSender.cs:line 41
+2022-12-16 02:55:59.254 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-16 02:56:07.303 +00:00 [WRN] Failed to determine the https port for redirect.

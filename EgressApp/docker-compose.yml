@@ -1,0 +1,57 @@
+version: '3.4'
+
+services:
+  apigateway:
+    container_name: gateway-api
+    image: ${DOCKER_REGISTRY-}apigateway
+    build:
+      context: .
+      dockerfile: src/microservices/ApiGateway/Dockerfile
+    ports:
+      - "8000:80"
+
+  authapp:
+    container_name: auth-api
+    image: ${DOCKER_REGISTRY-}authappapi
+    build:
+      context: .
+      dockerfile: src/microservices/AuthApp/API/AuthApp.API/Dockerfile
+    ports:
+      - "8010:80"
+
+  authapp_db:
+    container_name: auth-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "9050:1433"
+
+  jobapp:
+    container_name: job-api
+    image: ${DOCKER_REGISTRY-}jobopportunitymicroserviceapi
+    build:
+      context: .
+      dockerfile: src/microservices/JobApp/JobOpportunityMicroservice.API/Dockerfile
+    ports:
+      - "8020:80"
+
+  jobapp_db:
+    container_name: job-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "9060:1433"
+
+  egressapp:
+    container_name: egress-api
+    image: ${DOCKER_REGISTRY-}egressapi
+    build:
+      context: .
+      dockerfile: src/microservices/EgressApp/Egress.API/Dockerfile
+    ports:
+      - "8030:80"
+
+  egressapp_db:
+    container_name: egress-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "9070:1433"
+

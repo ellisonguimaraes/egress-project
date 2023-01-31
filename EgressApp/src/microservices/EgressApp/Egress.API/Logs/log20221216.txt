@@ -1,0 +1,39 @@
+2022-12-16 02:23:52.759 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-16 02:23:52.829 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-16 02:23:52.864 +00:00 [INF] Creating key {d21c7a15-2a05-4645-9e2f-025d733689ee} with creation date 2022-12-16 02:23:52Z, activation date 2022-12-16 02:23:52Z, and expiration date 2023-03-16 02:23:52Z.
+2022-12-16 02:23:52.948 +00:00 [WRN] No XML encryptor configured. Key {d21c7a15-2a05-4645-9e2f-025d733689ee} may be persisted to storage in unencrypted form.
+2022-12-16 02:23:52.956 +00:00 [INF] Writing data to file '/root/.aspnet/DataProtection-Keys/key-d21c7a15-2a05-4645-9e2f-025d733689ee.xml'.
+2022-12-16 02:23:53.031 +00:00 [INF] Now listening on: http://[::]:80
+2022-12-16 02:23:53.032 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-16 02:23:53.032 +00:00 [INF] Hosting environment: Development
+2022-12-16 02:23:53.034 +00:00 [INF] Content root path: /app/
+2022-12-16 02:28:03.815 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-16 02:28:03.865 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-16 02:28:04.020 +00:00 [INF] Now listening on: http://[::]:80
+2022-12-16 02:28:04.021 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-16 02:28:04.022 +00:00 [INF] Hosting environment: Development
+2022-12-16 02:28:04.023 +00:00 [INF] Content root path: /app/
+2022-12-16 02:30:42.280 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-16 02:30:42.334 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-16 02:30:42.477 +00:00 [INF] Now listening on: http://[::]:80
+2022-12-16 02:30:42.479 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-16 02:30:42.480 +00:00 [INF] Hosting environment: Development
+2022-12-16 02:30:42.481 +00:00 [INF] Content root path: /app/
+2022-12-16 02:35:54.110 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-16 02:35:54.154 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-16 02:35:54.353 +00:00 [INF] Now listening on: http://[::]:80
+2022-12-16 02:35:54.353 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-16 02:35:54.354 +00:00 [INF] Hosting environment: Development
+2022-12-16 02:35:54.354 +00:00 [INF] Content root path: /app/
+2022-12-16 02:53:28.239 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-16 02:53:28.293 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-16 02:53:28.446 +00:00 [INF] Now listening on: http://[::]:80
+2022-12-16 02:53:28.447 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-16 02:53:28.447 +00:00 [INF] Hosting environment: Development
+2022-12-16 02:53:28.448 +00:00 [INF] Content root path: /app/
+2022-12-16 02:55:56.620 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-16 02:55:56.673 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-16 02:55:56.815 +00:00 [INF] Now listening on: http://[::]:80
+2022-12-16 02:55:56.816 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-16 02:55:56.816 +00:00 [INF] Hosting environment: Development
+2022-12-16 02:55:56.817 +00:00 [INF] Content root path: /app/

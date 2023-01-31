@@ -1,0 +1,174 @@
+2022-12-05 08:18:04.277 -03:00 [INF] Now listening on: https://localhost:7236
+2022-12-05 08:18:04.297 -03:00 [INF] Now listening on: http://localhost:5011
+2022-12-05 08:18:04.298 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-05 08:18:04.299 -03:00 [INF] Hosting environment: Development
+2022-12-05 08:18:04.300 -03:00 [INF] Content root path: C:\Users\ellis\Desktop\microservice-egress\src\Egress.API\
+2022-12-05 08:18:04.811 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/swagger - -
+2022-12-05 08:18:04.829 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-05 08:18:04.869 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/swagger - - - 500 - text/html;+charset=utf-8 60.1496ms
+2022-12-05 08:18:05.042 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/favicon.ico - -
+2022-12-05 08:18:05.046 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-05 08:18:05.052 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/favicon.ico - - - 500 - text/plain;+charset=utf-8 9.5326ms
+2022-12-05 08:18:19.490 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/ - -
+2022-12-05 08:18:19.493 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-05 08:18:19.496 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/ - - - 500 - text/html;+charset=utf-8 6.2578ms
+2022-12-05 08:18:19.542 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/favicon.ico - -
+2022-12-05 08:18:19.544 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-05 08:18:19.548 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/favicon.ico - - - 500 - text/plain;+charset=utf-8 6.0525ms
+2022-12-05 08:18:25.063 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/health - -
+2022-12-05 08:18:25.068 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-05 08:18:25.072 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/health - - - 500 - text/html;+charset=utf-8 8.2753ms
+2022-12-05 08:18:25.143 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/favicon.ico - -
+2022-12-05 08:18:25.146 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-05 08:18:25.149 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/favicon.ico - - - 500 - text/plain;+charset=utf-8 5.6447ms
+2022-12-05 08:18:27.456 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/health - -
+2022-12-05 08:18:27.459 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-05 08:18:27.462 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/health - - - 500 - text/html;+charset=utf-8 6.4109ms
+2022-12-05 08:18:27.520 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/favicon.ico - -
+2022-12-05 08:18:27.522 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-05 08:18:27.525 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/favicon.ico - - - 500 - text/plain;+charset=utf-8 5.9068ms
+2022-12-05 08:18:28.231 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/health - -
+2022-12-05 08:18:28.234 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-05 08:18:28.237 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/health - - - 500 - text/html;+charset=utf-8 6.0271ms
+2022-12-05 08:18:28.279 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/favicon.ico - -
+2022-12-05 08:18:28.281 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-05 08:18:28.285 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/favicon.ico - - - 500 - text/plain;+charset=utf-8 5.9605ms
+2022-12-05 08:18:28.993 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/health - -
+2022-12-05 08:18:28.995 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-05 08:18:28.999 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/health - - - 500 - text/html;+charset=utf-8 6.3711ms
+2022-12-05 08:18:29.071 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/favicon.ico - -
+2022-12-05 08:18:29.073 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-05 08:18:29.076 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/favicon.ico - - - 500 - text/plain;+charset=utf-8 5.6986ms
+2022-12-05 08:18:54.243 -03:00 [INF] Now listening on: https://localhost:7236
+2022-12-05 08:18:54.258 -03:00 [INF] Now listening on: http://localhost:5011
+2022-12-05 08:18:54.259 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-05 08:18:54.260 -03:00 [INF] Hosting environment: Development
+2022-12-05 08:18:54.261 -03:00 [INF] Content root path: C:\Users\ellis\Desktop\microservice-egress\src\Egress.API\
+2022-12-05 08:18:54.810 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/swagger - -
+2022-12-05 08:18:54.826 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/swagger - - - 404 0 - 16.8991ms
+2022-12-05 08:18:58.182 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/health - -
+2022-12-05 08:18:58.188 -03:00 [INF] Executing endpoint 'Health checks'
+2022-12-05 08:18:58.197 -03:00 [INF] Executed endpoint 'Health checks'
+2022-12-05 08:18:58.198 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/health - - - 200 - text/plain 15.8118ms
+2022-12-05 08:18:58.288 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/favicon.ico - -
+2022-12-05 08:18:58.290 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/favicon.ico - - - 404 0 - 2.5275ms
+2022-12-05 08:19:00.131 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/health - -
+2022-12-05 08:19:00.133 -03:00 [INF] Executing endpoint 'Health checks'
+2022-12-05 08:19:00.136 -03:00 [INF] Executed endpoint 'Health checks'
+2022-12-05 08:19:00.137 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/health - - - 200 - text/plain 6.4589ms
+2022-12-05 08:19:00.698 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/health - -
+2022-12-05 08:19:00.701 -03:00 [INF] Executing endpoint 'Health checks'
+2022-12-05 08:19:00.703 -03:00 [INF] Executed endpoint 'Health checks'
+2022-12-05 08:19:00.704 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/health - - - 200 - text/plain 5.8297ms
+2022-12-05 08:19:01.187 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/health - -
+2022-12-05 08:19:01.190 -03:00 [INF] Executing endpoint 'Health checks'
+2022-12-05 08:19:01.193 -03:00 [INF] Executed endpoint 'Health checks'
+2022-12-05 08:19:01.194 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/health - - - 200 - text/plain 7.3340ms
+2022-12-05 08:19:01.672 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/health - -
+2022-12-05 08:19:01.675 -03:00 [INF] Executing endpoint 'Health checks'
+2022-12-05 08:19:01.678 -03:00 [INF] Executed endpoint 'Health checks'
+2022-12-05 08:19:01.679 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/health - - - 200 - text/plain 6.1655ms
+2022-12-05 08:19:02.139 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/health - -
+2022-12-05 08:19:02.141 -03:00 [INF] Executing endpoint 'Health checks'
+2022-12-05 08:19:02.144 -03:00 [INF] Executed endpoint 'Health checks'
+2022-12-05 08:19:02.145 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/health - - - 200 - text/plain 6.4375ms
+2022-12-05 08:19:02.907 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/health - -
+2022-12-05 08:19:02.910 -03:00 [INF] Executing endpoint 'Health checks'
+2022-12-05 08:19:02.912 -03:00 [INF] Executed endpoint 'Health checks'
+2022-12-05 08:19:02.913 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/health - - - 200 - text/plain 6.1702ms
+2022-12-05 08:19:04.169 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7236/health - -
+2022-12-05 08:19:04.171 -03:00 [INF] Executing endpoint 'Health checks'
+2022-12-05 08:19:04.173 -03:00 [INF] Executed endpoint 'Health checks'
+2022-12-05 08:19:04.174 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7236/health - - - 200 - text/plain 5.7086ms
+2022-12-05 08:21:03.635 -03:00 [INF] Now listening on: https://localhost:7000
+2022-12-05 08:21:03.653 -03:00 [INF] Now listening on: http://localhost:7001
+2022-12-05 08:21:03.655 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-05 08:21:03.655 -03:00 [INF] Hosting environment: Development
+2022-12-05 08:21:03.656 -03:00 [INF] Content root path: C:\Users\ellis\Desktop\microservice-egress\src\Egress.API\
+2022-12-05 08:21:04.259 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7000/ - -
+2022-12-05 08:21:04.277 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7000/ - - - 404 0 - 18.3298ms
+2022-12-05 08:21:08.690 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7000/health - -
+2022-12-05 08:21:08.696 -03:00 [INF] Executing endpoint 'Health checks'
+2022-12-05 08:21:08.706 -03:00 [INF] Executed endpoint 'Health checks'
+2022-12-05 08:21:08.707 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7000/health - - - 200 - text/plain 16.8786ms
+2022-12-05 08:21:08.791 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7000/favicon.ico - -
+2022-12-05 08:21:08.794 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7000/favicon.ico - - - 404 0 - 3.4614ms
+2022-12-05 08:37:01.910 -03:00 [INF] Now listening on: https://localhost:7000
+2022-12-05 08:37:01.924 -03:00 [INF] Now listening on: http://localhost:7001
+2022-12-05 08:37:01.927 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-05 08:37:01.928 -03:00 [INF] Hosting environment: Development
+2022-12-05 08:37:01.928 -03:00 [INF] Content root path: C:\Users\ellis\Desktop\microservice-egress\src\Egress.API\
+2022-12-05 08:37:02.512 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7000/ - -
+2022-12-05 08:37:02.532 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7000/ - - - 404 0 - 21.3414ms

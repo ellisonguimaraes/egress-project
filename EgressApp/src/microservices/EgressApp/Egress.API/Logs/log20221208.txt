@@ -1,0 +1,18 @@
+2022-12-08 22:49:39.953 -03:00 [INF] Now listening on: https://localhost:7000
+2022-12-08 22:49:39.973 -03:00 [INF] Now listening on: http://localhost:7001
+2022-12-08 22:49:39.976 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-08 22:49:39.977 -03:00 [INF] Hosting environment: Development
+2022-12-08 22:49:39.978 -03:00 [INF] Content root path: C:\Users\ellis\Desktop\microservice-egress\src\Egress.API\
+2022-12-08 22:49:40.307 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7000/ - -
+2022-12-08 22:49:40.327 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7000/ - - - 404 0 - 21.9021ms
+2022-12-08 22:50:38.223 -03:00 [INF] Now listening on: https://localhost:7000
+2022-12-08 22:50:38.241 -03:00 [INF] Now listening on: http://localhost:7001
+2022-12-08 22:50:38.243 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-08 22:50:38.244 -03:00 [INF] Hosting environment: Development
+2022-12-08 22:50:38.245 -03:00 [INF] Content root path: C:\Users\ellis\Desktop\microservice-egress\src\Egress.API\
+2022-12-08 22:50:38.775 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7000/health - -
+2022-12-08 22:50:38.797 -03:00 [INF] Executing endpoint 'Health checks'
+2022-12-08 22:50:38.809 -03:00 [INF] Executed endpoint 'Health checks'
+2022-12-08 22:50:38.812 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7000/health - - - 200 - text/plain 38.7998ms
+2022-12-08 22:50:38.903 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7000/favicon.ico - -
+2022-12-08 22:50:38.906 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7000/favicon.ico - - - 404 0 - 2.9078ms

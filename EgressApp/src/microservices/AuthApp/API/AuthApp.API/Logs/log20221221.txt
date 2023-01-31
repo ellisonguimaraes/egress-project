@@ -1,0 +1,22 @@
+2022-12-21 02:36:57.346 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-21 02:36:57.427 +00:00 [WRN] No XML encryptor configured. Key {cf3cafec-d21b-42f4-a235-0fab75c6d5e9} may be persisted to storage in unencrypted form.
+2022-12-21 02:37:57.789 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-12-21 02:37:58.450 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-531c25d8d87db0c572ce00f27cd2a5f9-60cad0dc46d23de7-00, Email: ellison.guimaraes@gmail.com
+AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Application.Services.Users.UserServices.RegisterAsync(User user, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 47
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 62, TraceId: 00-531c25d8d87db0c572ce00f27cd2a5f9-60cad0dc46d23de7-00
+2022-12-21 02:44:29.195 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-21 02:46:36.390 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-21 02:46:57.103 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-12-21 02:46:57.845 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0003: Confirm your account
+   at AuthApp.Application.Services.Users.UserServices.AuthenticateAsync(String email, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 143
+   at AuthApp.API.Controllers.UserController.AuthenticateAsync(AuthRequest authRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 95, TraceId: 00-026b37b255f992df45241d5b9d582301-3e865e2915fcb331-00, Email: ellison.guimaraes@gmail.com
+AuthApp.Application.Exceptions.AuthException: AUTH0003: Confirm your account
+   at AuthApp.Application.Services.Users.UserServices.AuthenticateAsync(String email, String password) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\Application\AuthApp.Application\Services\Users\UserServices.cs:line 143
+   at AuthApp.API.Controllers.UserController.AuthenticateAsync(AuthRequest authRequest) in C:\Users\ellis\Desktop\EgressProject\EgressApp\src\microservices\AuthApp\API\AuthApp.API\Controllers\UserController.cs:line 95, TraceId: 00-026b37b255f992df45241d5b9d582301-3e865e2915fcb331-00
+2022-12-21 03:05:55.025 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-21 03:14:00.381 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-21 03:16:14.540 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-21 03:18:14.279 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.

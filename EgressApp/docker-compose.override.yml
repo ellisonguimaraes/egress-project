@@ -1,0 +1,90 @@
+version: '3.4'
+
+volumes:
+  authapp_db_volume:
+  jobapp_db_volume:
+  egressapp_db_volume:
+
+networks:
+  backend:
+
+services:
+  apigateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    networks:
+      - backend
+
+  authapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    networks:
+      - backend
+
+  authapp_db:
+    ports:
+      - "1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Abcd@1234
+    volumes:
+      - authapp_db_volume:/var/opt/mssql
+    networks:
+      - backend
+
+  jobapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    networks:
+      - backend
+  
+  jobapp_db:
+    ports:
+      - "1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Abcd@1234
+    volumes:
+      - jobapp_db_volume:/var/opt/mssql
+    networks:
+      - backend
+
+  egressapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "80"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    networks:
+      - backend
+
+  egressapp_db:
+    ports:
+      - "1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Abcd@1234
+    volumes:
+      - egressapp_db_volume:/var/opt/mssql
+    networks:
+      - backend

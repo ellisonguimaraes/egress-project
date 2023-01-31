@@ -1,0 +1,33 @@
+2022-12-15 02:44:12.983 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-15 02:44:13.031 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-15 02:44:13.061 +00:00 [INF] Creating key {2be7f7cf-afe2-4f23-800e-0a92bac46e53} with creation date 2022-12-15 02:44:13Z, activation date 2022-12-15 02:44:13Z, and expiration date 2023-03-15 02:44:13Z.
+2022-12-15 02:44:13.100 +00:00 [WRN] No XML encryptor configured. Key {2be7f7cf-afe2-4f23-800e-0a92bac46e53} may be persisted to storage in unencrypted form.
+2022-12-15 02:44:13.106 +00:00 [INF] Writing data to file '/root/.aspnet/DataProtection-Keys/key-2be7f7cf-afe2-4f23-800e-0a92bac46e53.xml'.
+2022-12-15 02:44:13.178 +00:00 [INF] Now listening on: http://[::]:80
+2022-12-15 02:44:13.180 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-15 02:44:13.181 +00:00 [INF] Hosting environment: Development
+2022-12-15 02:44:13.182 +00:00 [INF] Content root path: /app/
+2022-12-15 02:44:43.548 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-15 02:44:43.586 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-15 02:44:43.612 +00:00 [INF] Creating key {03f1f839-6f80-4d7e-b28e-b24b67222dce} with creation date 2022-12-15 02:44:43Z, activation date 2022-12-15 02:44:43Z, and expiration date 2023-03-15 02:44:43Z.
+2022-12-15 02:44:43.638 +00:00 [WRN] No XML encryptor configured. Key {03f1f839-6f80-4d7e-b28e-b24b67222dce} may be persisted to storage in unencrypted form.
+2022-12-15 02:44:43.644 +00:00 [INF] Writing data to file '/root/.aspnet/DataProtection-Keys/key-03f1f839-6f80-4d7e-b28e-b24b67222dce.xml'.
+2022-12-15 02:44:43.703 +00:00 [INF] Now listening on: http://[::]:80
+2022-12-15 02:44:43.704 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-15 02:44:43.704 +00:00 [INF] Hosting environment: Development
+2022-12-15 02:44:43.704 +00:00 [INF] Content root path: /app/
+2022-12-15 02:45:50.723 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-15 02:45:50.768 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-15 02:45:50.802 +00:00 [INF] Creating key {9713b009-1c82-4d7a-927f-5a1a3f399344} with creation date 2022-12-15 02:45:50Z, activation date 2022-12-15 02:45:50Z, and expiration date 2023-03-15 02:45:50Z.
+2022-12-15 02:45:50.836 +00:00 [WRN] No XML encryptor configured. Key {9713b009-1c82-4d7a-927f-5a1a3f399344} may be persisted to storage in unencrypted form.
+2022-12-15 02:45:50.845 +00:00 [INF] Writing data to file '/root/.aspnet/DataProtection-Keys/key-9713b009-1c82-4d7a-927f-5a1a3f399344.xml'.
+2022-12-15 02:45:50.918 +00:00 [INF] Now listening on: http://[::]:80
+2022-12-15 02:45:50.919 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-15 02:45:50.919 +00:00 [INF] Hosting environment: Development
+2022-12-15 02:45:50.921 +00:00 [INF] Content root path: /app/
+2022-12-15 02:48:33.885 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2022-12-15 02:48:33.950 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-15 02:48:34.080 +00:00 [INF] Now listening on: http://[::]:80
+2022-12-15 02:48:34.081 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-15 02:48:34.081 +00:00 [INF] Hosting environment: Development
+2022-12-15 02:48:34.082 +00:00 [INF] Content root path: /app/

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "yEYv6LqDEu8Cjch1y2YVir2asXvxD/3nCUJb0Iqf2q4=",
+  "Source": "Egress.API",
+  "BasePath": "_content/Egress.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
