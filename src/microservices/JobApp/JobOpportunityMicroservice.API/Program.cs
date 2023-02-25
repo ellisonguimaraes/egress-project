@@ -7,7 +7,7 @@ using Serilog;
 #region Constants
 const string APPLICATION_PROPERTY = "Application";
 const string APPLICATION_NAME = "ApplicationName";
-const string JOB_DB_CONNECTION_STRING_PROPERTY = "JobDbConnectionString";
+const string JOB_DB_CONNECTION_STRING_PROPERTY = "JobDatabaseConnectionString";
 const string HEALTH_CHECK_ROUTE = "/health";
 #endregion
 
@@ -25,7 +25,9 @@ var logger = new LoggerConfiguration()
 builder.Logging.AddSerilog(logger);
 
 // Database Context Configuration
-builder.Services.AddSqlServer<ApplicationDbContext>(builder.Configuration.GetConnectionString(JOB_DB_CONNECTION_STRING_PROPERTY));
+var bufa = builder.Configuration["ConnectionStrings:JobDatabaseConnectionString"];
+var connectionString = builder.Configuration.GetConnectionString(JOB_DB_CONNECTION_STRING_PROPERTY);
+builder.Services.AddSqlServer<ApplicationDbContext>(connectionString);
 
 // Versioning API Configuration
 builder.Services.AddApiVersioningConfiguration(builder.Configuration);

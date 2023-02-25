@@ -1,0 +1,76 @@
+2023-02-22 06:01:36.397 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-02-22 06:01:36.440 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-02-22 06:01:36.472 +00:00 [INF] Creating key {5877d34d-9d4a-4f4f-9821-2667859d9142} with creation date 2023-02-22 06:01:36Z, activation date 2023-02-22 06:01:36Z, and expiration date 2023-05-23 06:01:36Z.
+2023-02-22 06:01:36.503 +00:00 [WRN] No XML encryptor configured. Key {5877d34d-9d4a-4f4f-9821-2667859d9142} may be persisted to storage in unencrypted form.
+2023-02-22 06:01:36.508 +00:00 [INF] Writing data to file '/root/.aspnet/DataProtection-Keys/key-5877d34d-9d4a-4f4f-9821-2667859d9142.xml'.
+2023-02-22 06:01:36.570 +00:00 [INF] Now listening on: http://[::]:80
+2023-02-22 06:01:36.571 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-22 06:01:36.571 +00:00 [INF] Hosting environment: Development
+2023-02-22 06:01:36.571 +00:00 [INF] Content root path: /app/
+2023-02-22 06:03:52.436 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-02-22 06:03:52.504 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-02-22 06:03:52.672 +00:00 [INF] Now listening on: http://[::]:80
+2023-02-22 06:03:52.673 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-22 06:03:52.674 +00:00 [INF] Hosting environment: Development
+2023-02-22 06:03:52.674 +00:00 [INF] Content root path: /app/
+2023-02-22 06:06:11.879 +00:00 [INF] Now listening on: http://[::]:80
+2023-02-22 06:06:12.006 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-22 06:06:12.009 +00:00 [INF] Hosting environment: Development
+2023-02-22 06:06:12.011 +00:00 [INF] Content root path: /app/
+2023-02-22 06:07:09.537 +00:00 [INF] Now listening on: http://[::]:80
+2023-02-22 06:07:09.592 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-22 06:07:09.593 +00:00 [INF] Hosting environment: Development
+2023-02-22 06:07:09.593 +00:00 [INF] Content root path: /app/
+2023-02-22 06:08:31.456 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:8030/api/v1/testimony application/json 37
+2023-02-22 06:08:31.517 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-02-22 06:08:31.573 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.TestimonyController.CreateAsync (Egress.API)'
+2023-02-22 06:08:31.615 +00:00 [INF] Route matched with {action = "Create", controller = "Testimony"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAsync(Egress.Application.Commands.Testimony.CreateTestimonyCommand) on controller Egress.API.Controllers.TestimonyController (Egress.API).
+2023-02-22 06:08:56.044 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Guid, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-02-22 06:08:56.072 +00:00 [INF] Executed action Egress.API.Controllers.TestimonyController.CreateAsync (Egress.API) in 24447.8688ms
+2023-02-22 06:08:56.074 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.TestimonyController.CreateAsync (Egress.API)'
+2023-02-22 06:08:56.085 +00:00 [ERR] An unexpected error occurred, Endpoint: /api/v1/testimony, TraceId: 00-6ed87205b01f8a32bddd1dfc70609a66-d6d792e39ea4d0fb-00
+System.AggregateException: One or more errors occurred. (The method or operation is not implemented.)
+ ---> System.NotImplementedException: The method or operation is not implemented.
+   at Egress.Application.Commands.Testimony.CreateTestimonyCommandHandler.Handle(CreateTestimonyCommand request, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\TCC\New\EgressProject\src\microservices\EgressApp\Egress.Application\Commands\Testimony\CreateTestimonyCommandHandler.cs:line 11
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at Egress.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\TCC\New\EgressProject\src\microservices\EgressApp\Egress.Application\Behaviors\ValidationBehavior.cs:line 21
+   --- End of inner exception stack trace ---
+   at ResultGetter(Object )
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCoreAsObject(Utf8JsonWriter writer, Object value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](JsonConverter jsonConverter, Utf8JsonWriter writer, TValue& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteStreamAsync[TValue](Stream utf8Json, TValue value, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at System.Text.Json.JsonSerializer.WriteStreamAsync[TValue](Stream utf8Json, TValue value, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at System.Text.Json.JsonSerializer.WriteStreamAsync[TValue](Stream utf8Json, TValue value, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Egress.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\ellis\Desktop\TCC\New\EgressProject\src\microservices\EgressApp\Egress.API\Middlewares\GlobalExceptionMiddleware.cs:line 34
+2023-02-22 06:08:56.121 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:8030/api/v1/testimony application/json 37 - 400 - application/json;+ver=1 24669.9682ms
+2023-02-22 06:42:22.457 +00:00 [INF] Now listening on: http://[::]:80
+2023-02-22 06:42:22.507 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-22 06:42:22.508 +00:00 [INF] Hosting environment: Development
+2023-02-22 06:42:22.508 +00:00 [INF] Content root path: /app/
+2023-02-22 06:42:23.079 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:8030/api/v1/testimony application/json 37
+2023-02-22 06:42:23.136 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-02-22 06:42:23.176 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.TestimonyController.CreateAsync (Egress.API)'
+2023-02-22 06:42:23.232 +00:00 [INF] Route matched with {action = "Create", controller = "Testimony"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAsync(Egress.Application.Commands.Testimony.CreateTestimonyCommand) on controller Egress.API.Controllers.TestimonyController (Egress.API).
+2023-02-22 18:04:54.359 +00:00 [INF] Now listening on: http://[::]:80
+2023-02-22 18:04:54.402 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-22 18:04:54.403 +00:00 [INF] Hosting environment: Development
+2023-02-22 18:04:54.403 +00:00 [INF] Content root path: /app/

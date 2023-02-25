@@ -9,7 +9,19 @@ networks:
   backend:
 
 services:
-  apigateway:
+#  apigateway:
+#    environment:
+#      - ASPNETCORE_ENVIRONMENT=Development
+#      - ASPNETCORE_URLS=http://+:80
+#    ports:
+#      - "80"
+#    volumes:
+#      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+#      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+#    networks:
+#      - backend
+#
+  auth_api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
@@ -21,19 +33,7 @@ services:
     networks:
       - backend
 
-  authapp:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:80
-    ports:
-      - "80"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-    networks:
-      - backend
-
-  authapp_db:
+  auth_db:
     ports:
       - "1433"
     environment:
@@ -44,7 +44,7 @@ services:
     networks:
       - backend
 
-  jobapp:
+  job_api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
@@ -56,7 +56,7 @@ services:
     networks:
       - backend
   
-  jobapp_db:
+  job_db:
     ports:
       - "1433"
     environment:
@@ -67,7 +67,7 @@ services:
     networks:
       - backend
 
-  egressapp:
+  egress_api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
@@ -78,7 +78,7 @@ services:
     networks:
       - backend
 
-  egressapp_db:
+  egress_db:
     ports:
       - "1433"
     environment:

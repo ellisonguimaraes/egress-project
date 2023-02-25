@@ -57,6 +57,8 @@ public class UserController : ControllerBase
                 return StatusCode(response.StatusCode, response);
             }
 
+            // Validar se usuário pertence ao banco. Se não, retornar informando.
+
             var user = _mapper.Map<User>(registerRequest);
 
             await _userServices.RegisterAsync(user, registerRequest.Password);

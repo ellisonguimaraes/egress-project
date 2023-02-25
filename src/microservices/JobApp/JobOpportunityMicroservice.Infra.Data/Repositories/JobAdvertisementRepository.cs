@@ -27,15 +27,15 @@ public class JobAdvertisementRepository : Repository<JobAdvertisement>
     /// </summary>
     /// <param name="paginationParameters">Page number and page size</param>
     /// <returns>Paged list job advertisement</returns>
-    public override PagedList<JobAdvertisement> GetPaginate(PaginationParameters paginationParameters)
-        => new PagedList<JobAdvertisement>(
-            DbSet
-                .Include(ja => ja.JobCategories).ThenInclude(jc => jc.Category)
-                .Include(ja => ja.Address)
-                .OrderBy(ja => ja.Id),
-            paginationParameters.PageNumber,
-            paginationParameters.PageSize
-        );
+    // public override PagedList<JobAdvertisement> GetPaginate(PaginationParameters paginationParameters)
+    //     => new PagedList<JobAdvertisement>(
+    //         DbSet
+    //             //.Include(ja => ja.JobCategories).ThenInclude(jc => jc.Category)
+    //             //.Include(ja => ja.Address)
+    //             .OrderBy(ja => ja.Id),
+    //         paginationParameters.PageNumber,
+    //         paginationParameters.PageSize
+    //     );
     
     /// <summary>
     /// Get job advertisement entity by id

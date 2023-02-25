@@ -1,0 +1,3 @@
+C:\Users\ellis\Desktop\TCC\New\EgressProject\Egress.API\obj\rider-publish\AuthApp.Infra.CrossCutting.Resources.dll
+C:\Users\ellis\Desktop\TCC\New\EgressProject\Egress.API\obj\rider-publish\AuthApp.Infra.CrossCutting.Resources.deps.json
+C:\Users\ellis\Desktop\TCC\New\EgressProject\Egress.API\obj\rider-publish\AuthApp.Infra.CrossCutting.Resources.pdb

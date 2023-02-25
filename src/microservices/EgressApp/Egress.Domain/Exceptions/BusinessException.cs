@@ -2,6 +2,9 @@
 
 namespace Egress.Domain.Exceptions;
 
+/// <summary>
+/// Generic business exception
+/// </summary>
 public class BusinessException : Exception
 {
     public string? TraceId { get; set; }
@@ -12,7 +15,7 @@ public class BusinessException : Exception
     {
         TraceId = Activity.Current?.Id;
     }
-    
+
     public BusinessException(string message, IEnumerable<string> errors) : base(message)
     {
         TraceId = Activity.Current?.Id;

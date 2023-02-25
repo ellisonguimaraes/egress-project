@@ -1,46 +1,34 @@
-name: dockercompose12464398186632957991
+name: dockercompose14801093022439848973
 services:
-  apigateway:
+  auth_api:
     build:
-      context: C:\Users\ellis\Desktop\EgressProject\EgressApp
-      dockerfile: src/microservices/ApiGateway/Dockerfile
-    container_name: gateway-api
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_URLS: http://+:80
-    image: apigateway
-    networks:
-      backend: null
-    ports:
-    - mode: ingress
-      target: 80
-      protocol: tcp
-    - mode: ingress
-      target: 80
-      published: "8000"
-      protocol: tcp
-    volumes:
-    - type: bind
-      source: C:\Users\ellis\AppData\Roaming/Microsoft/UserSecrets
-      target: /root/.microsoft/usersecrets
-      read_only: true
-      bind:
-        create_host_path: true
-    - type: bind
-      source: C:\Users\ellis\AppData\Roaming/ASP.NET/Https
-      target: /root/.aspnet/https
-      read_only: true
-      bind:
-        create_host_path: true
-  authapp:
-    build:
-      context: C:\Users\ellis\Desktop\EgressProject\EgressApp
+      context: C:\Users\ellis\Desktop\TCC\New\EgressProject
       dockerfile: src/microservices/AuthApp/API/AuthApp.API/Dockerfile
-    container_name: auth-api
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: AuthApp.API
+      target: base
+    container_name: auth_api
+    depends_on:
+      auth_db:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
     environment:
       ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
       ASPNETCORE_URLS: http://+:80
-    image: authappapi
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: authappapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/AuthApp.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
     networks:
       backend: null
     ports:
@@ -51,11 +39,16 @@ services:
       target: 80
       published: "8010"
       protocol: tcp
+    tty: true
     volumes:
     - type: bind
-      source: C:\Users\ellis\AppData\Roaming/Microsoft/UserSecrets
-      target: /root/.microsoft/usersecrets
-      read_only: true
+      source: C:\Users\ellis\Desktop\TCC\New\EgressProject\src\microservices\AuthApp\API\AuthApp.API
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\vsdbg\vs2017u5
+      target: /remote_debugger
       bind:
         create_host_path: true
     - type: bind
@@ -64,8 +57,25 @@ services:
       read_only: true
       bind:
         create_host_path: true
-  authapp_db:
-    container_name: auth-db
+    - type: bind
+      source: C:\Users\ellis\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\Desktop\TCC\New\EgressProject
+      target: /src
+      bind:
+        create_host_path: true
+  auth_db:
+    container_name: auth_db
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: Abcd@1234
@@ -78,46 +88,134 @@ services:
       protocol: tcp
     - mode: ingress
       target: 1433
-      published: "9050"
+      published: "9010"
       protocol: tcp
     volumes:
     - type: volume
       source: authapp_db_volume
       target: /var/opt/mssql
       volume: {}
-  egress.api:
+  egress_api:
     build:
-      context: C:\Users\ellis\Desktop\EgressProject\EgressApp
+      context: C:\Users\ellis\Desktop\TCC\New\EgressProject
       dockerfile: src/microservices/EgressApp/Egress.API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Egress.API
+      target: base
+    container_name: egress_api
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_URLS: https://+:443;http://+:80
-    image: egressapi
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: egressapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/Egress.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
     networks:
-      default: null
+      backend: null
     ports:
     - mode: ingress
       target: 80
       protocol: tcp
     - mode: ingress
-      target: 443
+      target: 80
+      published: "8030"
       protocol: tcp
+    tty: true
     volumes:
+    - type: bind
+      source: C:\Users\ellis\Desktop\TCC\New\EgressProject\src\microservices\EgressApp\Egress.API
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
     - type: bind
       source: C:\Users\ellis\AppData\Roaming/ASP.NET/Https
       target: /root/.aspnet/https
       read_only: true
       bind:
         create_host_path: true
-  jobapp:
+    - type: bind
+      source: C:\Users\ellis\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\Desktop\TCC\New\EgressProject
+      target: /src
+      bind:
+        create_host_path: true
+  egress_db:
+    container_name: egress_db
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Abcd@1234
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 1433
+      protocol: tcp
+    - mode: ingress
+      target: 1433
+      published: "9030"
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: egressapp_db_volume
+      target: /var/opt/mssql
+      volume: {}
+  job_api:
     build:
-      context: C:\Users\ellis\Desktop\EgressProject\EgressApp
+      context: C:\Users\ellis\Desktop\TCC\New\EgressProject
       dockerfile: src/microservices/JobApp/JobOpportunityMicroservice.API/Dockerfile
-    container_name: job-api
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: JobOpportunityMicroservice.API
+      target: base
+    container_name: job_api
+    depends_on:
+      job_db:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
     environment:
       ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
       ASPNETCORE_URLS: http://+:80
-    image: jobopportunitymicroserviceapi
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: jobopportunitymicroserviceapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/JobOpportunityMicroservice.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
     networks:
       backend: null
     ports:
@@ -128,11 +226,16 @@ services:
       target: 80
       published: "8020"
       protocol: tcp
+    tty: true
     volumes:
     - type: bind
-      source: C:\Users\ellis\AppData\Roaming/Microsoft/UserSecrets
-      target: /root/.microsoft/usersecrets
-      read_only: true
+      source: C:\Users\ellis\Desktop\TCC\New\EgressProject\src\microservices\JobApp\JobOpportunityMicroservice.API
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\vsdbg\vs2017u5
+      target: /remote_debugger
       bind:
         create_host_path: true
     - type: bind
@@ -141,8 +244,25 @@ services:
       read_only: true
       bind:
         create_host_path: true
-  jobapp_db:
-    container_name: job-db
+    - type: bind
+      source: C:\Users\ellis\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\Desktop\TCC\New\EgressProject
+      target: /src
+      bind:
+        create_host_path: true
+  job_db:
+    container_name: job_db
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: Abcd@1234
@@ -155,7 +275,7 @@ services:
       protocol: tcp
     - mode: ingress
       target: 1433
-      published: "9060"
+      published: "9020"
       protocol: tcp
     volumes:
     - type: volume
@@ -164,11 +284,11 @@ services:
       volume: {}
 networks:
   backend:
-    name: dockercompose12464398186632957991_backend
-  default:
-    name: dockercompose12464398186632957991_default
+    name: dockercompose14801093022439848973_backend
 volumes:
   authapp_db_volume:
-    name: dockercompose12464398186632957991_authapp_db_volume
+    name: dockercompose14801093022439848973_authapp_db_volume
+  egressapp_db_volume:
+    name: dockercompose14801093022439848973_egressapp_db_volume
   jobapp_db_volume:
-    name: dockercompose12464398186632957991_jobapp_db_volume
+    name: dockercompose14801093022439848973_jobapp_db_volume

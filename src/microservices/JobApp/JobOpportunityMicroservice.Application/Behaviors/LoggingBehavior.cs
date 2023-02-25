@@ -78,7 +78,7 @@ public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, 
         {
             return propertyInfo.GetValue(obj, null)?.ToString() ?? string.Empty;
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return string.Empty;
         }

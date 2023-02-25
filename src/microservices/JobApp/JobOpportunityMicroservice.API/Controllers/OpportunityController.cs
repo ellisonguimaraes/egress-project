@@ -33,8 +33,6 @@ public class OpportunityController : ControllerBase
     public async Task<IActionResult> GetPaginationAsync([FromQuery] GetAllJobOpportunityQuery getAllJobOpportunityQuery)
     {
         var result = await _mediator.Send(getAllJobOpportunityQuery);
-
-        var teste = HttpContext;
         
         var metadata = new {
             result.TotalCount,

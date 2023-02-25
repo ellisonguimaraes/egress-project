@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hwSjp7GPzQmVTXAhR2QJgHpfPlgFUYmXp3ILqIi/VGDMtxXXh+I+WUAIEwr1uWwoF8DpWSLjxIXtYYoFfY/jZQ==",
+  "dgSpecHash": "eDlDSaWS1bHu1Kf/UbT+Smuzj72KsagsjedvWIXP/cZo1ziXElQbtxmzpAJsQwW2swXNXggEzFQjFGOpjiDumQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj",
+  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

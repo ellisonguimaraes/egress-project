@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Services\\AuthApp.Services\\AuthApp.Services.csproj": {}
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Services\\AuthApp.Services\\AuthApp.Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Application\\AuthApp.Application\\AuthApp.Application.csproj": {
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Application\\AuthApp.Application\\AuthApp.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Application\\AuthApp.Application\\AuthApp.Application.csproj",
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Application\\AuthApp.Application\\AuthApp.Application.csproj",
         "projectName": "AuthApp.Application",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Application\\AuthApp.Application\\AuthApp.Application.csproj",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Application\\AuthApp.Application\\AuthApp.Application.csproj",
         "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Application\\AuthApp.Application\\obj\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Application\\AuthApp.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,14 +28,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj"
               }
             }
           }
@@ -98,14 +98,14 @@
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj": {
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj",
         "projectName": "AuthApp.Domain",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj",
         "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\obj\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -162,14 +162,14 @@
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj": {
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj",
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj",
         "projectName": "AuthApp.Infra.CrossCutting.Resources",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj",
         "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\obj\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -216,14 +216,14 @@
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj": {
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj",
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj",
         "projectName": "AuthApp.Infra.Data",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj",
         "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\obj\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -240,11 +240,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj"
               }
             }
           }
@@ -297,14 +297,14 @@
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Services\\AuthApp.Services\\AuthApp.Services.csproj": {
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Services\\AuthApp.Services\\AuthApp.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Services\\AuthApp.Services\\AuthApp.Services.csproj",
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Services\\AuthApp.Services\\AuthApp.Services.csproj",
         "projectName": "AuthApp.Services",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Services\\AuthApp.Services\\AuthApp.Services.csproj",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Services\\AuthApp.Services\\AuthApp.Services.csproj",
         "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Services\\AuthApp.Services\\obj\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Services\\AuthApp.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -321,17 +321,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Application\\AuthApp.Application\\AuthApp.Application.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Application\\AuthApp.Application\\AuthApp.Application.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Application\\AuthApp.Application\\AuthApp.Application.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Application\\AuthApp.Application\\AuthApp.Application.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.Resources\\AuthApp.Infra.CrossCutting.Resources.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.Data\\AuthApp.Infra.Data.csproj"
               }
             }
           }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QgRZrvpB7OT6kePIIrrpdcQe6j9FgnSOo/dnJLJHYlHXxTMEK17/w9O5kRFUQF0djxPlhIWU7cOSLLLTOY0gHQ==",
+  "dgSpecHash": "cdGbEDulQdwRcJRO3MSdBeavIUrDgFB9Zg+ZFtAMjOieGp1xO7HZxXwx2wEjYG9FznWd/aC9roJ9RjNR+ngtGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\EgressApp\\Egress.Domain\\Egress.Domain.csproj",
+  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\EgressApp\\Egress.Domain\\Egress.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

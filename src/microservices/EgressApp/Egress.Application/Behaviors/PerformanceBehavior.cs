@@ -7,7 +7,7 @@ namespace Egress.Application.Behaviors;
 /// <summary>
 /// Performance Behavior
 /// </summary>
-public class PerformanceBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>, INotification
+public class PerformanceBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
 {
     #region Constants
     private const string TRACE_ID_NAME = "TraceId";

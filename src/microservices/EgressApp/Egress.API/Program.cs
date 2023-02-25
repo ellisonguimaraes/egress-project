@@ -1,9 +1,7 @@
 using Egress.API.Middlewares;
 using Egress.Infra.CrossCutting.IoC;
 using Egress.Infra.Data.Context;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 
 #region Constants
 const string EGRESS_CONNECTION_STRING = "EgressDb";
@@ -32,29 +30,6 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.SuppressModelStateInvalidFilter = true;
 });
-
-builder.Services
-    .AddAuthentication(
-    options =>
-    {
-        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
-    })
-    .AddJwtBearer(options =>
-    {
-        options.Audience = "https://portalegressos.uesc.br";
-        options.Authority = "https://localhost:9001/";
-        options.RequireHttpsMetadata = false;
-        // options.TokenValidationParameters = new TokenValidationParameters
-        // {
-        //     ValidateIssuer = true,
-        //     ValidateAudience = true,
-        //     ValidateIssuerSigningKey = true,
-        //     ValidAudiences = new[] {"https://portalegressos.uesc.br"},
-        //     ValidIssuers = new[] { "AuthApp.Microservice" }
-        // };
-    });
 
 // Register services
 builder.Services.RegisterServices(builder.Configuration);

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "JLPJvuLF1X8CPx6Ye1JMlv99VUJ01xE5ARWMiabBnsg=",
+  "Source": "Egress.API",
+  "BasePath": "_content/Egress.API",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

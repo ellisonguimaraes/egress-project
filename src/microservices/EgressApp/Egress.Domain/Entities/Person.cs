@@ -8,7 +8,7 @@ public class Person : BaseEntity
 
     public string Name { get; set; }
 
-    public string? BirthDate { get; set; }
+    public DateTime? BirthDate { get; set; }
     
     public Sex? Sex { get; set; }
 

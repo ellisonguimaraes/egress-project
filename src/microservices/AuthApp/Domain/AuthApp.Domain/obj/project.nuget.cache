@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lmmWo3nL+9lxM3w7/qkJldhkpfocikHFPrqwI4fyIVIEcn6GBnjlQ8b1aGzs6X3dgCvWrYdGOBCDpCXOW98QGw==",
+  "dgSpecHash": "0bIuVR54WD5kJL5lLIgf5BO2VvqVnW5UP9wgK6cdR+3anG3hcuy/ZQ3fAS+4WVLU+azryBBwULetPng1oBSd9A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj",
+  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Domain\\AuthApp.Domain\\AuthApp.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ellis\\.nuget\\packages\\mailkit\\3.2.0\\mailkit.3.2.0.nupkg.sha512",
     "C:\\Users\\ellis\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.9\\microsoft.aspnetcore.cryptography.internal.6.0.9.nupkg.sha512",

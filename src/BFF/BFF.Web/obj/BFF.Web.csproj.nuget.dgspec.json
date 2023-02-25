@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\BFF\\BFF.Web\\BFF.Web.csproj": {}
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\BFF\\BFF.Web\\BFF.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\BFF\\BFF.Web\\BFF.Web.csproj": {
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\BFF\\BFF.Web\\BFF.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\BFF\\BFF.Web\\BFF.Web.csproj",
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\BFF\\BFF.Web\\BFF.Web.csproj",
         "projectName": "BFF.Web",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\BFF\\BFF.Web\\BFF.Web.csproj",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\BFF\\BFF.Web\\BFF.Web.csproj",
         "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\BFF\\BFF.Web\\obj\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\BFF\\BFF.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,5 +1,10 @@
 ﻿using Egress.Application.Behaviors;
 using Egress.Application.Commands.Testimony;
+using Egress.Application.Profiles;
+using Egress.Application.Queries.Person.GetPersonByDocument;
+using Egress.Domain.Entities;
+using Egress.Infra.Data.Repositories;
+using Egress.Infra.Data.Repositories.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
@@ -32,6 +37,9 @@ public static class ServiceCollectionExtensions
     /// <param name="configuration">Configuration file ~ appsettings</param>
     public static void RegisterServices(this IServiceCollection services, IConfiguration configuration)
     {
+        // AutoMapper
+        services.AddAutoMapper(typeof(PersonProfile));
+
         // Behaviors
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(PerformanceBehavior<,>));
@@ -39,6 +47,12 @@ public static class ServiceCollectionExtensions
         
         // Handlers
         services.AddMediatR(typeof(CreateTestimonyCommandHandler).Assembly);
+        services.AddMediatR(typeof(GetPersonByDocumentCommandHandler).Assembly);
+
+        // Repositories
+        services.AddScoped<IRepository<Testimony>, Repository<Testimony>>();
+        services.AddScoped<IPersonRepository, PersonRepository>();
+        services.AddScoped<IPersonCourseRepository, PersonCourseRepository>();
     }
     
     /// <summary>

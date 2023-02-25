@@ -19,7 +19,6 @@ public class TestimonyController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize]
     public async Task<IActionResult> CreateAsync([FromBody] CreateTestimonyCommand command)
     {
         var result = _mediator.Send(command);

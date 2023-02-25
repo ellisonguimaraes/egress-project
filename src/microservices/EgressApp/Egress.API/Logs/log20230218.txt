@@ -1,0 +1,9 @@
+2023-02-18 08:57:14.300 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-02-18 08:57:14.347 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-02-18 08:57:14.379 +00:00 [INF] Creating key {933b63b2-f512-4875-93ec-dfa45a5d25ff} with creation date 2023-02-18 08:57:14Z, activation date 2023-02-18 08:57:14Z, and expiration date 2023-05-19 08:57:14Z.
+2023-02-18 08:57:14.416 +00:00 [WRN] No XML encryptor configured. Key {933b63b2-f512-4875-93ec-dfa45a5d25ff} may be persisted to storage in unencrypted form.
+2023-02-18 08:57:14.422 +00:00 [INF] Writing data to file '/root/.aspnet/DataProtection-Keys/key-933b63b2-f512-4875-93ec-dfa45a5d25ff.xml'.
+2023-02-18 08:57:14.494 +00:00 [INF] Now listening on: http://[::]:80
+2023-02-18 08:57:14.495 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-18 08:57:14.496 +00:00 [INF] Hosting environment: Development
+2023-02-18 08:57:14.497 +00:00 [INF] Content root path: /app/

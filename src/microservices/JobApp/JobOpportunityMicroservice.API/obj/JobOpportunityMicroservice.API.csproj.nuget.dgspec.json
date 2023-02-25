@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.API\\JobOpportunityMicroservice.API.csproj": {}
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.API\\JobOpportunityMicroservice.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.API\\JobOpportunityMicroservice.API.csproj": {
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.API\\JobOpportunityMicroservice.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.API\\JobOpportunityMicroservice.API.csproj",
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.API\\JobOpportunityMicroservice.API.csproj",
         "projectName": "JobOpportunityMicroservice.API",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.API\\JobOpportunityMicroservice.API.csproj",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.API\\JobOpportunityMicroservice.API.csproj",
         "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.API\\obj\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj"
               }
             }
           }
@@ -130,14 +130,14 @@
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj": {
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj",
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj",
         "projectName": "JobOpportunityMicroservice.Application",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj",
         "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\obj\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -154,11 +154,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj"
               }
             }
           }
@@ -237,14 +237,14 @@
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj": {
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj",
         "projectName": "JobOpportunityMicroservice.Domain",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj",
         "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\obj\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -297,14 +297,14 @@
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj": {
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj",
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj",
         "projectName": "JobOpportunityMicroservice.Infra.CrossCutting.IoC",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj",
         "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\obj\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -321,11 +321,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj"
               }
             }
           }
@@ -392,14 +392,14 @@
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj",
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj",
         "projectName": "JobOpportunityMicroservice.Infra.CrossCutting.Resource",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj",
         "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\obj\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -446,14 +446,14 @@
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
+    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj",
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj",
         "projectName": "JobOpportunityMicroservice.Infra.Data",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj",
         "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\obj\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -470,11 +470,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj"
+              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj"
               }
             }
           }

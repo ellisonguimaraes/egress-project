@@ -15,10 +15,10 @@ public class PersonCourse : BaseEntity
     public Modality Modality { get; set; }
     
     #region Relationship
-    public virtual Guid PersonId { get; set; }
-    public Person Person { get; set; }
+    public Guid PersonId { get; set; }
+    public virtual Person Person { get; set; }
     
-    public virtual Guid CourseId { get; set; }
-    public Course Course { get; set; }
+    public Guid CourseId { get; set; }
+    public virtual Course Course { get; set; }
     #endregion
 }

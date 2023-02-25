@@ -8,7 +8,7 @@ namespace Egress.Application.Behaviors;
 /// <summary>
 /// Logging MediatR behavior
 /// </summary>
-public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>, INotification
+public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
 {
     #region Constants
     private const string SEPARATOR = ", ";

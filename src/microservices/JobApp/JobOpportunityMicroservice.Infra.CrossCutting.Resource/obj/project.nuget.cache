@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8Ty4Bqv4WaaieADKrvPwIcO8S1TBIwm/rCsceH8pwj3mvr2bytUJgWl6qNss7PiUhBV0NWiQI3j5Z6Q7I+LoVg==",
+  "dgSpecHash": "tizMrGX0W7VdLKZahnlJUI7bYbGpPlc2Pmy448Cj0AYIaUvc2a7idrgKK8GXMXk7Qnjgqp4vis/e5ElN4BakWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj",
+  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

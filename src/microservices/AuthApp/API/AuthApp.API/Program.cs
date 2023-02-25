@@ -24,8 +24,8 @@ var logger = new LoggerConfiguration()
 builder.Logging.AddSerilog(logger);
 
 // Database Context Configuration
-// Migration command: dotnet ef migrations add InitialMigrations -p .\src\Infra\AuthApp.Infra.Data\AuthApp.Infra.Data.csproj -s .\src\API\AuthApp.API\AuthApp.API.csproj
-// Update Db command: dotnet ef database update -p .\src\Infra\AuthApp.Infra.Data\AuthApp.Infra.Data.csproj -s .\src\API\AuthApp.API\AuthApp.API.csproj
+// Migration command: dotnet ef migrations add InitialMigrations -p .\src\microservices\AuthApp\Infra\AuthApp.Infra.Data\AuthApp.Infra.Data.csproj -s .\src\microservices\AuthApp\API\AuthApp.API\AuthApp.API.csproj
+// Update Db command: dotnet ef database update -p .\src\microservices\AuthApp\Infra\AuthApp.Infra.Data\AuthApp.Infra.Data.csproj -s .\src\microservices\AuthApp\API\AuthApp.API\AuthApp.API.csproj
 builder.Services.AddSqlServer<ApplicationDbContext>(builder.Configuration.GetConnectionString(AUTHDB_PROPERTY));
 
 // Identity Configuration

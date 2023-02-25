@@ -1,42 +1,13 @@
-name: dockercompose12464398186632957991
+name: dockercompose14801093022439848973
 services:
-  apigateway:
+  auth_api:
     build:
-      context: C:\Users\ellis\Desktop\EgressProject\EgressApp
-      dockerfile: src/microservices/ApiGateway/Dockerfile
-    container_name: gateway-api
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_URLS: http://+:80
-    image: apigateway
-    networks:
-      backend: null
-    ports:
-    - mode: ingress
-      target: 80
-      protocol: tcp
-    - mode: ingress
-      target: 80
-      published: "8000"
-      protocol: tcp
-    volumes:
-    - type: bind
-      source: C:\Users\ellis\AppData\Roaming/Microsoft/UserSecrets
-      target: /root/.microsoft/usersecrets
-      read_only: true
-      bind:
-        create_host_path: true
-    - type: bind
-      source: C:\Users\ellis\AppData\Roaming/ASP.NET/Https
-      target: /root/.aspnet/https
-      read_only: true
-      bind:
-        create_host_path: true
-  authapp:
-    build:
-      context: C:\Users\ellis\Desktop\EgressProject\EgressApp
+      context: C:\Users\ellis\Desktop\TCC\New\EgressProject
       dockerfile: src/microservices/AuthApp/API/AuthApp.API/Dockerfile
-    container_name: auth-api
+    container_name: auth_api
+    depends_on:
+      auth_db:
+        condition: service_started
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://+:80
@@ -64,8 +35,8 @@ services:
       read_only: true
       bind:
         create_host_path: true
-  authapp_db:
-    container_name: auth-db
+  auth_db:
+    container_name: auth_db
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: Abcd@1234
@@ -78,18 +49,68 @@ services:
       protocol: tcp
     - mode: ingress
       target: 1433
-      published: "9050"
+      published: "9010"
       protocol: tcp
     volumes:
     - type: volume
       source: authapp_db_volume
       target: /var/opt/mssql
       volume: {}
-  jobapp:
+  egress_api:
     build:
-      context: C:\Users\ellis\Desktop\EgressProject\EgressApp
+      context: C:\Users\ellis\Desktop\TCC\New\EgressProject
+      dockerfile: src/microservices/EgressApp/Egress.API/Dockerfile
+    container_name: egress_api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+    image: egressapi
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "8030"
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\ellis\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+  egress_db:
+    container_name: egress_db
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Abcd@1234
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 1433
+      protocol: tcp
+    - mode: ingress
+      target: 1433
+      published: "9030"
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: egressapp_db_volume
+      target: /var/opt/mssql
+      volume: {}
+  job_api:
+    build:
+      context: C:\Users\ellis\Desktop\TCC\New\EgressProject
       dockerfile: src/microservices/JobApp/JobOpportunityMicroservice.API/Dockerfile
-    container_name: job-api
+    container_name: job_api
+    depends_on:
+      job_db:
+        condition: service_started
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://+:80
@@ -117,8 +138,8 @@ services:
       read_only: true
       bind:
         create_host_path: true
-  jobapp_db:
-    container_name: job-db
+  job_db:
+    container_name: job_db
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: Abcd@1234
@@ -131,7 +152,7 @@ services:
       protocol: tcp
     - mode: ingress
       target: 1433
-      published: "9060"
+      published: "9020"
       protocol: tcp
     volumes:
     - type: volume
@@ -140,9 +161,11 @@ services:
       volume: {}
 networks:
   backend:
-    name: dockercompose12464398186632957991_backend
+    name: dockercompose14801093022439848973_backend
 volumes:
   authapp_db_volume:
-    name: dockercompose12464398186632957991_authapp_db_volume
+    name: dockercompose14801093022439848973_authapp_db_volume
+  egressapp_db_volume:
+    name: dockercompose14801093022439848973_egressapp_db_volume
   jobapp_db_volume:
-    name: dockercompose12464398186632957991_jobapp_db_volume
+    name: dockercompose14801093022439848973_jobapp_db_volume

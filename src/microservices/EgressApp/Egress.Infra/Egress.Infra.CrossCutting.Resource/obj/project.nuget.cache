@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X8Ma5XN+QzVjn1BiJRZptFSqZaPywHWzW8wf95/4Y8vba7IIFL6Fgs8OCM4FjeTspXW9kOgzw5RWB0ja09mdQw==",
+  "dgSpecHash": "4gU+zpsWUK8zQg/ZwDuzX7drVCRI7FxGFCy+92DourABQEUxN+cQBwPkZTUUtxnN5DP2YFut15I5Way1+5W4PQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\EgressApp\\Egress.Infra\\Egress.Infra.CrossCutting.Resource\\Egress.Infra.CrossCutting.Resource.csproj",
+  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\EgressApp\\Egress.Infra\\Egress.Infra.CrossCutting.Resource\\Egress.Infra.CrossCutting.Resource.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

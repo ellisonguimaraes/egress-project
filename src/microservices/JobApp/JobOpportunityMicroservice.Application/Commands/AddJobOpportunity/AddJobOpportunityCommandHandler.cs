@@ -24,7 +24,7 @@ public class AddJobOpportunityCommandHandler : IRequestHandler<AddJobOpportunity
         var jobAdvertisement = _mapper.Map<JobAdvertisement>(request);
 
         jobAdvertisement.JobCategories = await BuildJobCategoryListAsync(request.Categories);
-        jobAdvertisement.UserId = Guid.NewGuid().ToString();
+        jobAdvertisement.UserId = Guid.NewGuid();
 
         var result = await _jobAdvertisementRepository.CreateAsync(jobAdvertisement);
 

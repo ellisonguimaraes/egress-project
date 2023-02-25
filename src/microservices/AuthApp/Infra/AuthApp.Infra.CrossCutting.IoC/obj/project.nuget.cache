@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D86nx6fH/qjf5hBbVZ6g0M9E/TFsulIMCk57jD6yAjJLvP/HbRWkvLye8xckvKmh12d9Z/sFmPPIUXdfQubflA==",
+  "dgSpecHash": "hRO02SGqQyr67koqDq/eZAwDmrHpN3BFupHxcAyWobhlAZaFpWI/2ZIxJbmwz0wxEqbZkoD018dMBpSgDooI1A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.IoC\\AuthApp.Infra.CrossCutting.IoC.csproj",
+  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Infra\\AuthApp.Infra.CrossCutting.IoC\\AuthApp.Infra.CrossCutting.IoC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ellis\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\ellis\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

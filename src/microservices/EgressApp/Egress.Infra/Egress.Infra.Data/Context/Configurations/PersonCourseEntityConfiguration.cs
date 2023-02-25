@@ -10,7 +10,7 @@ namespace Egress.Infra.Data.Context.Configurations;
 public class PersonCourseEntityConfiguration : BaseEntityConfiguration<PersonCourse>
 {
     #region PersonCourse
-    private const string TABLE_NAME = "Testimony";
+    private const string TABLE_NAME = "PersonCourse";
     private const string START_DATE_DB_PROPERTY_NAME = "start_date";
     private const string END_DATE_DB_PROPERTY_NAME = "end_date";
     private const string MAT_DB_PROPERTY_NAME = "mat";

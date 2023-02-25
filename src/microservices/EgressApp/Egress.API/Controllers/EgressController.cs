@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Egress.Application.Queries.Person.GetPersonByDocument;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Egress.API.Controllers;
 
@@ -7,8 +9,18 @@ namespace Egress.API.Controllers;
 [Route("api/v{version:apiVersion}/[controller]")]
 public class EgressController : ControllerBase
 {
-    public EgressController()
+    private readonly IMediator _mediator;
+
+    public EgressController(IMediator mediator)
     {
-        
+        _mediator = mediator;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetByDocumentAsync([FromQuery] GetPersonByDocumentCommand command)
+    {
+        var result = await _mediator.Send(command);
+
+        return Ok(result);
     }
 }

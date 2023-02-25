@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O+lx4DnWzjYbQVc7Qlehw/joOEdW4MZ5EvzOJHeFXZmwZ8xxL+222+sQ7zpYueiBYg0ViMNSiQCmRQNPM8y+4A==",
+  "dgSpecHash": "dRY+5QIXl7L1pRtfZNFFRk2O73WXJ/xWUp0gBl78ejyAJuUAbuRSfEYezLGmfsC7b6afM8fWiVe5qXFnjrS+YA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\EgressApp\\src\\microservices\\AuthApp\\Services\\AuthApp.Services\\AuthApp.Services.csproj",
+  "projectFilePath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\AuthApp\\Services\\AuthApp.Services\\AuthApp.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ellis\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\ellis\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
