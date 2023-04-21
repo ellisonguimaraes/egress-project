@@ -21,6 +21,7 @@ public class PersonRepository : Repository<Person>, IPersonRepository
             .Include(p => p.Employments)
             .Include(p => p.Address)
             .Include(p => p.PersonCourses)
+                .ThenInclude(pc => pc.Course)
             .Include(p => p.Highlights)
             .Include(p => p.Specializations)
             .Include(p => p.Testimonies)
