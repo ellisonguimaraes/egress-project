@@ -1,0 +1,91 @@
+2023-04-16 00:23:24.369 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:28:45.041 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:29:31.218 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:32:02.421 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:35:35.463 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:42:55.558 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:42:55.969 +00:00 [WRN] No XML encryptor configured. Key {92cf94a0-733d-4c42-88bb-690c21e6582f} may be persisted to storage in unencrypted form.
+2023-04-16 00:44:58.233 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:46:55.027 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:48:29.000 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:50:25.414 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:52:14.184 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:53:57.403 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:57:46.781 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 00:59:42.982 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 01:00:37.830 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 01:01:08.222 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 01:28:33.566 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 01:28:33.802 +00:00 [WRN] No XML encryptor configured. Key {ec6bf896-99c4-4707-a58e-95b48ae9ae3c} may be persisted to storage in unencrypted form.
+2023-04-16 01:30:01.087 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 01:30:17.196 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-16 01:30:21.015 +00:00 [ERR] MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials f16-20020a9d5f10000000b0069f0a85fa36sm3099541oti.57 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials f16-20020a9d5f10000000b0069f0a85fa36sm3099541oti.57 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, Boolean doAsync, CancellationToken cancellationToken)
+   at AuthApp.Application.Utils.EmailSender.EmailSender.SendAsync(MimeMessage mailMessage) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Utils/EmailSender/EmailSender.cs:line 41, MAIL0001: There was an error sending the email, TraceId: 00-23f481b6fe44f92e199411d4e0f3e44b-044c1274120234c6-00
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials f16-20020a9d5f10000000b0069f0a85fa36sm3099541oti.57 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials f16-20020a9d5f10000000b0069f0a85fa36sm3099541oti.57 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, Boolean doAsync, CancellationToken cancellationToken)
+   at AuthApp.Application.Utils.EmailSender.EmailSender.SendAsync(MimeMessage mailMessage) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Utils/EmailSender/EmailSender.cs:line 41
+2023-04-16 02:44:02.612 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 02:44:02.822 +00:00 [WRN] No XML encryptor configured. Key {523284b1-9ad4-4f98-992b-c95905f64fc8} may be persisted to storage in unencrypted form.
+2023-04-16 02:44:16.029 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-16 02:44:20.145 +00:00 [ERR] MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials d5-20020a056830044500b006a3e377f0d7sm3226984otc.4 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials d5-20020a056830044500b006a3e377f0d7sm3226984otc.4 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, Boolean doAsync, CancellationToken cancellationToken)
+   at AuthApp.Application.Utils.EmailSender.EmailSender.SendAsync(MimeMessage mailMessage) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Utils/EmailSender/EmailSender.cs:line 41, MAIL0001: There was an error sending the email, TraceId: 00-a9c50e5a0fb089e5b5e1d96e776dc7ef-659d2a2550564891-00
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials d5-20020a056830044500b006a3e377f0d7sm3226984otc.4 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials d5-20020a056830044500b006a3e377f0d7sm3226984otc.4 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, Boolean doAsync, CancellationToken cancellationToken)
+   at AuthApp.Application.Utils.EmailSender.EmailSender.SendAsync(MimeMessage mailMessage) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Utils/EmailSender/EmailSender.cs:line 41
+2023-04-16 03:23:59.550 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 03:24:00.152 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-16 03:37:01.008 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-16 03:37:01.251 +00:00 [WRN] No XML encryptor configured. Key {a78de61b-9490-4e93-bc90-c57e3ef5f9e7} may be persisted to storage in unencrypted form.
+2023-04-16 03:37:13.139 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-16 03:37:33.775 +00:00 [ERR] AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 64, TraceId: 00-ba36706a4c29650f8e67d7fe9271cf81-d244e14ec7d5d840-00, Email: ellison.guimaraes7@gmail.com
+AuthApp.Application.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 64, TraceId: 00-ba36706a4c29650f8e67d7fe9271cf81-d244e14ec7d5d840-00
+2023-04-16 03:37:59.735 +00:00 [ERR] MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials v124-20020a4a5a82000000b0051ffe0fe11bsm3377157ooa.6 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials v124-20020a4a5a82000000b0051ffe0fe11bsm3377157ooa.6 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, Boolean doAsync, CancellationToken cancellationToken)
+   at AuthApp.Application.Utils.EmailSender.EmailSender.SendAsync(MimeMessage mailMessage) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Utils/EmailSender/EmailSender.cs:line 41, MAIL0001: There was an error sending the email, TraceId: 00-1d8a1d84522c3fda117538a4676612dc-84c0cc14540e7242-00
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials v124-20020a4a5a82000000b0051ffe0fe11bsm3377157ooa.6 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials v124-20020a4a5a82000000b0051ffe0fe11bsm3377157ooa.6 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, Boolean doAsync, CancellationToken cancellationToken)
+   at AuthApp.Application.Utils.EmailSender.EmailSender.SendAsync(MimeMessage mailMessage) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Utils/EmailSender/EmailSender.cs:line 41
+2023-04-16 03:38:29.092 +00:00 [ERR] MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials h2-20020a9d7982000000b006a43519523fsm2875365otm.1 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials h2-20020a9d7982000000b006a43519523fsm2875365otm.1 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, Boolean doAsync, CancellationToken cancellationToken)
+   at AuthApp.Application.Utils.EmailSender.EmailSender.SendAsync(MimeMessage mailMessage) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Utils/EmailSender/EmailSender.cs:line 41, MAIL0001: There was an error sending the email, TraceId: 00-117564fd25795ce59878a5de07c22d5a-fb0b83abfd36cc53-00
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials h2-20020a9d7982000000b006a43519523fsm2875365otm.1 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials h2-20020a9d7982000000b006a43519523fsm2875365otm.1 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, Boolean doAsync, CancellationToken cancellationToken)
+   at AuthApp.Application.Utils.EmailSender.EmailSender.SendAsync(MimeMessage mailMessage) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Utils/EmailSender/EmailSender.cs:line 41

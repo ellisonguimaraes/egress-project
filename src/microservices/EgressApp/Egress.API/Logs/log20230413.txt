@@ -1,0 +1,8 @@
+2023-04-13 05:10:07.286 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-13 05:10:07.315 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-13 05:10:07.315 +00:00 [INF] Hosting environment: Development
+2023-04-13 05:10:07.316 +00:00 [INF] Content root path: /app/
+2023-04-13 05:11:36.346 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:8030/api/v1/egress?document=06300076598&document_type=1 - -
+2023-04-13 05:11:36.418 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-13 05:11:36.453 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-13 05:11:36.492 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
