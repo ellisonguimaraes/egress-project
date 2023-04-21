@@ -1,6 +1,6 @@
 ﻿using AuthApp.Application.Exceptions;
 using AuthApp.Application.Models;
-using AuthApp.Application.Services.Users;
+using AuthApp.Services.Interfaces;
 using AuthApp.Domain;
 using AuthApp.Infra.CrossCutting.Resources;
 using AutoMapper;

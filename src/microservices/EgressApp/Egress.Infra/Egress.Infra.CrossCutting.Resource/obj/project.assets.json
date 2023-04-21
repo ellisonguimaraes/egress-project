@@ -8,26 +8,24 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ellis\\.nuget\\packages\\": {}
+    "/Users/ellisonguimaraes/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\EgressApp\\Egress.Infra\\Egress.Infra.CrossCutting.Resource\\Egress.Infra.CrossCutting.Resource.csproj",
+      "projectUniqueName": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Infra/Egress.Infra.CrossCutting.Resource/Egress.Infra.CrossCutting.Resource.csproj",
       "projectName": "Egress.Infra.CrossCutting.Resource",
-      "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\EgressApp\\Egress.Infra\\Egress.Infra.CrossCutting.Resource\\Egress.Infra.CrossCutting.Resource.csproj",
-      "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\EgressApp\\Egress.Infra\\Egress.Infra.CrossCutting.Resource\\obj\\",
+      "projectPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Infra/Egress.Infra.CrossCutting.Resource/Egress.Infra.CrossCutting.Resource.csproj",
+      "packagesPath": "/Users/ellisonguimaraes/.nuget/packages/",
+      "outputPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Infra/Egress.Infra.CrossCutting.Resource/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/ellisonguimaraes/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -51,7 +49,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -60,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
       }
     }
   }

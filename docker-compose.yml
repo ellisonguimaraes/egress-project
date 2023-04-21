@@ -23,7 +23,7 @@ services:
 
   auth_db:
     container_name: auth_db
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    image: mcr.microsoft.com/azure-sql-edge
     ports:
       - "9010:1433"
 
@@ -40,7 +40,7 @@ services:
 
   job_db:
     container_name: job_db
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    image: mcr.microsoft.com/azure-sql-edge
     ports:
       - "9020:1433"
 
@@ -55,7 +55,7 @@ services:
 
   egress_db:
     container_name: egress_db
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    image: mcr.microsoft.com/azure-sql-edge
     ports:
       - "9030:1433"
 

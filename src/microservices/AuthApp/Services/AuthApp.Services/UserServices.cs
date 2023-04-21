@@ -1,6 +1,5 @@
 ﻿using AuthApp.Application.Exceptions;
 using AuthApp.Application.Extensions;
-using AuthApp.Application.Services.Jwt;
 using AuthApp.Application.Utils.EmailSender;
 using AuthApp.Domain;
 using AuthApp.Domain.Email;
@@ -8,12 +7,13 @@ using AuthApp.Domain.Enums;
 using AuthApp.Infra.CrossCutting.Resources;
 using AuthApp.Infra.Data.Repositories.RefreshToken;
 using AuthApp.Services.Exceptions;
+using AuthApp.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using MimeKit;
 using AuthException = AuthApp.Application.Exceptions.AuthException;
 
-namespace AuthApp.Application.Services.Users;
+namespace AuthApp.Services;
 
 public class UserServices : IUserServices
 {

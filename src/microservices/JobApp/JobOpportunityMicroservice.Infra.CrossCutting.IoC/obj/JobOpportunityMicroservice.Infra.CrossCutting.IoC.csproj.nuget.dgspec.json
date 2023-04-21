@@ -1,38 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj": {}
+    "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.IoC/JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj": {
+    "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Application/JobOpportunityMicroservice.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj",
+        "projectUniqueName": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Application/JobOpportunityMicroservice.Application.csproj",
         "projectName": "JobOpportunityMicroservice.Application",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj",
-        "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\obj\\",
+        "projectPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Application/JobOpportunityMicroservice.Application.csproj",
+        "packagesPath": "/Users/ellisonguimaraes/.nuget/packages/",
+        "outputPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ellisonguimaraes/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj"
+              "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.Resource/JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
+                "projectPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.Resource/JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj"
+              "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.Data/JobOpportunityMicroservice.Infra.Data.csproj": {
+                "projectPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.Data/JobOpportunityMicroservice.Infra.Data.csproj"
               }
             }
           }
@@ -98,7 +96,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -107,28 +106,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj": {
+    "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Domain/JobOpportunityMicroservice.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj",
+        "projectUniqueName": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Domain/JobOpportunityMicroservice.Domain.csproj",
         "projectName": "JobOpportunityMicroservice.Domain",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj",
-        "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\obj\\",
+        "projectPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Domain/JobOpportunityMicroservice.Domain.csproj",
+        "packagesPath": "/Users/ellisonguimaraes/.nuget/packages/",
+        "outputPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ellisonguimaraes/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -158,7 +155,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -167,39 +165,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj": {
+    "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.IoC/JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj",
+        "projectUniqueName": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.IoC/JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj",
         "projectName": "JobOpportunityMicroservice.Infra.CrossCutting.IoC",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj",
-        "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\obj\\",
+        "projectPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.IoC/JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj",
+        "packagesPath": "/Users/ellisonguimaraes/.nuget/packages/",
+        "outputPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.IoC/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ellisonguimaraes/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj"
+              "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Application/JobOpportunityMicroservice.Application.csproj": {
+                "projectPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Application/JobOpportunityMicroservice.Application.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj"
+              "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.Data/JobOpportunityMicroservice.Infra.Data.csproj": {
+                "projectPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.Data/JobOpportunityMicroservice.Infra.Data.csproj"
               }
             }
           }
@@ -253,7 +249,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -262,28 +259,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
+    "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.Resource/JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj",
+        "projectUniqueName": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.Resource/JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj",
         "projectName": "JobOpportunityMicroservice.Infra.CrossCutting.Resource",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj",
-        "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\obj\\",
+        "projectPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.Resource/JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj",
+        "packagesPath": "/Users/ellisonguimaraes/.nuget/packages/",
+        "outputPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.Resource/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ellisonguimaraes/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -307,7 +302,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -316,39 +312,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
+    "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.Data/JobOpportunityMicroservice.Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj",
+        "projectUniqueName": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.Data/JobOpportunityMicroservice.Infra.Data.csproj",
         "projectName": "JobOpportunityMicroservice.Infra.Data",
-        "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj",
-        "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.Data\\obj\\",
+        "projectPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.Data/JobOpportunityMicroservice.Infra.Data.csproj",
+        "packagesPath": "/Users/ellisonguimaraes/.nuget/packages/",
+        "outputPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ellisonguimaraes/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj"
+              "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Domain/JobOpportunityMicroservice.Domain.csproj": {
+                "projectPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Domain/JobOpportunityMicroservice.Domain.csproj"
               },
-              "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
-                "projectPath": "C:\\Users\\ellis\\Desktop\\TCC\\New\\EgressProject\\src\\microservices\\JobApp\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj"
+              "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.Resource/JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
+                "projectPath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.Infra.CrossCutting.Resource/JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj"
               }
             }
           }
@@ -378,7 +372,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -387,7 +382,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
         }
       }
     }

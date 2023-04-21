@@ -1,11 +1,11 @@
 ﻿using AuthApp.Application.Mapper;
 using AuthApp.Application.Models;
-using AuthApp.Application.Services.Jwt;
-using AuthApp.Application.Services.Users;
 using AuthApp.Application.Utils.EmailSender;
 using AuthApp.Application.Validators;
 using AuthApp.Domain.Settings;
 using AuthApp.Infra.Data.Repositories.RefreshToken;
+using AuthApp.Services;
+using AuthApp.Services.Interfaces;
 using FluentValidation;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

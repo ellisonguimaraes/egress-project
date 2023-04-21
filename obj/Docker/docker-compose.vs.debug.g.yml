@@ -13,12 +13,10 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\ellis\Desktop\TCC\New\EgressProject\src\microservices\AuthApp\API\AuthApp.API:/app
-      - C:\Users\ellis\Desktop\TCC\New\EgressProject:/src
-      - C:\Users\ellis\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\ellis\.nuget\packages\:/root/.nuget/packages:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API:/app
+      - /Users/ellisonguimaraes/Documents/repos/egress-project:/src
+      - /Users/ellisonguimaraes/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/ellisonguimaraes/.nuget/packages/:/root/.nuget/packages:ro
 
     entrypoint: tail -f /dev/null
     labels:
@@ -39,12 +37,10 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\ellis\Desktop\TCC\New\EgressProject\src\microservices\EgressApp\Egress.API:/app
-      - C:\Users\ellis\Desktop\TCC\New\EgressProject:/src
-      - C:\Users\ellis\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\ellis\.nuget\packages\:/root/.nuget/packages:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.API:/app
+      - /Users/ellisonguimaraes/Documents/repos/egress-project:/src
+      - /Users/ellisonguimaraes/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/ellisonguimaraes/.nuget/packages/:/root/.nuget/packages:ro
 
     entrypoint: tail -f /dev/null
     labels:
@@ -66,12 +62,10 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\ellis\Desktop\TCC\New\EgressProject\src\microservices\JobApp\JobOpportunityMicroservice.API:/app
-      - C:\Users\ellis\Desktop\TCC\New\EgressProject:/src
-      - C:\Users\ellis\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\ellis\.nuget\packages\:/root/.nuget/packages:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/JobApp/JobOpportunityMicroservice.API:/app
+      - /Users/ellisonguimaraes/Documents/repos/egress-project:/src
+      - /Users/ellisonguimaraes/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/ellisonguimaraes/.nuget/packages/:/root/.nuget/packages:ro
 
     entrypoint: tail -f /dev/null
     labels:

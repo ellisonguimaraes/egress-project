@@ -11,6 +11,7 @@
           "AuthApp.Application": "1.0.0",
           "AuthApp.Domain": "1.0.0",
           "AuthApp.Infra.Data": "1.0.0",
+          "AuthApp.Services": "1.0.0",
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": "6.0.11",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Versioning": "5.0.0",
@@ -198,22 +199,22 @@
           "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "2.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "2.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "2.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "2.1.1.0"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -694,6 +695,20 @@
         },
         "runtime": {
           "AuthApp.Infra.Data.dll": {}
+        }
+      },
+      "AuthApp.Services/1.0.0": {
+        "dependencies": {
+          "AuthApp.Application": "1.0.0",
+          "AuthApp.Domain": "1.0.0",
+          "AuthApp.Infra.CrossCutting.Resources": "1.0.0",
+          "AuthApp.Infra.Data": "1.0.0",
+          "BCrypt.Net-Next": "4.0.3",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.9",
+          "Microsoft.Extensions.Identity.Core": "6.0.9"
+        },
+        "runtime": {
+          "AuthApp.Services.dll": {}
         }
       }
     }
@@ -1182,6 +1197,11 @@
       "sha512": ""
     },
     "AuthApp.Infra.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AuthApp.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
