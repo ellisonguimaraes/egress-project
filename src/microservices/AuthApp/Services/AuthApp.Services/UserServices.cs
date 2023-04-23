@@ -1,25 +1,25 @@
-﻿using AuthApp.Application.Exceptions;
-using AuthApp.Application.Extensions;
-using AuthApp.Application.Services.Jwt;
-using AuthApp.Application.Utils.EmailSender;
-using AuthApp.Domain;
+﻿using AuthApp.Domain;
 using AuthApp.Domain.Email;
 using AuthApp.Domain.Enums;
 using AuthApp.Infra.CrossCutting.Resources;
 using AuthApp.Infra.Data.Repositories.RefreshToken;
 using AuthApp.Services.Exceptions;
+using AuthApp.Services.Extensions;
+using AuthApp.Services.Interfaces;
+using AuthApp.Services.Utils.EmailSender;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using MimeKit;
-using AuthException = AuthApp.Application.Exceptions.AuthException;
 
-namespace AuthApp.Application.Services.Users;
+namespace AuthApp.Services;
 
 public class UserServices : IUserServices
 {
+    #region Constants
     private const string URL_BASE_PROPERTY_NAME = "UrlBase";
     private const string API_DEFAULT_VERSION_PROPERTY_NAME = "ApiDefaultVersion";
     private const string DOT = ".";
+    #endregion
 
     private readonly UserManager<User> _userManager;
     private readonly IRefreshTokenRepository _refreshTokenRepository;
@@ -43,7 +43,7 @@ public class UserServices : IUserServices
     /// </summary>
     /// <param name="user">User</param>
     /// <param name="password">Password</param>
-    public async Task RegisterAsync(User user, string password)
+    public async Task RegisterAsync(User user, string password, bool isLockout = false)
     {
         if (UserExists(user))
             throw new AuthException(ErrorCodeResource.REGISTER_USER_ALREADY_EXISTS);
@@ -56,6 +56,8 @@ public class UserServices : IUserServices
         await AddToRoleAsync(user);
 
         var message = await BuildConfirmationEmailAsync(user);
+
+        await _userManager.SetLockoutEnabledAsync(user, isLockout);
 
         await _emailSender.SendAsync(message);
     }
@@ -78,7 +80,7 @@ public class UserServices : IUserServices
     {
         var emailToken = (await _userManager.GenerateEmailConfirmationTokenAsync(user)).Base64Encode();
 
-        var url = $"{_urlBase}/confirm?token={emailToken}&email={user.Email}";
+        var url = $"{_urlBase}/confirm_account?token={emailToken}&email={user.Email}";
 
         var to = new List<To> { new To(user.Name, user.Email) };
         var body = string.Format(TemplatesResource.EMAIL_CONFIRM_MESSAGE, user.Name, url);
@@ -132,7 +134,7 @@ public class UserServices : IUserServices
         if (user is null)
             throw new AuthException(ErrorCodeResource.USER_NOT_FOUND);
 
-        if (await _userManager.IsLockedOutAsync(user))
+        if (await IsLockedAsync(user))
             throw new AuthException(ErrorCodeResource.USER_IS_BLOCKED);
 
         if (!await _userManager.CheckPasswordAsync(user, password))
@@ -149,6 +151,19 @@ public class UserServices : IUserServices
         var token = await GenerateTokenAsync(user);
 
         return token;
+    }
+
+    /// <summary>
+    /// Check if user is locked
+    /// </summary>
+    /// <param name="user">User</param>
+    /// <returns>True or false</returns>
+    private async Task<bool> IsLockedAsync(User user)
+    {
+        var lockoutEnabled = await _userManager.GetLockoutEnabledAsync(user);
+        var lockoutEndDate = await _userManager.GetLockoutEndDateAsync(user);
+
+        return lockoutEndDate is null ? lockoutEnabled : lockoutEnabled || ((DateTimeOffset)lockoutEndDate).Ticks > DateTime.UtcNow.Ticks;
     }
 
     /// <summary>
@@ -188,7 +203,7 @@ public class UserServices : IUserServices
         if (refreshTokenEntity is null || refreshTokenEntity.User is null)
             throw new AuthException(ErrorCodeResource.INVALID_REFRESH_TOKEN);
 
-        if (await _userManager.IsLockedOutAsync(refreshTokenEntity.User))
+        if (await IsLockedAsync(refreshTokenEntity.User))
             throw new AuthException(ErrorCodeResource.USER_IS_BLOCKED);
 
         if (!refreshTokenEntity.IsActive || refreshTokenEntity.ExpiresIn < DateTime.UtcNow)
@@ -233,7 +248,7 @@ public class UserServices : IUserServices
     /// Reset user password
     /// </summary>
     /// <param name="email">Email</param>
-    public async Task RequestResetPasswordAsync(string email)
+    public async Task SendResetPasswordEmailAsync(string email)
     {
         var user = await _userManager.FindByEmailAsync(email);
 
@@ -254,7 +269,7 @@ public class UserServices : IUserServices
     {
         var emailToken = (await _userManager.GeneratePasswordResetTokenAsync(user)).Base64Encode();
 
-        var url = $"{_urlBase}/resetpassword?token={emailToken}&email={user.Email}";
+        var url = $"{_urlBase}/password_reset?token={emailToken}&email={user.Email}";
 
         var to = new List<To> { new To(user.Name, user.Email) };
         var body = string.Format(TemplatesResource.EMAIL_RESET_PASSWORD_MESSAGE, user.Name, url);
@@ -281,9 +296,21 @@ public class UserServices : IUserServices
 
         await RevokeAllRefreshTokenAsync(user.Id);
 
-        var message = BuildConfirmedResetPasswordEmail(user);
+        var message = BuildResetPasswordConfirmedEmail(user);
 
         await _emailSender.SendAsync(message);
+    }
+
+    /// <summary>
+    /// Revoke all refresh token
+    /// </summary>
+    /// <param name="user">User</param>
+    private async Task RevokeAllRefreshTokenAsync(string userId)
+    {
+        var refreshTokens = await _refreshTokenRepository.GetAllByUserIdAsync(userId);
+
+        foreach (var refreshToken in refreshTokens)
+            await RevokeRefreshTokenAsync(refreshToken);
     }
 
     /// <summary>
@@ -291,28 +318,13 @@ public class UserServices : IUserServices
     /// </summary>
     /// <param name="user">User</param>
     /// <returns>MimeMessage</returns>
-    private MimeMessage BuildConfirmedResetPasswordEmail(User user)
+    private MimeMessage BuildResetPasswordConfirmedEmail(User user)
     {
         var to = new List<To> { new To(user.Name, user.Email) };
         var body = string.Format(TemplatesResource.CONFIRMED_EMAIL_RESET_PASSWORD_MESSAGE, user.Name, _urlBase);
         var message = new Message(to, TemplatesResource.CONFIRMED_EMAIL_RESET_PASSWORD_SUBJECT, body);
 
         return _emailSender.CreateEmailMessage(message);
-    }
-
-    /// <summary>
-    /// Get user infos
-    /// </summary>
-    /// <param name="sub">User id</param>
-    /// <returns>User</returns>
-    public async Task<User> GetUserInfoAsync(string sub)
-    {
-        var user = await _userManager.FindByIdAsync(sub);
-
-        if (user is null)
-            throw new AuthException(ErrorCodeResource.USER_NOT_FOUND);
-
-        return user;
     }
 
     /// <summary>
@@ -340,14 +352,17 @@ public class UserServices : IUserServices
     }
 
     /// <summary>
-    /// Revoke all refresh token
+    /// Get user info
     /// </summary>
-    /// <param name="user">User</param>
-    private async Task RevokeAllRefreshTokenAsync(string userId)
+    /// <param name="sub">User id</param>
+    /// <returns>User</returns>
+    public async Task<User> GetUserInfoAsync(string sub)
     {
-        var refreshTokens = await _refreshTokenRepository.GetAllByUserIdAsync(userId);
+        var user = await _userManager.FindByIdAsync(sub);
 
-        foreach (var refreshToken in refreshTokens)
-            await RevokeRefreshTokenAsync(refreshToken);
+        if (user is null)
+            throw new AuthException(ErrorCodeResource.USER_NOT_FOUND);
+
+        return user;
     }
 }

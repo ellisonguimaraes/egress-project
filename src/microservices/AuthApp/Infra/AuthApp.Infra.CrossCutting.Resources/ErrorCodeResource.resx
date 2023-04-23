@@ -195,4 +195,19 @@
   <data name="VALIDATION_NOT_EQUAL_PASSWORD" xml:space="preserve">
     <value>VA0004: {PropertyName} is not equal</value>
   </data>
+  <data name="DATA_VALIDATION_FAILURE" xml:space="preserve">
+    <value>Data validation failure</value>
+  </data>
+  <data name="NOT_IDENTITY_EGRESS" xml:space="preserve">
+    <value>BU0001: It was not possible to identify the egress. I recommend contacting the collegiate.</value>
+  </data>
+  <data name="BUSINESS_FAILURE" xml:space="preserve">
+    <value>Business failure</value>
+  </data>
+  <data name="ERROR_GENERATING_TOKENS_MESSAGE" xml:space="preserve">
+    <value>There was an error generating the tokens</value>
+  </data>
+  <data name="INVALID_AUTHORIZATION_TOKEN" xml:space="preserve">
+    <value>AUTH0019: Invalid authorization token</value>
+  </data>
 </root>

@@ -1,0 +1,97 @@
+name: dockercompose3434601838597767713
+services:
+  auth_api:
+    build:
+      context: /Users/ellisonguimaraes/Documents/repos/egress-project
+      dockerfile: src/microservices/AuthApp/API/AuthApp.API/Dockerfile
+    container_name: auth_api
+    depends_on:
+      egress_program_db:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+    image: authappapi
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "5010"
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: /Users/ellisonguimaraes/.aspnet/https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/ellisonguimaraes/.microsoft/usersecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+  egress_api:
+    build:
+      context: /Users/ellisonguimaraes/Documents/repos/egress-project
+      dockerfile: src/microservices/EgressApp/Egress.API/Dockerfile
+    container_name: egress_api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+    image: egressapi
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "5020"
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: /Users/ellisonguimaraes/.aspnet/https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/ellisonguimaraes/.microsoft/usersecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+  egress_program_db:
+    container_name: egress_program_db
+    environment:
+      ACCEPT_EULA: "1"
+      MSSQL_SA_PASSWORD: Abcd@1234
+      MSSQL_USER: SA
+    image: mcr.microsoft.com/azure-sql-edge
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 1433
+      protocol: tcp
+    - mode: ingress
+      target: 1433
+      published: "9000"
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: egress_program_db_volume
+      target: /var/opt/mssql
+      volume: {}
+networks:
+  backend:
+    name: dockercompose3434601838597767713_backend
+volumes:
+  egress_program_db_volume:
+    name: dockercompose3434601838597767713_egress_program_db_volume

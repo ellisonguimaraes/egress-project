@@ -1,0 +1,28 @@
+2023-04-23 00:14:05.501 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-23 00:14:05.538 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-23 00:14:05.546 +00:00 [INF] Hosting environment: Development
+2023-04-23 00:14:05.547 +00:00 [INF] Content root path: /app/
+2023-04-23 00:31:48.615 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-23 00:31:48.646 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-23 00:31:48.646 +00:00 [INF] Hosting environment: Development
+2023-04-23 00:31:48.647 +00:00 [INF] Content root path: /app/
+2023-04-23 00:47:48.456 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-23 00:47:48.484 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-23 00:47:48.485 +00:00 [INF] Hosting environment: Development
+2023-04-23 00:47:48.486 +00:00 [INF] Content root path: /app/
+2023-04-23 00:52:15.215 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-23 00:52:15.243 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-23 00:52:15.244 +00:00 [INF] Hosting environment: Development
+2023-04-23 00:52:15.244 +00:00 [INF] Content root path: /app/
+2023-04-23 00:57:39.039 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-23 00:57:39.073 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-23 00:57:39.074 +00:00 [INF] Hosting environment: Development
+2023-04-23 00:57:39.075 +00:00 [INF] Content root path: /app/
+2023-04-23 00:58:44.385 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-23 00:58:44.414 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-23 00:58:44.415 +00:00 [INF] Hosting environment: Development
+2023-04-23 00:58:44.416 +00:00 [INF] Content root path: /app/
+2023-04-23 01:12:25.190 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-23 01:12:25.261 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-23 01:12:25.264 +00:00 [INF] Hosting environment: Development
+2023-04-23 01:12:25.265 +00:00 [INF] Content root path: /app/

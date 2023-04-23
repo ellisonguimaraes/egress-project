@@ -28,12 +28,10 @@ public class RegisterRequestValidator : AbstractValidator<RegisterRequest>
 
         RuleFor(ar => ar.DocumentType)
             .NotNull().WithMessage(ErrorCodeResource.VALIDATION_CANNOT_BE_NULL)
-            .NotEmpty().WithMessage(ErrorCodeResource.VALIDATION_CANNOT_BE_EMPTY)
             .IsInEnum().WithMessage(ErrorCodeResource.VALIDATION_INVALID_PROPERTY);
 
         RuleFor(ar => ar.UserType)
             .NotNull().WithMessage(ErrorCodeResource.VALIDATION_CANNOT_BE_NULL)
-            .NotEmpty().WithMessage(ErrorCodeResource.VALIDATION_CANNOT_BE_EMPTY)
             .IsInEnum().WithMessage(ErrorCodeResource.VALIDATION_INVALID_PROPERTY);
     }
 }

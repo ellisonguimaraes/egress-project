@@ -12,6 +12,8 @@ public class User : IdentityUser
 
     public string Document { get; set; }
 
+    public Guid? PersonId { get; set; }
+
     public DocumentType DocumentType { get; set; }
 
     public UserType UserType { get; set; }

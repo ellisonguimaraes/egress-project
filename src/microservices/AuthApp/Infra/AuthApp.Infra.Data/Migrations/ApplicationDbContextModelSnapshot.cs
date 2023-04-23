@@ -129,6 +129,10 @@ namespace AuthApp.Infra.Data.Migrations
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("PersonId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("PersonId");
+
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -159,6 +163,13 @@ namespace AuthApp.Infra.Data.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("PersonId")
+                        .IsUnique()
+                        .HasFilter("[PersonId] IS NOT NULL");
+
+                    b.HasIndex("Document", "DocumentType")
+                        .IsUnique();
 
                     b.ToTable("AspNetUsers", (string)null);
                 });

@@ -20,6 +20,15 @@
     <ProjectReference Include="..\..\Domain\AuthApp.Domain\AuthApp.Domain.csproj" />
     <ProjectReference Include="..\..\Infra\AuthApp.Infra.CrossCutting.Resources\AuthApp.Infra.CrossCutting.Resources.csproj" />
     <ProjectReference Include="..\..\Infra\AuthApp.Infra.Data\AuthApp.Infra.Data.csproj" />
+    <ProjectReference Include="..\..\Services\AuthApp.Services\AuthApp.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Services\" />
+    <None Remove="Services\Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Services\Interfaces\" />
+  </ItemGroup>
 </Project>

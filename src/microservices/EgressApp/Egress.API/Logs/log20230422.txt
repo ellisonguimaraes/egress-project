@@ -1,0 +1,946 @@
+2023-04-22 01:09:23.815 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 01:09:23.864 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 01:09:23.870 +00:00 [INF] Hosting environment: Development
+2023-04-22 01:09:23.872 +00:00 [INF] Content root path: /app/
+2023-04-22 01:09:33.001 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5020/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 01:09:33.083 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 01:09:33.128 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 01:09:33.167 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 01:09:33.200 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-f6c87542360617558f061108b5c3b567-91376b068066e6ea-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 01:09:33.824 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 01:09:33.943 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 01:09:38.621 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 01:09:39.168 +00:00 [INF] Executed DbCommand (57ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 01:09:39.296 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-f6c87542360617558f061108b5c3b567-91376b068066e6ea-00, Duration: 6094ms
+2023-04-22 01:09:39.298 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-f6c87542360617558f061108b5c3b567-91376b068066e6ea-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 01:09:39.305 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.Application.Queries.Responses.PersonCommandResponse'.
+2023-04-22 01:09:39.342 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 6170.6109ms
+2023-04-22 01:09:39.343 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 01:09:39.353 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5020/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 6353.2142ms
+2023-04-22 01:14:24.552 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 01:14:24.583 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 01:14:24.584 +00:00 [INF] Hosting environment: Development
+2023-04-22 01:14:24.584 +00:00 [INF] Content root path: /app/
+2023-04-22 01:15:12.594 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 01:15:12.621 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 01:15:12.622 +00:00 [INF] Hosting environment: Development
+2023-04-22 01:15:12.622 +00:00 [INF] Content root path: /app/
+2023-04-22 03:16:54.884 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5020/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 03:16:54.950 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 03:16:54.991 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 03:16:55.027 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 03:16:55.059 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-a84975ccf5e576d8fc758ec6e9c3a437-11d7bdbbd225b7b2-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 03:16:55.624 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 03:16:55.738 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 03:16:58.783 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 03:16:59.322 +00:00 [INF] Executed DbCommand (55ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 03:16:59.468 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-a84975ccf5e576d8fc758ec6e9c3a437-11d7bdbbd225b7b2-00, Duration: 4406ms
+2023-04-22 03:16:59.470 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-a84975ccf5e576d8fc758ec6e9c3a437-11d7bdbbd225b7b2-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 03:16:59.478 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.Application.Queries.Responses.PersonCommandResponse'.
+2023-04-22 03:16:59.517 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 4485.1714ms
+2023-04-22 03:16:59.519 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 03:16:59.528 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5020/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 4646.6376ms
+2023-04-22 03:17:05.664 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5020/api/v1/egress?document=12365498797&document_type=1 - -
+2023-04-22 03:17:05.671 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 03:17:05.674 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 03:17:05.679 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-b616f566892242b473970644aabf8763-c832a5e9c396b919-00, Document: 12365498797, DocumentType: Cpf
+2023-04-22 03:17:05.703 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 03:17:08.121 +00:00 [INF] Executed DbCommand (11ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 03:17:08.267 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 2591.2007ms
+2023-04-22 03:17:08.269 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 03:17:09.789 +00:00 [ERR] Business failure: [ERROR0002] Person not found, Endpoint: /api/v1/egress, TraceId: 00-b616f566892242b473970644aabf8763-c832a5e9c396b919-00
+Egress.Domain.Exceptions.BusinessException: [ERROR0002] Person not found
+   at Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommandHandler.Handle(GetPersonByDocumentCommand request, CancellationToken cancellationToken) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Queries/Person/GetPersonByDocument/GetPersonByDocumentCommandHandler.cs:line 43
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at Egress.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Behaviors/ValidationBehavior.cs:line 21
+   at Egress.Application.Behaviors.PerformanceBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Behaviors/PerformanceBehavior.cs:line 28
+   at Egress.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Behaviors/LoggingBehavior.cs:line 31
+   at Egress.API.Controllers.EgressController.GetByDocumentAsync(GetPersonByDocumentCommand command) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.API/Controllers/EgressController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Egress.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.API/Middlewares/GlobalExceptionMiddleware.cs:line 34, TraceId: 00-b616f566892242b473970644aabf8763-c832a5e9c396b919-00
+2023-04-22 03:17:09.880 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5020/api/v1/egress?document=12365498797&document_type=1 - - - 400 - application/json;+ver=1 4216.1022ms
+2023-04-22 03:43:25.132 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 03:43:25.189 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 03:43:25.190 +00:00 [INF] Hosting environment: Development
+2023-04-22 03:43:25.191 +00:00 [INF] Content root path: /app/
+2023-04-22 03:45:34.882 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 03:45:34.924 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 03:45:34.927 +00:00 [INF] Hosting environment: Development
+2023-04-22 03:45:34.929 +00:00 [INF] Content root path: /app/
+2023-04-22 03:45:59.357 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 03:45:59.424 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 03:45:59.481 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 03:45:59.517 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 03:45:59.550 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-83659602382a1274331b9ed5b280b1f9-8ef21f393ec93ea4-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 03:46:00.134 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 03:46:00.250 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 03:46:06.045 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 03:46:06.630 +00:00 [INF] Executed DbCommand (80ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 03:46:12.606 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-83659602382a1274331b9ed5b280b1f9-8ef21f393ec93ea4-00, Duration: 13053ms
+2023-04-22 03:46:12.630 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-83659602382a1274331b9ed5b280b1f9-8ef21f393ec93ea4-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 03:46:12.652 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 03:46:12.716 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 13191.9946ms
+2023-04-22 03:46:12.718 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 03:46:12.730 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 13376.1832ms
+2023-04-22 03:47:14.249 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 03:47:14.262 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 03:47:14.264 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 03:47:14.268 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-a8e76955cfa09c24d96f975a13b86760-eda4c47f683bcacb-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 03:47:14.291 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 03:47:16.037 +00:00 [INF] Executed DbCommand (14ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 03:47:16.042 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-a8e76955cfa09c24d96f975a13b86760-eda4c47f683bcacb-00, Duration: 1772ms
+2023-04-22 03:47:16.043 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-a8e76955cfa09c24d96f975a13b86760-eda4c47f683bcacb-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 03:47:16.044 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 03:47:16.047 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 1781.3202ms
+2023-04-22 03:47:16.047 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 03:47:16.049 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 1800.7433ms
+2023-04-22 03:50:43.769 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=1236549879&document_type=1 - -
+2023-04-22 03:50:43.777 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 03:50:43.778 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 03:50:43.783 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-c96b429ff5dfdfabec17f3051c6e7e3a-c75c26567f2c0796-00, Document: 1236549879, DocumentType: Cpf
+2023-04-22 03:50:43.795 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 03:50:45.461 +00:00 [INF] Executed DbCommand (19ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 03:50:45.647 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 1867.8043ms
+2023-04-22 03:50:45.650 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 03:50:49.420 +00:00 [ERR] Business failure: [ERROR0002] Person not found, Endpoint: /api/v1/egress, TraceId: 00-c96b429ff5dfdfabec17f3051c6e7e3a-c75c26567f2c0796-00
+Egress.Domain.Exceptions.BusinessException: [ERROR0002] Person not found
+   at Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommandHandler.Handle(GetPersonByDocumentCommand request, CancellationToken cancellationToken) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Queries/Person/GetPersonByDocument/GetPersonByDocumentCommandHandler.cs:line 43
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at Egress.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Behaviors/ValidationBehavior.cs:line 21
+   at Egress.Application.Behaviors.PerformanceBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Behaviors/PerformanceBehavior.cs:line 28
+   at Egress.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Behaviors/LoggingBehavior.cs:line 31
+   at Egress.API.Controllers.EgressController.GetByDocumentAsync(GetPersonByDocumentCommand command) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.API/Controllers/EgressController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Egress.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.API/Middlewares/GlobalExceptionMiddleware.cs:line 34, TraceId: 00-c96b429ff5dfdfabec17f3051c6e7e3a-c75c26567f2c0796-00
+2023-04-22 03:50:49.534 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=1236549879&document_type=1 - - - 400 - application/json;+ver=1 5765.3016ms
+2023-04-22 04:02:19.312 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 04:02:19.410 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 04:02:19.417 +00:00 [INF] Hosting environment: Development
+2023-04-22 04:02:19.425 +00:00 [INF] Content root path: /app/
+2023-04-22 04:02:57.176 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 04:02:57.261 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 04:02:57.277 +00:00 [INF] Hosting environment: Development
+2023-04-22 04:02:57.280 +00:00 [INF] Content root path: /app/
+2023-04-22 04:03:16.683 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=1236549879&document_type=1 - -
+2023-04-22 04:03:16.770 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 04:03:16.822 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:03:16.866 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 04:03:16.898 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-f09b7d9f4a7eee3e70a2a62a00dbadeb-a1f066186b20bcc1-00, Document: 1236549879, DocumentType: Cpf
+2023-04-22 04:03:17.474 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 04:03:17.588 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 04:03:21.436 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 04:03:22.046 +00:00 [INF] Executed DbCommand (99ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 04:03:22.169 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 5295.0909ms
+2023-04-22 04:03:22.173 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:03:23.957 +00:00 [ERR] Business failure: [ERROR0002] Person not found, Endpoint: /api/v1/egress, TraceId: 00-f09b7d9f4a7eee3e70a2a62a00dbadeb-a1f066186b20bcc1-00
+Egress.Domain.Exceptions.BusinessException: [ERROR0002] Person not found
+   at Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommandHandler.Handle(GetPersonByDocumentCommand request, CancellationToken cancellationToken) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Queries/Person/GetPersonByDocument/GetPersonByDocumentCommandHandler.cs:line 43
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at Egress.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Behaviors/ValidationBehavior.cs:line 21
+   at Egress.Application.Behaviors.PerformanceBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Behaviors/PerformanceBehavior.cs:line 28
+   at Egress.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Behaviors/LoggingBehavior.cs:line 31
+   at Egress.API.Controllers.EgressController.GetByDocumentAsync(GetPersonByDocumentCommand command) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.API/Controllers/EgressController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Egress.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.API/Middlewares/GlobalExceptionMiddleware.cs:line 34, TraceId: 00-f09b7d9f4a7eee3e70a2a62a00dbadeb-a1f066186b20bcc1-00
+2023-04-22 04:03:24.137 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=1236549879&document_type=1 - - - 400 - application/json;+ver=1 7455.2397ms
+2023-04-22 04:03:58.237 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 04:03:58.242 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:03:58.244 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 04:03:58.247 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-a3d380ed40076e83111345cd771137a9-d6fb606ce632b723-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 04:03:58.276 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 04:04:00.005 +00:00 [INF] Executed DbCommand (31ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 04:04:00.176 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-a3d380ed40076e83111345cd771137a9-d6fb606ce632b723-00, Duration: 1927ms
+2023-04-22 04:04:00.177 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-a3d380ed40076e83111345cd771137a9-d6fb606ce632b723-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 04:04:00.184 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 04:04:00.212 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 1966.8845ms
+2023-04-22 04:04:00.213 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:04:00.217 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 1979.6181ms
+2023-04-22 04:40:09.803 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 04:40:09.839 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 04:40:09.843 +00:00 [INF] Hosting environment: Development
+2023-04-22 04:40:09.847 +00:00 [INF] Content root path: /app/
+2023-04-22 04:40:59.451 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 04:40:59.541 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 04:40:59.586 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:40:59.640 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 04:40:59.811 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-2465aaad1c18283b31ea5e28184dd559-86ede4815543e7d8-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 04:41:00.945 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 04:41:01.070 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 04:41:04.837 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 04:41:05.378 +00:00 [INF] Executed DbCommand (57ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 04:41:05.517 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-2465aaad1c18283b31ea5e28184dd559-86ede4815543e7d8-00, Duration: 5695ms
+2023-04-22 04:41:05.519 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-2465aaad1c18283b31ea5e28184dd559-86ede4815543e7d8-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 04:41:05.525 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 04:41:05.565 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 5903.9944ms
+2023-04-22 04:41:05.567 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:41:05.576 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 6122.3788ms
+2023-04-22 04:43:09.464 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 04:43:09.479 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:43:09.482 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 04:43:09.487 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-4a9ed5653e84f38a8cc36d77cd34c2e8-48a1ba5e577f4cb2-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 04:43:09.511 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 04:43:10.882 +00:00 [INF] Executed DbCommand (51ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 04:43:10.896 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-4a9ed5653e84f38a8cc36d77cd34c2e8-48a1ba5e577f4cb2-00, Duration: 1408ms
+2023-04-22 04:43:10.898 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-4a9ed5653e84f38a8cc36d77cd34c2e8-48a1ba5e577f4cb2-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 04:43:10.901 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 04:43:10.905 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 1421.7207ms
+2023-04-22 04:43:10.906 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:43:10.908 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 1444.2624ms
+2023-04-22 04:46:32.465 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 04:46:32.470 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:46:32.471 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 04:46:32.475 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-3ef81383abe7e41bfefd0f3bed40885e-8efc37e83e9a95f9-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 04:46:32.493 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 04:46:33.679 +00:00 [INF] Executed DbCommand (18ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 04:46:33.693 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-3ef81383abe7e41bfefd0f3bed40885e-8efc37e83e9a95f9-00, Duration: 1216ms
+2023-04-22 04:46:33.694 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-3ef81383abe7e41bfefd0f3bed40885e-8efc37e83e9a95f9-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 04:46:33.696 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 04:46:33.699 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 1226.7553ms
+2023-04-22 04:46:33.701 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:46:33.702 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 1237.2636ms
+2023-04-22 04:46:45.981 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 04:46:45.987 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:46:45.989 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 04:46:45.994 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-07ada7752805a9411712fa037965ca43-e243f24c2773f6eb-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 04:46:45.998 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 04:46:47.157 +00:00 [INF] Executed DbCommand (18ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 04:46:47.172 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-07ada7752805a9411712fa037965ca43-e243f24c2773f6eb-00, Duration: 1176ms
+2023-04-22 04:46:47.175 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-07ada7752805a9411712fa037965ca43-e243f24c2773f6eb-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 04:46:47.179 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 04:46:47.187 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 1195.1344ms
+2023-04-22 04:46:47.189 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:46:47.192 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 1211.6232ms
+2023-04-22 04:49:13.357 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 04:49:13.395 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 04:49:13.396 +00:00 [INF] Hosting environment: Development
+2023-04-22 04:49:13.396 +00:00 [INF] Content root path: /app/
+2023-04-22 04:50:35.743 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 04:50:35.826 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 04:50:35.853 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:50:35.886 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 04:50:35.918 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-64d6edfe8f62dd9ba82dc550601b4a16-7302bbdd28a65bec-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 04:50:36.463 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 04:50:36.577 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 04:50:39.387 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 04:50:39.862 +00:00 [INF] Executed DbCommand (50ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 04:50:39.984 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-64d6edfe8f62dd9ba82dc550601b4a16-7302bbdd28a65bec-00, Duration: 4064ms
+2023-04-22 04:50:39.985 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-64d6edfe8f62dd9ba82dc550601b4a16-7302bbdd28a65bec-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 04:50:39.989 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 04:50:40.022 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 4129.5403ms
+2023-04-22 04:50:40.023 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:50:40.030 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 4289.4339ms
+2023-04-22 04:50:57.340 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 04:50:57.348 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:50:57.350 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 04:50:57.353 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-c4c1781b6d3860b4ae18dac62c146547-23697a4ea30d413f-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 04:50:57.385 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 04:51:02.596 +00:00 [INF] Executed DbCommand (18ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 04:51:02.602 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-c4c1781b6d3860b4ae18dac62c146547-23697a4ea30d413f-00, Duration: 5248ms
+2023-04-22 04:51:02.603 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-c4c1781b6d3860b4ae18dac62c146547-23697a4ea30d413f-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 04:51:02.605 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 04:51:02.609 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 5258.8875ms
+2023-04-22 04:51:02.611 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:51:02.612 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 5273.3481ms
+2023-04-22 04:54:56.569 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 04:54:56.620 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 04:54:56.627 +00:00 [INF] Hosting environment: Development
+2023-04-22 04:54:56.628 +00:00 [INF] Content root path: /app/
+2023-04-22 04:55:22.445 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 04:55:22.481 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 04:55:22.483 +00:00 [INF] Hosting environment: Development
+2023-04-22 04:55:22.484 +00:00 [INF] Content root path: /app/
+2023-04-22 04:55:42.793 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 04:55:42.856 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 04:55:42.896 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:55:42.938 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 04:55:42.972 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-7c2615701c3414e7289c51aec1cffcf5-14552ff2f874e5c9-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 04:55:43.571 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 04:55:43.685 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 04:55:45.773 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 04:55:46.383 +00:00 [INF] Executed DbCommand (75ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 04:55:46.518 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-7c2615701c3414e7289c51aec1cffcf5-14552ff2f874e5c9-00, Duration: 3544ms
+2023-04-22 04:55:46.519 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-7c2615701c3414e7289c51aec1cffcf5-14552ff2f874e5c9-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 04:55:46.523 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 04:55:46.563 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 3618.2062ms
+2023-04-22 04:55:46.565 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:55:46.572 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 3781.7687ms
+2023-04-22 04:55:58.145 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 04:55:58.153 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:55:58.157 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 04:55:58.162 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-e5b7def57c6cae1aa3377700def2e47b-38b806a95b618375-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 04:55:58.192 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 04:55:59.326 +00:00 [INF] Executed DbCommand (15ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 04:55:59.334 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-e5b7def57c6cae1aa3377700def2e47b-38b806a95b618375-00, Duration: 1170ms
+2023-04-22 04:55:59.335 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-e5b7def57c6cae1aa3377700def2e47b-38b806a95b618375-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 04:55:59.337 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 04:55:59.342 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 1183.7183ms
+2023-04-22 04:55:59.343 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 04:55:59.344 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 1199.8934ms
+2023-04-22 05:00:26.090 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 05:00:26.128 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 05:00:26.130 +00:00 [INF] Hosting environment: Development
+2023-04-22 05:00:26.131 +00:00 [INF] Content root path: /app/
+2023-04-22 05:00:33.727 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 05:00:33.783 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 05:00:33.823 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:00:33.865 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 05:00:33.899 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-f90fccaac38727ab8dc6950da0a0b295-dbec06504011dd7c-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 05:00:34.517 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 05:00:34.629 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 05:00:36.534 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 05:00:37.164 +00:00 [INF] Executed DbCommand (81ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 05:00:37.306 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-f90fccaac38727ab8dc6950da0a0b295-dbec06504011dd7c-00, Duration: 3405ms
+2023-04-22 05:00:37.309 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-f90fccaac38727ab8dc6950da0a0b295-dbec06504011dd7c-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 05:00:37.314 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 05:00:37.357 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 3484.1781ms
+2023-04-22 05:00:37.359 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:00:37.369 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 3644.6070ms
+2023-04-22 05:04:46.507 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 05:04:46.540 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 05:04:46.542 +00:00 [INF] Hosting environment: Development
+2023-04-22 05:04:46.543 +00:00 [INF] Content root path: /app/
+2023-04-22 05:04:53.407 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 05:04:53.478 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 05:04:53.515 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:04:53.549 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 05:04:53.586 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-7ccf14fbe2197333fe12bc2246c9312a-1ce2e0997bf05b9c-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 05:04:54.148 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 05:04:54.263 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 05:04:56.222 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 05:04:56.921 +00:00 [INF] Executed DbCommand (68ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 05:04:57.066 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-7ccf14fbe2197333fe12bc2246c9312a-1ce2e0997bf05b9c-00, Duration: 3478ms
+2023-04-22 05:04:57.068 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-7ccf14fbe2197333fe12bc2246c9312a-1ce2e0997bf05b9c-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 05:04:57.074 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 05:04:57.114 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 3557.4884ms
+2023-04-22 05:04:57.115 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:04:57.125 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 3719.2668ms
+2023-04-22 05:05:02.997 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 05:05:03.012 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:05:03.016 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 05:05:03.021 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-1ab968f005c8a96c853fbc4e7dc2075c-e6a07ec07723da8c-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 05:05:03.049 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 05:05:04.638 +00:00 [INF] Executed DbCommand (52ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 05:05:04.644 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-1ab968f005c8a96c853fbc4e7dc2075c-e6a07ec07723da8c-00, Duration: 1622ms
+2023-04-22 05:05:04.645 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-1ab968f005c8a96c853fbc4e7dc2075c-e6a07ec07723da8c-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 05:05:04.646 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 05:05:04.650 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 1632.5734ms
+2023-04-22 05:05:04.650 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:05:04.651 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 1657.5891ms
+2023-04-22 05:06:05.693 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 05:06:05.734 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 05:06:05.736 +00:00 [INF] Hosting environment: Development
+2023-04-22 05:06:05.736 +00:00 [INF] Content root path: /app/
+2023-04-22 05:06:23.202 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 05:06:23.246 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 05:06:23.273 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:06:23.304 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 05:06:23.335 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-1c39f817c846b910fa8b1949d100dc96-4b74a0eaa00302c8-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 05:06:23.931 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 05:06:24.050 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 05:06:25.927 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 05:06:26.514 +00:00 [INF] Executed DbCommand (54ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 05:06:26.647 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-1c39f817c846b910fa8b1949d100dc96-4b74a0eaa00302c8-00, Duration: 3310ms
+2023-04-22 05:06:26.650 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-1c39f817c846b910fa8b1949d100dc96-4b74a0eaa00302c8-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 05:06:26.655 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 05:06:26.700 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 3387.6562ms
+2023-04-22 05:06:26.703 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:06:26.713 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 3513.3153ms
+2023-04-22 05:06:33.796 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 05:06:33.804 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:06:33.807 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 05:06:33.812 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-55dc15b93ac50c652dd7e2f145c355ff-0b544b05f46cce8d-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 05:06:33.841 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 05:06:34.654 +00:00 [INF] Executed DbCommand (21ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 05:06:34.660 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-55dc15b93ac50c652dd7e2f145c355ff-0b544b05f46cce8d-00, Duration: 847ms
+2023-04-22 05:06:34.661 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-55dc15b93ac50c652dd7e2f145c355ff-0b544b05f46cce8d-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 05:06:34.662 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 05:06:34.665 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 856.6369ms
+2023-04-22 05:06:34.671 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:06:34.673 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 877.8632ms
+2023-04-22 05:11:22.412 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 05:11:22.446 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 05:11:22.447 +00:00 [INF] Hosting environment: Development
+2023-04-22 05:11:22.450 +00:00 [INF] Content root path: /app/
+2023-04-22 05:11:28.747 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 05:11:28.823 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 05:11:28.850 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:11:28.882 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 05:11:28.913 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-5327233b3712155f6a1ef685ffe11674-ee6611daf79ed875-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 05:11:29.467 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 05:11:29.576 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 05:11:31.038 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 05:11:31.563 +00:00 [INF] Executed DbCommand (53ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 05:11:31.705 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-5327233b3712155f6a1ef685ffe11674-ee6611daf79ed875-00, Duration: 2790ms
+2023-04-22 05:11:31.707 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-5327233b3712155f6a1ef685ffe11674-ee6611daf79ed875-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 05:11:31.712 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 05:11:31.750 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 2861.0601ms
+2023-04-22 05:11:31.752 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:11:31.762 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 3018.7040ms
+2023-04-22 05:15:22.971 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 05:15:23.068 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 05:15:23.068 +00:00 [INF] Hosting environment: Development
+2023-04-22 05:15:23.069 +00:00 [INF] Content root path: /app/
+2023-04-22 05:15:35.191 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 05:15:35.263 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 05:15:35.294 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:15:35.326 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 05:15:35.358 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-ada43d926ba221fd728db629dd59ab8d-76ae943b2ed9a536-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 05:15:35.921 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 05:15:36.032 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 05:15:37.941 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 05:15:38.458 +00:00 [INF] Executed DbCommand (52ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 05:15:38.583 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-ada43d926ba221fd728db629dd59ab8d-76ae943b2ed9a536-00, Duration: 3223ms
+2023-04-22 05:15:38.584 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-ada43d926ba221fd728db629dd59ab8d-76ae943b2ed9a536-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 05:15:38.587 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 05:15:38.623 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 3288.8557ms
+2023-04-22 05:15:38.624 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 05:15:38.632 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 3443.6064ms
+2023-04-22 13:39:32.885 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 13:39:32.918 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 13:39:32.919 +00:00 [INF] Hosting environment: Development
+2023-04-22 13:39:32.919 +00:00 [INF] Content root path: /app/
+2023-04-22 13:47:17.726 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 13:47:17.850 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-22 13:47:17.929 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 13:47:17.976 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 13:47:18.017 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-2859d6e483598973a19de5d338ed7cf5-ed7d36c29c15df62-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 13:47:18.709 +00:00 [WRN] No store type was specified for the decimal property 'SalaryRange' on entity type 'Employment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-22 13:47:18.826 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 13:47:22.131 +00:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-22 13:47:23.084 +00:00 [INF] Executed DbCommand (313ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 13:47:23.273 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-2859d6e483598973a19de5d338ed7cf5-ed7d36c29c15df62-00, Duration: 5253ms
+2023-04-22 13:47:23.275 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-2859d6e483598973a19de5d338ed7cf5-ed7d36c29c15df62-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 13:47:23.287 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 13:47:23.359 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 5373.5974ms
+2023-04-22 13:47:23.361 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 13:47:23.379 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 5654.2991ms
+2023-04-22 13:48:49.713 +00:00 [INF] Request starting HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - -
+2023-04-22 13:48:49.729 +00:00 [INF] Executing endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 13:48:49.733 +00:00 [INF] Route matched with {action = "GetByDocument", controller = "Egress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByDocumentAsync(Egress.Application.Queries.Person.GetPersonByDocument.GetPersonByDocumentCommand) on controller Egress.API.Controllers.EgressController (Egress.API).
+2023-04-22 13:48:49.742 +00:00 [INF] Handling GetPersonByDocumentCommand, TraceId: 00-c80fb15c6c286fb00e7a416904387f72-f3945222148a5534-00, Document: 12365498798, DocumentType: Cpf
+2023-04-22 13:48:49.796 +00:00 [INF] Entity Framework Core 6.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+2023-04-22 13:48:51.109 +00:00 [INF] Executed DbCommand (13ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[birth_date], [t].[cpf], [t].[created_at], [t].[email], [t].[expose_data], [t].[name], [t].[perfil_image], [t].[person_type], [t].[phone_number], [t].[sex], [t].[updated_at], [t].[id0], [e].[id], [e].[created_at], [e].[end_date], [e].[enterprise], [e].[initiative], [e].[person_id], [e].[role], [e].[salary_range], [e].[section], [e].[start_date], [e].[status], [e].[updated_at], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[person_id], [t].[state], [t].[street], [t].[updated_at0], [t0].[id], [t0].[course_id], [t0].[created_at], [t0].[end_date], [t0].[level], [t0].[mat], [t0].[modality], [t0].[person_id], [t0].[start_date], [t0].[updated_at], [t0].[id0], [t0].[course_name], [t0].[created_at0], [t0].[updated_at0], [h].[id], [h].[created_at], [h].[description], [h].[link], [h].[person_id], [h].[title], [h].[updated_at], [s].[id], [s].[course_name], [s].[created_at], [s].[end_date], [s].[institution_name], [s].[modality], [s].[person_id], [s].[start_date], [s].[status], [s].[updated_at], [t1].[id], [t1].[content], [t1].[created_at], [t1].[person_id], [t1].[updated_at], [t1].[was_accepted]
+FROM (
+    SELECT TOP(2) [p].[id], [p].[birth_date], [p].[cpf], [p].[created_at], [p].[email], [p].[expose_data], [p].[name], [p].[perfil_image], [p].[person_type], [p].[phone_number], [p].[sex], [p].[updated_at], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[person_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [Person] AS [p]
+    LEFT JOIN [Address] AS [a] ON [p].[id] = [a].[person_id]
+    WHERE [p].[cpf] = @__cpf_0
+) AS [t]
+LEFT JOIN [Employment] AS [e] ON [t].[id] = [e].[person_id]
+LEFT JOIN (
+    SELECT [p0].[id], [p0].[course_id], [p0].[created_at], [p0].[end_date], [p0].[level], [p0].[mat], [p0].[modality], [p0].[person_id], [p0].[start_date], [p0].[updated_at], [c].[id] AS [id0], [c].[course_name], [c].[created_at] AS [created_at0], [c].[updated_at] AS [updated_at0]
+    FROM [PersonCourse] AS [p0]
+    INNER JOIN [Course] AS [c] ON [p0].[course_id] = [c].[id]
+) AS [t0] ON [t].[id] = [t0].[person_id]
+LEFT JOIN [Highlights] AS [h] ON [t].[id] = [h].[person_id]
+LEFT JOIN [Specialization] AS [s] ON [t].[id] = [s].[person_id]
+LEFT JOIN [Testimony] AS [t1] ON [t].[id] = [t1].[person_id]
+ORDER BY [t].[id], [t].[id0], [e].[id], [t0].[id], [t0].[id0], [h].[id], [s].[id]
+2023-04-22 13:48:51.115 +00:00 [INF] Performance GetPersonByDocumentCommand, TraceId: 00-c80fb15c6c286fb00e7a416904387f72-f3945222148a5534-00, Duration: 1371ms
+2023-04-22 13:48:51.116 +00:00 [INF] Handled PersonCommandResponse, TraceId: 00-c80fb15c6c286fb00e7a416904387f72-f3945222148a5534-00, Cpf: 12365498798, Name: Ellison, BirthDate: 06/18/2012 22:34:09, Sex: MALE, Email: ellison.guimaraes@gmail.com, PhoneNumber: 73988991122, PerfilImage: , ExposeData: True, PersonType: STUDENT, Address: , Courses: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.CourseCommandResponse], Employments: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.EmploymentCommandResponse], Highlights: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.HighlightsCommandResponse], Specializations: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.SpecializationCommandResponse], Testimonies: System.Collections.Generic.List`1[Egress.Application.Queries.Responses.TestimonyCommandResponse], Id: 4df17a6b-3097-47b0-b934-f9c5d906c581, CreatedAt: 06/18/2012 22:34:09, UpdatedAt: 06/18/2012 22:34:09
+2023-04-22 13:48:51.117 +00:00 [INF] Executing OkObjectResult, writing value of type 'Egress.API.Models.GenericHttpResponse'.
+2023-04-22 13:48:51.119 +00:00 [INF] Executed action Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API) in 1384.4374ms
+2023-04-22 13:48:51.119 +00:00 [INF] Executed endpoint 'Egress.API.Controllers.EgressController.GetByDocumentAsync (Egress.API)'
+2023-04-22 13:48:51.120 +00:00 [INF] Request finished HTTP/1.1 GET http://egress_api/api/v1/egress?document=12365498798&document_type=1 - - - 200 - application/json;+charset=utf-8;+ver=1 1407.3305ms
+2023-04-22 14:40:40.541 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 14:40:40.569 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 14:40:40.570 +00:00 [INF] Hosting environment: Development
+2023-04-22 14:40:40.570 +00:00 [INF] Content root path: /app/
+2023-04-22 14:51:55.714 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 14:51:55.745 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 14:51:55.746 +00:00 [INF] Hosting environment: Development
+2023-04-22 14:51:55.746 +00:00 [INF] Content root path: /app/
+2023-04-22 14:55:55.245 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 14:55:55.274 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 14:55:55.275 +00:00 [INF] Hosting environment: Development
+2023-04-22 14:55:55.276 +00:00 [INF] Content root path: /app/
+2023-04-22 14:57:37.515 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 14:57:37.547 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 14:57:37.548 +00:00 [INF] Hosting environment: Development
+2023-04-22 14:57:37.548 +00:00 [INF] Content root path: /app/
+2023-04-22 15:07:59.734 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 15:07:59.764 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 15:07:59.765 +00:00 [INF] Hosting environment: Development
+2023-04-22 15:07:59.765 +00:00 [INF] Content root path: /app/
+2023-04-22 15:29:14.001 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 15:29:14.032 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 15:29:14.033 +00:00 [INF] Hosting environment: Development
+2023-04-22 15:29:14.033 +00:00 [INF] Content root path: /app/
+2023-04-22 15:32:11.465 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 15:32:11.499 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 15:32:11.500 +00:00 [INF] Hosting environment: Development
+2023-04-22 15:32:11.500 +00:00 [INF] Content root path: /app/
+2023-04-22 17:02:56.322 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 17:02:56.366 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 17:02:56.367 +00:00 [INF] Hosting environment: Development
+2023-04-22 17:02:56.368 +00:00 [INF] Content root path: /app/
+2023-04-22 17:18:40.703 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 17:18:40.743 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 17:18:40.744 +00:00 [INF] Hosting environment: Development
+2023-04-22 17:18:40.746 +00:00 [INF] Content root path: /app/
+2023-04-22 17:40:18.414 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 17:40:18.448 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 17:40:18.450 +00:00 [INF] Hosting environment: Development
+2023-04-22 17:40:18.451 +00:00 [INF] Content root path: /app/
+2023-04-22 18:03:14.747 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 18:03:14.779 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 18:03:14.780 +00:00 [INF] Hosting environment: Development
+2023-04-22 18:03:14.781 +00:00 [INF] Content root path: /app/
+2023-04-22 19:27:40.017 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-22 19:27:40.077 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-22 19:27:40.078 +00:00 [INF] Hosting environment: Development
+2023-04-22 19:27:40.079 +00:00 [INF] Content root path: /app/

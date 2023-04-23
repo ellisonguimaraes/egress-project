@@ -1,0 +1,175 @@
+name: dockercompose3434601838597767713
+services:
+  auth_api:
+    build:
+      context: /Users/ellisonguimaraes/Documents/repos/egress-project
+      dockerfile: src/microservices/AuthApp/API/AuthApp.API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: AuthApp.API
+      target: base
+    container_name: auth_api
+    depends_on:
+      egress_program_db:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: authappapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/AuthApp.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "5010"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/ellisonguimaraes/vsdbg/vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/ellisonguimaraes/.aspnet/https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/ellisonguimaraes/.microsoft/usersecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/ellisonguimaraes/.nuget/packages/
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/ellisonguimaraes/Documents/repos/egress-project
+      target: /src
+      bind:
+        create_host_path: true
+  egress_api:
+    build:
+      context: /Users/ellisonguimaraes/Documents/repos/egress-project
+      dockerfile: src/microservices/EgressApp/Egress.API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Egress.API
+      target: base
+    container_name: egress_api
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: egressapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/Egress.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "5020"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.API
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/ellisonguimaraes/vsdbg/vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/ellisonguimaraes/.aspnet/https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/ellisonguimaraes/.microsoft/usersecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/ellisonguimaraes/.nuget/packages/
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/ellisonguimaraes/Documents/repos/egress-project
+      target: /src
+      bind:
+        create_host_path: true
+  egress_program_db:
+    container_name: egress_program_db
+    environment:
+      ACCEPT_EULA: "1"
+      MSSQL_SA_PASSWORD: Abcd@1234
+      MSSQL_USER: SA
+    image: mcr.microsoft.com/azure-sql-edge
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 1433
+      protocol: tcp
+    - mode: ingress
+      target: 1433
+      published: "9000"
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: egress_program_db_volume
+      target: /var/opt/mssql
+      volume: {}
+networks:
+  backend:
+    name: dockercompose3434601838597767713_backend
+volumes:
+  egress_program_db_volume:
+    name: dockercompose3434601838597767713_egress_program_db_volume

@@ -33,4 +33,13 @@
     <ProjectReference Include="..\..\Infra\AuthApp.Infra.Data\AuthApp.Infra.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Logs\log20230421.txt" />
+    <None Remove="Logs\log20230414.txt" />
+    <None Remove="Logs\log20230416.txt" />
+    <None Remove="Middlewares\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Middlewares\" />
+  </ItemGroup>
 </Project>

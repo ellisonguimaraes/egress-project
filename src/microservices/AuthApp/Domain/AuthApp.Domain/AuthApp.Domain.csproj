@@ -11,4 +11,12 @@
     <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Api\" />
+    <None Remove="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Api\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
 </Project>

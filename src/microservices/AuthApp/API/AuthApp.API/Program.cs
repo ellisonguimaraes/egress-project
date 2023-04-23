@@ -1,3 +1,4 @@
+using AuthApp.API.Middlewares;
 using AuthApp.Infra.CrossCutting.IoC;
 using AuthApp.Infra.Data.Context;
 using Microsoft.AspNetCore.Mvc;
@@ -52,6 +53,8 @@ builder.Services.RegisterServices(builder.Configuration);
 var app = builder.Build();
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<GlobalExceptionMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();

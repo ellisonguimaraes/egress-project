@@ -39,12 +39,12 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();
 
+app.UseMiddleware<GlobalExceptionMiddleware>();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapHealthChecks(HEALTH_CHECK_ROUTE);
-
-app.UseMiddleware<GlobalExceptionMiddleware>();
 
 app.MapControllers();
 

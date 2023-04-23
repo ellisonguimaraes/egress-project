@@ -1,4 +1,6 @@
-﻿namespace AuthApp.Application.Models;
+﻿using AuthApp.Domain.Utils;
+
+namespace AuthApp.Application.Models;
 
 public static class Responses
 {

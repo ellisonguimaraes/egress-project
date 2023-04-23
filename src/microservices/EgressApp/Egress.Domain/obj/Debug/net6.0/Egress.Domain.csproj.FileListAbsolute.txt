@@ -34,3 +34,15 @@ C:/Users/ellis/Desktop/TCC/New/EgressProject/src/microservices/EgressApp/Egress.
 C:/Users/ellis/Desktop/TCC/New/EgressProject/src/microservices/EgressApp/Egress.Domain/obj/Debug/net6.0/refint/Egress.Domain.dll
 C:/Users/ellis/Desktop/TCC/New/EgressProject/src/microservices/EgressApp/Egress.Domain/obj/Debug/net6.0/Egress.Domain.pdb
 C:/Users/ellis/Desktop/TCC/New/EgressProject/src/microservices/EgressApp/Egress.Domain/obj/Debug/net6.0/ref/Egress.Domain.dll
+/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Domain/bin/Debug/net6.0/Egress.Domain.deps.json
+/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Domain/bin/Debug/net6.0/Egress.Domain.dll
+/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Domain/bin/Debug/net6.0/Egress.Domain.pdb
+/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Domain/obj/Debug/net6.0/Egress.Domain.csproj.AssemblyReference.cache
+/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Domain/obj/Debug/net6.0/Egress.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Domain/obj/Debug/net6.0/Egress.Domain.AssemblyInfoInputs.cache
+/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Domain/obj/Debug/net6.0/Egress.Domain.AssemblyInfo.cs
+/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Domain/obj/Debug/net6.0/Egress.Domain.csproj.CoreCompileInputs.cache
+/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Domain/obj/Debug/net6.0/Egress.Domain.dll
+/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Domain/obj/Debug/net6.0/refint/Egress.Domain.dll
+/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Domain/obj/Debug/net6.0/Egress.Domain.pdb
+/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Domain/obj/Debug/net6.0/ref/Egress.Domain.dll

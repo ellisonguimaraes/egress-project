@@ -1,4 +1,5 @@
-﻿using Egress.Application.Queries.Person.GetPersonByDocument;
+﻿using Egress.API.Models;
+using Egress.Application.Queries.Person.GetPersonByDocument;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +21,9 @@ public class EgressController : ControllerBase
     public async Task<IActionResult> GetByDocumentAsync([FromQuery] GetPersonByDocumentCommand command)
     {
         var result = await _mediator.Send(command);
-
-        return Ok(result);
+        return Ok(new GenericHttpResponse
+        {
+            Data = result
+        });
     }
 }

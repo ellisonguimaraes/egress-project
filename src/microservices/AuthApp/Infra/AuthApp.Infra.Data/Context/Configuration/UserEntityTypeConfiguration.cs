@@ -15,6 +15,8 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(e => e.Document).HasColumnName("Document").HasMaxLength(20).IsRequired();
 
+        builder.Property(e => e.PersonId).HasColumnName("PersonId");
+
         builder.Property(e => e.DocumentType).HasColumnName("DocumentType").HasMaxLength(20).IsRequired();
 
         builder.Property(e => e.UserType).HasColumnName("UserType").HasMaxLength(20).IsRequired();
@@ -22,5 +24,9 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
         builder.Property(e => e.CreatedAt).HasColumnName("CreatedAt").IsRequired();
 
         builder.Property(e => e.EditedAt).HasColumnName("EditedAt").IsRequired();
+
+        builder.HasIndex(e => e.PersonId).IsUnique();
+
+        builder.HasIndex(e => new { e.Document, e.DocumentType }).IsUnique();
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+z/TAXPQVd5EC6LSHw23uD1Md7Q/e8eWoCNwLQWVFuLsE0/7bDn6/e/wpv0tkmLyBw9iqkfnhfW8INbWx0Y4jg==",
+  "dgSpecHash": "MZpFTxHRqHrrh88TtUP34GUYWEKPeCRtILOVSA2cTs+UCml5iay+h6IUG27l/r0cSireNVkim+y/EgaNSbZWNQ==",
   "success": true,
   "projectFilePath": "/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/AuthApp.API.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,7 @@
     "/Users/ellisonguimaraes/.nuget/packages/microsoft.extensions.dependencymodel/3.0.0/microsoft.extensions.dependencymodel.3.0.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/microsoft.extensions.fileproviders.abstractions/3.1.8/microsoft.extensions.fileproviders.abstractions.3.1.8.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/microsoft.extensions.hosting.abstractions/3.1.8/microsoft.extensions.hosting.abstractions.3.1.8.nupkg.sha512",
+    "/Users/ellisonguimaraes/.nuget/packages/microsoft.extensions.http/6.0.0/microsoft.extensions.http.6.0.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/microsoft.extensions.identity.core/6.0.9/microsoft.extensions.identity.core.6.0.9.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/microsoft.extensions.identity.stores/6.0.9/microsoft.extensions.identity.stores.6.0.9.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/microsoft.extensions.logging/6.0.0/microsoft.extensions.logging.6.0.0.nupkg.sha512",
@@ -64,6 +65,8 @@
     "/Users/ellisonguimaraes/.nuget/packages/mimekit/3.2.0/mimekit.3.2.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/netcore.mailkit/2.1.0/netcore.mailkit.2.1.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/portable.bouncycastle/1.9.0/portable.bouncycastle.1.9.0.nupkg.sha512",
+    "/Users/ellisonguimaraes/.nuget/packages/refit/6.3.2/refit.6.3.2.nupkg.sha512",
+    "/Users/ellisonguimaraes/.nuget/packages/refit.httpclientfactory/6.3.2/refit.httpclientfactory.6.3.2.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/serilog/2.12.0/serilog.2.12.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/serilog.aspnetcore/6.0.1/serilog.aspnetcore.6.0.1.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/serilog.enrichers.clientinfo/1.2.0/serilog.enrichers.clientinfo.1.2.0.nupkg.sha512",
@@ -89,6 +92,7 @@
     "/Users/ellisonguimaraes/.nuget/packages/system.drawing.common/4.7.0/system.drawing.common.4.7.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/system.formats.asn1/6.0.0/system.formats.asn1.6.0.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/system.identitymodel.tokens.jwt/6.10.0/system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",
+    "/Users/ellisonguimaraes/.nuget/packages/system.net.http.json/6.0.0/system.net.http.json.6.0.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/system.reflection.typeextensions/4.7.0/system.reflection.typeextensions.4.7.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/system.runtime.caching/4.7.0/system.runtime.caching.4.7.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
@@ -99,8 +103,8 @@
     "/Users/ellisonguimaraes/.nuget/packages/system.security.permissions/4.7.0/system.security.permissions.4.7.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/system.text.encoding.codepages/4.7.0/system.text.encoding.codepages.4.7.0.nupkg.sha512",
-    "/Users/ellisonguimaraes/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512",
-    "/Users/ellisonguimaraes/.nuget/packages/system.text.json/4.6.0/system.text.json.4.6.0.nupkg.sha512",
+    "/Users/ellisonguimaraes/.nuget/packages/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg.sha512",
+    "/Users/ellisonguimaraes/.nuget/packages/system.text.json/6.0.0/system.text.json.6.0.0.nupkg.sha512",
     "/Users/ellisonguimaraes/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []

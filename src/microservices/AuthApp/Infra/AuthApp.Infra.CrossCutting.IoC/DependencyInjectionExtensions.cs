@@ -1,14 +1,18 @@
 ﻿using AuthApp.Application.Mapper;
 using AuthApp.Application.Models;
-using AuthApp.Application.Services.Jwt;
-using AuthApp.Application.Services.Users;
-using AuthApp.Application.Utils.EmailSender;
+using AuthApp.Application.Services;
+using AuthApp.Application.Services.Interfaces;
 using AuthApp.Application.Validators;
 using AuthApp.Domain.Settings;
 using AuthApp.Infra.Data.Repositories.RefreshToken;
+using AuthApp.Services;
+using AuthApp.Services.HttpClients;
+using AuthApp.Services.Interfaces;
+using AuthApp.Services.Utils.EmailSender;
 using FluentValidation;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Refit;
 
 namespace AuthApp.Infra.CrossCutting.IoC;
 
@@ -18,6 +22,9 @@ namespace AuthApp.Infra.CrossCutting.IoC;
 public static class DependencyInjectionExtensions
 {
     private const string EMAIL_SETTINGS_PROPERTY_NAME = "EmailSettings";
+    private const string EGRESS_API_SETTINGS_PROPERTY_NAME = "EgressApiSettings";
+    private const string EGRESS_API_SETTINGS_BASE_URL = "BaseUrl";
+    private const string EGRESS_API_SETTINGS_VERSION = "Version";
 
     /// <summary>
     /// Register services
@@ -34,6 +41,9 @@ public static class DependencyInjectionExtensions
         services.AddScoped<IJwtServices, JwtServices>();
         services.AddScoped<IUserServices, UserServices>();
 
+        // App Services
+        services.AddScoped<IUserAppServices, UserAppServices>();
+
         // Repositories
         services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 
@@ -46,5 +56,10 @@ public static class DependencyInjectionExtensions
         // Mapper
         services.AddAutoMapper(typeof(TokenProfile));
         services.AddAutoMapper(typeof(UserProfile));
+
+        // HttpClient Configurations
+        var baseUrl = $"http://{configuration[$"{EGRESS_API_SETTINGS_PROPERTY_NAME}:{EGRESS_API_SETTINGS_BASE_URL}"]}/{configuration[$"{EGRESS_API_SETTINGS_PROPERTY_NAME}:{EGRESS_API_SETTINGS_VERSION}"]}";
+        services.AddRefitClient<IEgressClient>()
+            .ConfigureHttpClient(cfg => cfg.BaseAddress = new Uri(baseUrl));
     }
 }

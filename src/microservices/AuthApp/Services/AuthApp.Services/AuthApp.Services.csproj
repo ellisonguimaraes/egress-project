@@ -10,13 +10,23 @@
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.9" />
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.9" />
+    <PackageReference Include="Refit.HttpClientFactory" Version="6.3.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Application\AuthApp.Application\AuthApp.Application.csproj" />
     <ProjectReference Include="..\..\Domain\AuthApp.Domain\AuthApp.Domain.csproj" />
     <ProjectReference Include="..\..\Infra\AuthApp.Infra.CrossCutting.Resources\AuthApp.Infra.CrossCutting.Resources.csproj" />
     <ProjectReference Include="..\..\Infra\AuthApp.Infra.Data\AuthApp.Infra.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Utils\" />
+    <None Remove="Extensions\" />
+    <None Remove="HttpClients\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="HttpClients\" />
+  </ItemGroup>
 </Project>

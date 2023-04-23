@@ -28,4 +28,9 @@
     <ProjectReference Include="..\Egress.Infra\Egress.Infra.Data\Egress.Infra.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Logs\log20230414.txt" />
+    <None Remove="Logs\log20230416.txt" />
+    <None Remove="Logs\log20230413.txt" />
+  </ItemGroup>
 </Project>

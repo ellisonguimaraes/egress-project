@@ -16,5 +16,9 @@ public class ResetPasswordRequestValidator : AbstractValidator<ResetPasswordRequ
         RuleFor(rp => rp.NewPassword)
             .NotNull().WithMessage(ErrorCodeResource.VALIDATION_CANNOT_BE_NULL)
             .NotEmpty().WithMessage(ErrorCodeResource.VALIDATION_CANNOT_BE_EMPTY);
+
+        RuleFor(rp => rp.Token)
+            .NotNull().WithMessage(ErrorCodeResource.VALIDATION_CANNOT_BE_NULL)
+            .NotEmpty().WithMessage(ErrorCodeResource.VALIDATION_CANNOT_BE_EMPTY);
     }
 }

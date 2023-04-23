@@ -22,6 +22,7 @@
     <ProjectReference Include="..\..\Application\AuthApp.Application\AuthApp.Application.csproj" />
     <ProjectReference Include="..\..\Domain\AuthApp.Domain\AuthApp.Domain.csproj" />
     <ProjectReference Include="..\AuthApp.Infra.Data\AuthApp.Infra.Data.csproj" />
+    <ProjectReference Include="..\..\Services\AuthApp.Services\AuthApp.Services.csproj" />
   </ItemGroup>
 
 </Project>
