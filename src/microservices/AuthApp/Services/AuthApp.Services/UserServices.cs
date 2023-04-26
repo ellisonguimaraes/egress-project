@@ -1,6 +1,8 @@
-﻿using AuthApp.Domain;
+﻿using System.Linq.Expressions;
+using AuthApp.Domain;
 using AuthApp.Domain.Email;
 using AuthApp.Domain.Enums;
+using AuthApp.Domain.Utils;
 using AuthApp.Infra.CrossCutting.Resources;
 using AuthApp.Infra.Data.Repositories.RefreshToken;
 using AuthApp.Services.Exceptions;
@@ -65,11 +67,27 @@ public class UserServices : IUserServices
     /// <summary>
     /// User exists verify
     /// </summary>
-    /// <param name="user"></param>
+    /// <param name="user">User</param>
     /// <returns>User exists or not</returns>
     private bool UserExists(User user) => _userManager.Users.Any(u =>
             u.UserName.Equals(user.UserName) ||
             u.Email.Equals(user.Email));
+
+    /// <summary>
+    /// Person id exists verify
+    /// </summary>
+    /// <param name="user">User</param>
+    /// <returns>PersonId exists or not</returns>
+    public bool PersonIdExists(Guid personId) => _userManager.Users.Any(u =>
+            u.PersonId != null && u.PersonId.Equals(personId));
+
+    /// <summary>
+    /// User with this document exists verify
+    /// </summary>
+    /// <param name="user">User</param>
+    /// <returns>Exists or not</returns>
+    public bool UserWithThisDocumentExists(string document, DocumentType documentType) => _userManager.Users.Any(u =>
+            u.DocumentType.Equals(documentType) && u.Document.Equals(document));
 
     /// <summary>
     /// Build confirmation email message
@@ -173,7 +191,9 @@ public class UserServices : IUserServices
     /// <returns>Token Payload</returns>
     private async Task<Token> GenerateTokenAsync(User user)
     {
-        var token = _jwtServices.GenerateToken(user);
+        var roles = await _userManager.GetRolesAsync(user);
+
+        var token = _jwtServices.GenerateToken(user, roles.First());
 
         var refreshTokenEntity = new RefreshToken
         {
@@ -356,13 +376,53 @@ public class UserServices : IUserServices
     /// </summary>
     /// <param name="sub">User id</param>
     /// <returns>User</returns>
-    public async Task<User> GetUserInfoAsync(string sub)
+    public async Task<(User, IList<string>)> GetUserInfoAsync(string sub)
     {
         var user = await _userManager.FindByIdAsync(sub);
 
         if (user is null)
             throw new AuthException(ErrorCodeResource.USER_NOT_FOUND);
 
-        return user;
+        var roles = await _userManager.GetRolesAsync(user);
+
+        return (user, roles);
+    }
+
+    /// <summary>
+    /// Get paginate user
+    /// </summary>
+    /// <param name="paginationParameters">Page number and page size</param>
+    /// <param name="orderByPropertySeletor">Order by property seletor</param>
+    /// <param name="predicate">Filter/predicate</param>
+    /// <returns>Paginate users</returns>
+    public PagedList<User> GetPaginateUsers(PaginationParameters paginationParameters, Expression<Func<User, string>> orderByPropertySeletor, Expression<Func<User, bool>>? predicate = null) =>
+        new PagedList<User>(
+            predicate is null?
+                _userManager.Users
+                    .OrderBy(orderByPropertySeletor) :
+                _userManager.Users
+                    .OrderBy(orderByPropertySeletor)
+                    .Where(predicate),
+            paginationParameters.PageNumber,
+            paginationParameters.PageSize);
+
+    /// <summary>
+    /// Unlock user
+    /// </summary>
+    /// <param name="id">Id</param>
+    public async Task UnlockUserAsync(Guid id)
+    {
+        var user = await _userManager.FindByIdAsync(id.ToString());
+
+        if (user is null)
+            throw new AuthException(ErrorCodeResource.USER_NOT_FOUND);
+
+        user.LockoutEnabled = false;
+        user.LockoutEnd = null;
+
+        var result = await _userManager.UpdateAsync(user);
+
+        if (!result.Succeeded)
+            throw new AuthException(ErrorCodeResource.COULD_NOT_UNLOCK_USER);
     }
 }

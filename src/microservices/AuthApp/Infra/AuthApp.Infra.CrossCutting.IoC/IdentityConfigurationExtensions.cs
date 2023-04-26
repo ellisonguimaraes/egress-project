@@ -1,4 +1,5 @@
 ﻿using AuthApp.Domain;
+using AuthApp.Domain.Enums;
 using AuthApp.Domain.Settings;
 using AuthApp.Infra.Data.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -62,16 +63,6 @@ public static class IdentityConfigurationExtensions
             options.Password.RequiredLength = int.Parse(configuration[IDENTITY_SETTINGS_PASSWORD_REQUIRELENGTH_PROPERTY]);
         }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
-        // Authentication and Authorization settings
-        services.AddAuthorization(options =>
-        {
-            //options.AddPolicy(RoleSettings.EGRESS, p => p.RequireAuthenticatedUser().RequireRole(RoleSettings.EGRESS).RequireClaim("ACTIVATED", "true"));
-            //options.AddPolicy(RoleSettings.TEACHER, p => p.RequireAuthenticatedUser().RequireRole(RoleSettings.TEACHER).RequireClaim("ACTIVATED", "true"));
-            //options.AddPolicy(RoleSettings.STUDENT, p => p.RequireAuthenticatedUser().RequireRole(RoleSettings.STUDENT).RequireClaim("ACTIVATED", "true"));
-            //options.AddPolicy(RoleSettings.COLLEGIATE, p => p.RequireAuthenticatedUser().RequireRole(RoleSettings.COLLEGIATE).RequireClaim("ACTIVATED", "true").RequireClaim(RoleSettings.SECTION_CLAIM_NAME));
-            //options.AddPolicy(RoleSettings.DEPARTMENT, p => p.RequireAuthenticatedUser().RequireRole(RoleSettings.DEPARTMENT).RequireClaim("ACTIVATED", "true").RequireClaim(RoleSettings.SECTION_CLAIM_NAME));
-            //options.AddPolicy(RoleSettings.ADMINISTRATOR, p => p.RequireAuthenticatedUser().RequireRole(RoleSettings.ADMINISTRATOR).RequireClaim("ACTIVATED", "true"));
-        });
 
         services.AddAuthentication(x =>
         {
@@ -90,6 +81,12 @@ public static class IdentityConfigurationExtensions
                 ValidAudience = jwtSettings.Audience,
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.SecretKey!))
             };
+        });
+
+        // Authentication and Authorization settings
+        services.AddAuthorization(options =>
+        {
+            options.AddPolicy(PermissionType.ADM.ToString(), policy => policy.RequireAuthenticatedUser().RequireRole(PermissionType.ADM.ToString()));
         });
     }
 }

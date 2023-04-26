@@ -56,12 +56,12 @@ public class JwtServices : IJwtServices
     /// </summary>
     /// <param name="user">User</param>
     /// <returns>Token Payload</returns>
-    public Token GenerateToken(User user)
+    public Token GenerateToken(User user, string role)
     {
         var accessTokenExpiresIn = DateTime.UtcNow.AddSeconds(_jwtSettings.ExpiryTimeInSeconds);
         var refreshTokenExpiresIn = DateTime.UtcNow.AddSeconds(_jwtSettings.RefreshTokenExpiryTimeInSeconds);
 
-        var accessToken = GenerateAccessToken(user, accessTokenExpiresIn);
+        var accessToken = GenerateAccessToken(user, role, accessTokenExpiresIn);
         var refreshToken = GenerateRefreshToken();
 
         var token = new Token
@@ -82,7 +82,7 @@ public class JwtServices : IJwtServices
     /// <param name="user">User</param>
     /// <param name="expiresIn">Access token expiration date</param>
     /// <returns>JWT access token</returns>
-    private string GenerateAccessToken(User user, DateTime expiresIn)
+    private string GenerateAccessToken(User user, string role, DateTime expiresIn)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
 
@@ -91,7 +91,8 @@ public class JwtServices : IJwtServices
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Email, user.Email)
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim(ClaimTypes.Role, role)
         };
 
         var tokenDescriptor = new SecurityTokenDescriptor

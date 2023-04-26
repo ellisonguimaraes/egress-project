@@ -1,0 +1,83 @@
+2023-04-25 03:37:55.389 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 03:38:53.789 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 03:39:34.849 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 03:39:59.999 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-25 03:44:08.693 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 03:44:13.704 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-25 03:45:47.680 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 03:46:04.856 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-25 03:46:18.325 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 03:46:18.759 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-25 03:47:08.264 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 03:47:08.531 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-25 03:56:07.456 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 03:56:07.599 +00:00 [WRN] No XML encryptor configured. Key {0d2beae9-cf6b-4059-b24e-caad2d055925} may be persisted to storage in unencrypted form.
+2023-04-25 03:56:16.920 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-25 03:56:48.272 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 03:56:51.519 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-25 03:58:39.880 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 03:58:42.878 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-25 04:03:05.504 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 04:15:17.536 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 04:15:18.199 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-25 04:15:33.928 +00:00 [WRN] [POST /api/v1/user/authenticate] Exceeded route performance, Duration: 15727ms, TraceId: 00-41bb5e939cf7056f2536802cf7a5767c-f28486de035453ef-00
+2023-04-25 04:16:19.518 +00:00 [ERR] [POST /api/v1/user/authenticate] AUTH0002: User is blocked, TraceId: 00-ffbc3e74b10209e8a723a7f6b3eca632-c0322aac4cc8d4ec-00
+AuthApp.Services.Exceptions.AuthException: AUTH0002: User is blocked
+   at AuthApp.Services.UserServices.AuthenticateAsync(String email, String password) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 154
+   at AuthApp.Application.Services.UserAppServices.AuthenticateAsync(AuthRequest authRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 126
+   at AuthApp.API.Controllers.UserController.AuthenticateAsync(AuthRequest authRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-ffbc3e74b10209e8a723a7f6b3eca632-c0322aac4cc8d4ec-00
+2023-04-25 04:16:23.386 +00:00 [ERR] [POST /api/v1/user/authenticate] AUTH0003: Confirm your account, TraceId: 00-d033a17d01a1083b6fef5b1502082101-c56b8aed2b88382d-00
+AuthApp.Services.Exceptions.AuthException: AUTH0003: Confirm your account
+   at AuthApp.Services.UserServices.AuthenticateAsync(String email, String password) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 163
+   at AuthApp.Application.Services.UserAppServices.AuthenticateAsync(AuthRequest authRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 126
+   at AuthApp.API.Controllers.UserController.AuthenticateAsync(AuthRequest authRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-d033a17d01a1083b6fef5b1502082101-c56b8aed2b88382d-00
+2023-04-25 04:17:12.005 +00:00 [ERR] [POST /api/v1/user/authenticate] AUTH0003: Confirm your account, TraceId: 00-2335540c799e5b79e9331ed148ccf6c3-7aa61a16fa760db5-00
+AuthApp.Services.Exceptions.AuthException: AUTH0003: Confirm your account
+   at AuthApp.Services.UserServices.AuthenticateAsync(String email, String password) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 163
+   at AuthApp.Application.Services.UserAppServices.AuthenticateAsync(AuthRequest authRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 126
+   at AuthApp.API.Controllers.UserController.AuthenticateAsync(AuthRequest authRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-2335540c799e5b79e9331ed148ccf6c3-7aa61a16fa760db5-00
+2023-04-25 04:29:23.567 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 04:29:24.123 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-25 04:36:51.494 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 04:37:07.501 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-25 04:39:17.759 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-25 04:39:42.319 +00:00 [WRN] Failed to determine the https port for redirect.

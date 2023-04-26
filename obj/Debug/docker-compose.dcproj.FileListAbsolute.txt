@@ -204,11 +204,10 @@ C:/Users/ellis/Desktop/TCC/New/EgressProject/obj/Debug/docker-compose.dcproj.Cop
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Serilog.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/FluentValidation.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/AuthApp.Services.dll
+/Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Microsoft.IdentityModel.Tokens.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/AuthApp.Domain.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Microsoft.AspNetCore.Mvc.Versioning.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/AuthApp.Application.dll
-/Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/AutoMapper.dll
-/Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Microsoft.IdentityModel.Tokens.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Serilog.Settings.Configuration.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Microsoft.Extensions.Configuration.Abstractions.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Microsoft.Extensions.DependencyModel.dll
@@ -232,8 +231,9 @@ C:/Users/ellis/Desktop/TCC/New/EgressProject/obj/Debug/docker-compose.dcproj.Cop
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/MimeKit.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/MailKit.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Microsoft.Extensions.Identity.Stores.dll
-/Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Microsoft.Extensions.Primitives.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Microsoft.IdentityModel.Logging.dll
+/Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Microsoft.Extensions.Primitives.dll
+/Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/AutoMapper.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Microsoft.EntityFrameworkCore.Relational.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 /Users/ellisonguimaraes/Documents/repos/egress-project/bin/Debug/Microsoft.EntityFrameworkCore.Abstractions.dll

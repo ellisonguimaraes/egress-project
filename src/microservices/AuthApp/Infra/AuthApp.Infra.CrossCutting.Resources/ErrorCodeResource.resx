@@ -210,4 +210,16 @@
   <data name="INVALID_AUTHORIZATION_TOKEN" xml:space="preserve">
     <value>AUTH0019: Invalid authorization token</value>
   </data>
+  <data name="ALREADY_REGISTER_FOR_THIS_EGRESS" xml:space="preserve">
+    <value>BU0002: There is already a register for this egress</value>
+  </data>
+  <data name="ALREADY_USER_REGISTERED_WITH_THIS_DOCUMENT" xml:space="preserve">
+    <value>BU0003: There is already a user registered with this document</value>
+  </data>
+  <data name="COULD_NOT_UNLOCK_USER" xml:space="preserve">
+    <value>AUTH0020: Could not unlock user</value>
+  </data>
+  <data name="INVALID_USER_ID_FORMAT" xml:space="preserve">
+    <value>AUTH0021: User id with invalid format</value>
+  </data>
 </root>

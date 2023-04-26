@@ -58,6 +58,24 @@ namespace AuthApp.Infra.CrossCutting.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BU0002: There is already a register for this egress.
+        /// </summary>
+        public static string ALREADY_REGISTER_FOR_THIS_EGRESS {
+            get {
+                return ResourceManager.GetString("ALREADY_REGISTER_FOR_THIS_EGRESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BU0003: There is already a user registered with this document.
+        /// </summary>
+        public static string ALREADY_USER_REGISTERED_WITH_THIS_DOCUMENT {
+            get {
+                return ResourceManager.GetString("ALREADY_USER_REGISTERED_WITH_THIS_DOCUMENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Business failure.
         /// </summary>
         public static string BUSINESS_FAILURE {
@@ -108,6 +126,15 @@ namespace AuthApp.Infra.CrossCutting.Resources {
         public static string COULD_NOT_RESET_PASSWORD {
             get {
                 return ResourceManager.GetString("COULD_NOT_RESET_PASSWORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AUTH0020: Could not unlock user.
+        /// </summary>
+        public static string COULD_NOT_UNLOCK_USER {
+            get {
+                return ResourceManager.GetString("COULD_NOT_UNLOCK_USER", resourceCulture);
             }
         }
         
@@ -225,6 +252,15 @@ namespace AuthApp.Infra.CrossCutting.Resources {
         public static string INVALID_TOKEN_FORMAT {
             get {
                 return ResourceManager.GetString("INVALID_TOKEN_FORMAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AUTH0021: User id with invalid format.
+        /// </summary>
+        public static string INVALID_USER_ID_FORMAT {
+            get {
+                return ResourceManager.GetString("INVALID_USER_ID_FORMAT", resourceCulture);
             }
         }
         

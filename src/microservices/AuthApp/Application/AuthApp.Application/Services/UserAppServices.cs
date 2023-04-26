@@ -3,6 +3,7 @@ using AuthApp.Application.Services.Interfaces;
 using AuthApp.Application.Validators;
 using AuthApp.Domain;
 using AuthApp.Domain.Enums;
+using AuthApp.Domain.Utils;
 using AuthApp.Infra.CrossCutting.Resources;
 using AuthApp.Services.Exceptions;
 using AuthApp.Services.HttpClients;
@@ -30,7 +31,7 @@ public class UserAppServices : IUserAppServices
     private readonly IValidator<ResetPasswordRequest> _resetPasswordRequest;
     private readonly IValidator<ChangePasswordRequest> _changePasswordRequestValidator;
     private readonly IMapper _mapper;
-    private readonly IEgressClient _egressClient;
+    private readonly IEgressHttpClient _egressHttpClient;
 
     public UserAppServices(
         IUserServices userServices,
@@ -39,7 +40,7 @@ public class UserAppServices : IUserAppServices
         IValidator<ResetPasswordRequest> resetPasswordRequest,
         IValidator<ChangePasswordRequest> changePasswordRequestValidator,
         IMapper mapper,
-        IEgressClient egressClient)
+        IEgressHttpClient egressHttpClient)
     {
         _userServices = userServices;
         _registerRequestValidator = registerRequestValidator;
@@ -47,19 +48,21 @@ public class UserAppServices : IUserAppServices
         _resetPasswordRequest = resetPasswordRequest;
         _changePasswordRequestValidator = changePasswordRequestValidator;
         _mapper = mapper;
-        _egressClient = egressClient;
+        _egressHttpClient = egressHttpClient;
     }
 
     /// <summary>
     /// Register new user
     /// </summary>
     /// <param name="registerRequest">Registration data</param>
-    /// <returns></returns>
     public async Task RegisterAsync(RegisterRequest registerRequest)
     {
         _registerRequestValidator.Validate(registerRequest, opt => opt.ThrowOnFailures());
 
         var user = BuildUser(registerRequest);
+
+        if (_userServices.UserWithThisDocumentExists(registerRequest.Document, registerRequest.DocumentType))
+            throw new BusinessException(ErrorCodeResource.ALREADY_USER_REGISTERED_WITH_THIS_DOCUMENT);
 
         if (registerRequest.UserType.Equals(UserType.STUDENT) || registerRequest.UserType.Equals(UserType.TEACHER))
         {
@@ -68,6 +71,9 @@ public class UserAppServices : IUserAppServices
         else if (registerRequest.UserType.Equals(UserType.EGRESS))
         {
             user.PersonId = await GetPersonIdAsync(registerRequest.Document, registerRequest.DocumentType);
+
+            if (_userServices.PersonIdExists(user.PersonId.Value))
+                throw new BusinessException(ErrorCodeResource.ALREADY_REGISTER_FOR_THIS_EGRESS);
 
             await _userServices.RegisterAsync(user, registerRequest.Password);
         }
@@ -97,7 +103,7 @@ public class UserAppServices : IUserAppServices
     /// <exception cref="BusinessException"></exception>
     private async Task<Guid> GetPersonIdAsync(string document, DocumentType documentType)
     {
-        var response = await _egressClient.GetPersonByDocumentAsync(document, ((byte)documentType));
+        var response = await _egressHttpClient.GetPersonByDocumentAsync(document, ((byte)documentType));
 
         if (!response.IsSuccessStatusCode)
         {
@@ -199,9 +205,40 @@ public class UserAppServices : IUserAppServices
         if (string.IsNullOrEmpty(sub))
             throw new AuthException(ErrorCodeResource.INVALID_AUTHORIZATION_TOKEN);
 
-        var result = await _userServices.GetUserInfoAsync(sub);
+        (var user, var roles) = await _userServices.GetUserInfoAsync(sub);
 
-        return _mapper.Map<UserResponse>(result);
+        var response = _mapper.Map<UserResponse>(user);
+
+        response.Roles = roles;
+
+        return response;
+    }
+
+    /// <summary>
+    /// Get all lockout users
+    /// </summary>
+    /// <returns></returns>
+    public PagedList<UserResponse> GetLockoutUsers(PaginationParameters paginationParameters)
+    {
+        var users = _userServices.GetPaginateUsers(paginationParameters, u => u.Id, u => u.LockoutEnabled || u.LockoutEnd > DateTimeOffset.UtcNow);
+
+        return new PagedList<UserResponse>(
+            users.Select(u => _mapper.Map<UserResponse>(u)),
+            users.CurrentPage,
+            users.PageSize,
+            users.TotalCount);
+    }
+
+    /// <summary>
+    /// Unlock user
+    /// </summary>
+    /// <param name="id">Id</param>
+    public async Task UnlockUserAsync(string id)
+    {
+        if (string.IsNullOrEmpty(id) || !Guid.TryParseExact(id, "D", out Guid userId))
+            throw new ValidationException(ErrorCodeResource.INVALID_USER_ID_FORMAT);
+
+        await _userServices.UnlockUserAsync(userId);
     }
 }
 

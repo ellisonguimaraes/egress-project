@@ -1,5 +1,6 @@
 ﻿using AuthApp.Application.Models;
 using AuthApp.Domain;
+using AuthApp.Domain.Utils;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -15,5 +16,7 @@ public interface IUserAppServices
     Task ResetPasswordAsync(ResetPasswordRequest resetPasswordRequest);
     Task ChangePasswordAsync(string? sub, ChangePasswordRequest changePasswordRequest);
     Task<UserResponse> GetUserInfoAsync(string? sub);
+    PagedList<UserResponse> GetLockoutUsers(PaginationParameters paginationParameters);
+    Task UnlockUserAsync(string id);
 }
 

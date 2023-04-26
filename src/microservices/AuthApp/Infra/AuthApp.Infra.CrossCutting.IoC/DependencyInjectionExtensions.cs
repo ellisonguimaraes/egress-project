@@ -59,7 +59,7 @@ public static class DependencyInjectionExtensions
 
         // HttpClient Configurations
         var baseUrl = $"http://{configuration[$"{EGRESS_API_SETTINGS_PROPERTY_NAME}:{EGRESS_API_SETTINGS_BASE_URL}"]}/{configuration[$"{EGRESS_API_SETTINGS_PROPERTY_NAME}:{EGRESS_API_SETTINGS_VERSION}"]}";
-        services.AddRefitClient<IEgressClient>()
+        services.AddRefitClient<IEgressHttpClient>()
             .ConfigureHttpClient(cfg => cfg.BaseAddress = new Uri(baseUrl));
     }
 }

@@ -28,6 +28,9 @@ public class UserProfile : Profile
                 dest => dest.DocumentType,
                 opt => opt.MapFrom(src => src.DocumentType)
             ).ForMember(
+                dest => dest.PersonId,
+                opt => opt.MapFrom(src => src.PersonId)
+            ).ForMember(
                 dest => dest.UserType,
                 opt => opt.MapFrom(src => src.UserType)
             ).ForMember(

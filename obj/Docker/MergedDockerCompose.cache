@@ -89,9 +89,28 @@ services:
       source: egress_program_db_volume
       target: /var/opt/mssql
       volume: {}
+  seq:
+    container_name: seq
+    environment:
+      ACCEPT_EULA: "Y"
+    image: datalust/seq:latest
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5341"
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: seq_volume
+      target: /data
+      volume: {}
 networks:
   backend:
     name: dockercompose3434601838597767713_backend
 volumes:
   egress_program_db_volume:
     name: dockercompose3434601838597767713_egress_program_db_volume
+  seq_volume:
+    name: dockercompose3434601838597767713_seq_volume

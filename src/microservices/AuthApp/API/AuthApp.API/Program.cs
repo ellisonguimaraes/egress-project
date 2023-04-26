@@ -54,6 +54,7 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
+app.UseMiddleware<PerformanceMiddleware>();
 app.UseMiddleware<GlobalExceptionMiddleware>();
 
 app.UseAuthentication();

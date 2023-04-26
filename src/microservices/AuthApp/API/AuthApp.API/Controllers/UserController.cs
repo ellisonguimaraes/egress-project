@@ -12,6 +12,8 @@ using System.Security.Claims;
 using AuthApp.Application.Services.Interfaces;
 using AuthApp.Services.Exceptions;
 using AuthApp.Domain.Utils;
+using AuthApp.Domain.Enums;
+using System.Text.Json;
 
 namespace AuthApp.API.Controllers;
 
@@ -91,6 +93,39 @@ public class UserController : ControllerBase
     {
         var sub = HttpContext.User.Claims.SingleOrDefault(c => c.Type.Equals(ClaimTypes.NameIdentifier))?.Value;
         var result = await _userAppServices.GetUserInfoAsync(sub);
-        return Ok(result);
+        return Ok(new GenericHttpResponse<UserResponse> { Data = result });
+    }
+
+    [HttpGet]
+    [Route("lockout/all")]
+    [Authorize(Policy = "ADM")]
+    public IActionResult GetLockoutUsers([FromQuery(Name = "page_number")] int pageNumber, [FromQuery(Name = "page_size")] int pageSize)
+    {
+        var paginationParameters = new PaginationParameters(pageNumber, pageSize);
+
+        var result = _userAppServices.GetLockoutUsers(paginationParameters);
+
+        var metadata = new
+        {
+            result.TotalCount,
+            result.PageSize,
+            result.CurrentPage,
+            result.HasNext,
+            result.HasPrevious,
+            result.TotalPages
+        };
+
+        Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(metadata));
+
+        return Ok(new GenericHttpResponse<PagedList<UserResponse>> { Data = result });
+    }
+
+    [HttpPut]
+    [Route("unlock/{id}")]
+    [Authorize(Policy = "ADM")]
+    public async Task<IActionResult> UnlockUserAsync([FromRoute(Name = "id")] string id)
+    {
+        await _userAppServices.UnlockUserAsync(id);
+        return NoContent();
     }
 }

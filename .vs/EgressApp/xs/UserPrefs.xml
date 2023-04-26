@@ -1,49 +1,28 @@
 ﻿<Properties StartupConfiguration="{2C733426-FBA7-4E9B-A6BE-EF59572CB6FE}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.API/Middlewares/GlobalExceptionMiddleware.cs" relfile="src/microservices/EgressApp/Egress.API/Middlewares/GlobalExceptionMiddleware.cs" line="61" column="1" />
-      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.API/Middlewares/GlobalExceptionMiddleware.cs" relfile="src/microservices/EgressApp/Egress.API/Middlewares/GlobalExceptionMiddleware.cs" line="49" column="1" />
-      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Queries/Person/GetPersonByDocument/GetPersonByDocumentCommandHandler.cs" relfile="src/microservices/EgressApp/Egress.Application/Queries/Person/GetPersonByDocument/GetPersonByDocumentCommandHandler.cs" line="30" column="1" />
-      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs" relfile="src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs" line="53" column="1" />
-      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/Utils/EmailSender/EmailSender.cs" relfile="src/microservices/AuthApp/Services/AuthApp.Services/Utils/EmailSender/EmailSender.cs" line="33" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs">
-    <Files>
-      <File FileName="src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs" Line="73" Column="14" />
-    </Files>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="EgressApp" expanded="True">
             <Node name="src" expanded="True">
+              <Node name="BFF" expanded="True">
+                <Node name="BFF.Web" expanded="True" />
+              </Node>
               <Node name="microservices" expanded="True">
                 <Node name="AuthApp" expanded="True">
                   <Node name="AuthApp.API" expanded="True">
-                    <Node name="Controllers" expanded="True">
-                      <Node name="UserController.cs" selected="True" />
-                    </Node>
+                    <Node name="Controllers" expanded="True" />
                     <Node name="Middlewares" expanded="True" />
-                    <Node name="appsettings.json" expanded="True" />
                   </Node>
                   <Node name="AuthApp.Application" expanded="True">
-                    <Node name="Models" expanded="True" />
-                    <Node name="Services" expanded="True">
-                      <Node name="Interfaces" expanded="True" />
-                    </Node>
+                    <Node name="Services" expanded="True" />
                   </Node>
-                  <Node name="AuthApp.Domain" expanded="True" />
+                  <Node name="AuthApp.Domain" expanded="True">
+                    <Node name="Enums" expanded="True" />
+                  </Node>
                   <Node name="AuthApp.Infra.CrossCutting.IoC" expanded="True" />
-                  <Node name="AuthApp.Infra.CrossCutting.Resources" expanded="True">
-                    <Node name="ErrorCodeResource.resx" expanded="True" />
-                  </Node>
-                  <Node name="AuthApp.Infra.Data" expanded="True">
-                    <Node name="Context" expanded="True">
-                      <Node name="Configuration" expanded="True" />
-                    </Node>
-                    <Node name="Repositories" expanded="True" />
-                  </Node>
+                  <Node name="AuthApp.Infra.CrossCutting.Resources" expanded="True" />
                   <Node name="AuthApp.Services" expanded="True">
                     <Node name="Exceptions" expanded="True" />
                     <Node name="Extensions" expanded="True" />
@@ -52,36 +31,10 @@
                     <Node name="Utils" expanded="True">
                       <Node name="EmailSender" expanded="True" />
                     </Node>
+                    <Node name="JwtServices.cs" selected="True" />
                   </Node>
                 </Node>
-                <Node name="EgressApp" expanded="True">
-                  <Node name="Egress.Infra" expanded="True">
-                    <Node name="Egress.Infra.CrossCutting.Resource" expanded="True">
-                      <Node name="LoggerResource.resx" expanded="True" />
-                    </Node>
-                  </Node>
-                  <Node name="Egress.API" expanded="True">
-                    <Node name="Controllers" expanded="True" />
-                    <Node name="Middlewares" expanded="True" />
-                    <Node name="appsettings.json" expanded="True" />
-                  </Node>
-                  <Node name="Egress.Application" expanded="True">
-                    <Node name="Behaviors" expanded="True" />
-                    <Node name="Commands" expanded="True">
-                      <Node name="Testimony" expanded="True" />
-                    </Node>
-                    <Node name="Profiles" expanded="True" />
-                    <Node name="Queries" expanded="True">
-                      <Node name="Person" expanded="True">
-                        <Node name="GetPersonByDocument" expanded="True" />
-                      </Node>
-                      <Node name="Responses" expanded="True" />
-                    </Node>
-                  </Node>
-                  <Node name="Egress.Domain" expanded="True">
-                    <Node name="Entities" expanded="True" />
-                  </Node>
-                </Node>
+                <Node name="EgressApp" expanded="True" />
               </Node>
             </Node>
             <Node name="docker-compose" expanded="True">
@@ -95,7 +48,22 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.API/Middlewares/GlobalExceptionMiddleware.cs" relfile="src/microservices/EgressApp/Egress.API/Middlewares/GlobalExceptionMiddleware.cs" line="61" column="1" />
+      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.API/Middlewares/GlobalExceptionMiddleware.cs" relfile="src/microservices/EgressApp/Egress.API/Middlewares/GlobalExceptionMiddleware.cs" line="49" column="1" />
+      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/EgressApp/Egress.Application/Queries/Person/GetPersonByDocument/GetPersonByDocumentCommandHandler.cs" relfile="src/microservices/EgressApp/Egress.Application/Queries/Person/GetPersonByDocument/GetPersonByDocumentCommandHandler.cs" line="30" column="1" />
+      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs" relfile="src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs" line="219" column="1" />
+      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs" relfile="src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs" line="153" column="1" />
+      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs" relfile="src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs" line="59" column="1" />
+      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs" relfile="src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs" line="47" column="1" />
+      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs" relfile="src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs" line="61" column="1" />
+      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs" relfile="src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs" line="192" column="1" />
+      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs" relfile="src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs" line="110" column="1" />
+      <Breakpoint file="/Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs" relfile="src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs" line="102" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

@@ -1,0 +1,96 @@
+2023-04-26 01:12:58.178 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:12:58.316 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:12:58.318 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:12:58.321 +00:00 [INF] Content root path: /app/
+2023-04-26 01:14:25.755 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:14:25.807 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:14:25.808 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:14:25.809 +00:00 [INF] Content root path: /app/
+2023-04-26 01:16:34.672 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:16:34.703 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:16:34.704 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:16:34.705 +00:00 [INF] Content root path: /app/
+2023-04-26 01:19:04.396 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:19:04.429 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:19:04.430 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:19:04.431 +00:00 [INF] Content root path: /app/
+2023-04-26 01:19:44.780 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:19:44.812 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:19:44.813 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:19:44.814 +00:00 [INF] Content root path: /app/
+2023-04-26 01:20:19.553 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:20:19.629 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:20:19.630 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:20:19.631 +00:00 [INF] Content root path: /app/
+2023-04-26 01:22:30.042 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:22:30.098 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:22:30.099 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:22:30.099 +00:00 [INF] Content root path: /app/
+2023-04-26 01:23:17.482 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:23:17.513 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:23:17.514 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:23:17.514 +00:00 [INF] Content root path: /app/
+2023-04-26 01:26:24.211 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:26:24.245 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:26:24.246 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:26:24.247 +00:00 [INF] Content root path: /app/
+2023-04-26 01:28:43.804 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:28:43.846 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:28:43.847 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:28:43.847 +00:00 [INF] Content root path: /app/
+2023-04-26 01:29:40.027 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:29:40.056 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:29:40.057 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:29:40.058 +00:00 [INF] Content root path: /app/
+2023-04-26 01:31:26.484 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:31:26.517 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:31:26.518 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:31:26.519 +00:00 [INF] Content root path: /app/
+2023-04-26 01:32:11.624 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:32:11.652 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:32:11.654 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:32:11.655 +00:00 [INF] Content root path: /app/
+2023-04-26 01:32:51.050 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:32:51.083 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:32:51.084 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:32:51.085 +00:00 [INF] Content root path: /app/
+2023-04-26 01:33:21.612 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:33:21.640 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:33:21.642 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:33:21.643 +00:00 [INF] Content root path: /app/
+2023-04-26 01:35:36.866 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:35:36.901 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:35:36.903 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:35:36.904 +00:00 [INF] Content root path: /app/
+2023-04-26 01:35:55.248 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:35:55.304 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:35:55.306 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:35:55.307 +00:00 [INF] Content root path: /app/
+2023-04-26 01:38:06.132 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 01:38:06.163 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 01:38:06.164 +00:00 [INF] Hosting environment: Development
+2023-04-26 01:38:06.165 +00:00 [INF] Content root path: /app/
+2023-04-26 02:20:06.753 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 02:20:06.808 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 02:20:06.809 +00:00 [INF] Hosting environment: Development
+2023-04-26 02:20:06.811 +00:00 [INF] Content root path: /app/
+2023-04-26 03:01:20.647 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 03:01:20.683 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 03:01:20.684 +00:00 [INF] Hosting environment: Development
+2023-04-26 03:01:20.688 +00:00 [INF] Content root path: /app/
+2023-04-26 03:03:48.240 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 03:03:48.272 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 03:03:48.273 +00:00 [INF] Hosting environment: Development
+2023-04-26 03:03:48.274 +00:00 [INF] Content root path: /app/
+2023-04-26 04:23:46.336 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 04:23:46.369 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 04:23:46.370 +00:00 [INF] Hosting environment: Development
+2023-04-26 04:23:46.371 +00:00 [INF] Content root path: /app/
+2023-04-26 04:24:41.431 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 04:24:41.463 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 04:24:41.464 +00:00 [INF] Hosting environment: Development
+2023-04-26 04:24:41.465 +00:00 [INF] Content root path: /app/
+2023-04-26 04:35:00.530 +00:00 [INF] Now listening on: http://[::]:80
+2023-04-26 04:35:00.566 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 04:35:00.568 +00:00 [INF] Hosting environment: Development
+2023-04-26 04:35:00.570 +00:00 [INF] Content root path: /app/

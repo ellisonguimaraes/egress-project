@@ -1,0 +1,186 @@
+2023-04-26 01:13:02.802 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:13:03.267 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:14:09.692 +00:00 [WRN] [PUT /api/v1/user/unlock/6c7b025c-cedc-470a-adfa-c4fe905682af] Exceeded route performance, Duration: 18689ms, TraceId: 00-4e26201188dd0df1a8f3787db706191a-a4b8bf72be45459e-00
+2023-04-26 01:14:27.782 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:16:36.585 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:17:26.691 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:17:56.781 +00:00 [ERR] [GET /api/v1/user/lockout/all] ERROR0001: An unexpected error occurred, TraceId: 00-d8739a62eee952324ced8ebad844f6dc-93b32c4ccf235796-00
+System.InvalidOperationException: The LINQ expression 'DbSet<User>()
+    .Where(u => u.LockoutEnd == null ? u.LockoutEnabled : u.LockoutEnabled || ((DateTimeOffset)u.LockoutEnd).Ticks > DateTime.UtcNow.Ticks)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|15_0(ShapedQueryExpression translated, <>c__DisplayClass15_0& )
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at AuthApp.Services.UserServices.GetAllLockoutUsers() in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 394
+   at AuthApp.Application.Services.UserAppServices.GetLockoutUsers() in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 222
+   at AuthApp.API.Controllers.UserController.GetLockoutUsers() in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 103
+   at lambda_method49(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36
+2023-04-26 01:17:56.831 +00:00 [WRN] [GET /api/v1/user/lockout/all] Exceeded route performance, Duration: 30132ms, TraceId: 00-d8739a62eee952324ced8ebad844f6dc-93b32c4ccf235796-00
+2023-04-26 01:19:06.267 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:19:08.552 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:19:27.395 +00:00 [ERR] [GET /api/v1/user/lockout/all] ERROR0001: An unexpected error occurred, TraceId: 00-bd16977076dc3999ecd83238e7ca5088-2b1c7703b0dd8ad5-00
+System.InvalidOperationException: The LINQ expression 'DbSet<User>()
+    .Where(u => u.LockoutEnabled || ((DateTimeOffset)u.LockoutEnd).Ticks > DateTime.UtcNow.Ticks)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|15_0(ShapedQueryExpression translated, <>c__DisplayClass15_0& )
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at AuthApp.Services.UserServices.GetAllLockoutUsers() in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 394
+   at AuthApp.Application.Services.UserAppServices.GetLockoutUsers() in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 222
+   at AuthApp.API.Controllers.UserController.GetLockoutUsers() in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 103
+   at lambda_method49(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36
+2023-04-26 01:19:27.436 +00:00 [WRN] [GET /api/v1/user/lockout/all] Exceeded route performance, Duration: 18882ms, TraceId: 00-bd16977076dc3999ecd83238e7ca5088-2b1c7703b0dd8ad5-00
+2023-04-26 01:19:46.522 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:19:48.355 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:20:21.784 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:20:41.187 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:22:34.028 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:22:34.157 +00:00 [WRN] No XML encryptor configured. Key {3264332e-31d0-45e3-8add-38a89fdadf20} may be persisted to storage in unencrypted form.
+2023-04-26 01:22:34.652 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:23:19.265 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:23:24.152 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:23:38.135 +00:00 [WRN] [GET /api/v1/user/lockout/all] Exceeded route performance, Duration: 13981ms, TraceId: 00-16a3d53b436f00b6d62632ce5740d036-c2cd507d3697ca0e-00
+2023-04-26 01:26:25.889 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:26:50.206 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:28:45.650 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:29:04.655 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:29:41.745 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:30:06.239 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:31:28.356 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:31:29.907 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:32:13.619 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:32:14.025 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:32:52.904 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:33:00.745 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:33:23.314 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:34:36.123 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:35:38.710 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:35:57.310 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:36:53.645 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:37:53.135 +00:00 [WRN] [GET /api/v1/user/lockout/all] Exceeded route performance, Duration: 59489ms, TraceId: 00-6fad65336c778f0a071e0ab21b9dcfd0-ca1a029d9750450e-00
+2023-04-26 01:38:08.204 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 01:38:09.045 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 01:38:39.477 +00:00 [WRN] [GET /api/v1/user/lockout/all] Exceeded route performance, Duration: 30430ms, TraceId: 00-ac8b0d7e7c0d33e0a796b5d6ddc126f5-6a0fe4e14c3e7e92-00
+2023-04-26 02:20:09.276 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 02:20:56.293 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 02:21:07.905 +00:00 [ERR] [POST /api/v1/user/authenticate] AUTH0002: User is blocked, TraceId: 00-ac8b3e025db6ad67813e0ef93c9d92c8-73c916d2e0d3bebc-00
+AuthApp.Services.Exceptions.AuthException: AUTH0002: User is blocked
+   at AuthApp.Services.UserServices.AuthenticateAsync(String email, String password) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 156
+   at AuthApp.Application.Services.UserAppServices.AuthenticateAsync(AuthRequest authRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 127
+   at AuthApp.API.Controllers.UserController.AuthenticateAsync(AuthRequest authRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-ac8b3e025db6ad67813e0ef93c9d92c8-73c916d2e0d3bebc-00
+2023-04-26 02:22:27.078 +00:00 [WRN] [GET /api/v1/user/lockout/all] Exceeded route performance, Duration: 30037ms, TraceId: 00-3f6a20bd0228675cd5807e9cbdb0d210-a5d21cf6ceeb56f7-00
+2023-04-26 02:23:06.417 +00:00 [WRN] [GET /api/v1/user/lockout/all] Exceeded route performance, Duration: 36704ms, TraceId: 00-a710d853d28b059e088d2f8064bb002a-2b5c9455875e19d0-00
+2023-04-26 02:24:05.150 +00:00 [WRN] [GET /api/v1/user/lockout/all] Exceeded route performance, Duration: 56751ms, TraceId: 00-d27de312d9207331cbe31d3253adac16-b6a28dac1c55afab-00
+2023-04-26 02:26:06.804 +00:00 [WRN] [GET /api/v1/user/lockout/all] Exceeded route performance, Duration: 129570ms, TraceId: 00-6c5729b2fcc7a343691cf1c1a7b447dc-18beea92ace68b0f-00
+2023-04-26 02:42:16.537 +00:00 [WRN] [GET /api/v1/user/lockout/all] Exceeded route performance, Duration: 125427ms, TraceId: 00-01e49c9094f543fd4613591ce8f40481-2da5428be852d9f9-00
+2023-04-26 03:01:22.697 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 03:01:37.086 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 03:01:46.225 +00:00 [WRN] [GET /api/v1/user/lockout/all] Exceeded route performance, Duration: 9135ms, TraceId: 00-15a3fe61f3c3e856935c834e84ff8aeb-7a45190b652034b7-00
+2023-04-26 03:03:50.009 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 03:03:58.808 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 03:04:06.509 +00:00 [WRN] [GET /api/v1/user/lockout/all] Exceeded route performance, Duration: 7697ms, TraceId: 00-9290e30eccd4119df5e75141c26b733a-c7d27c01b7cf697e-00
+2023-04-26 04:22:18.495 +00:00 [ERR] [POST /api/v1/user/register] Business failure: BU0003: There is already a user registered with this document, TraceId: 00-af7c986d60ff7137404b774adae10783-e12b5e00f9bdaf9f-00
+AuthApp.Services.Exceptions.BusinessException: BU0003: There is already a user registered with this document
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 65
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-af7c986d60ff7137404b774adae10783-e12b5e00f9bdaf9f-00
+2023-04-26 04:23:48.274 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 04:23:51.299 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 04:24:11.794 +00:00 [ERR] [PUT /api/v1/user/unlock/2e28b32c-98be-416a-a2f3-8faaf7d4a314] Data validation failure, TraceId: 00-a7526eb84a5ac940f92a8a046613b41a-fe9339a6f3f9955d-00
+FluentValidation.ValidationException: AUTH0021: User id with invalid format
+   at AuthApp.Application.Services.UserAppServices.UnlockUserAsync(String id) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 239
+   at AuthApp.API.Controllers.UserController.UnlockUserAsync(String id) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 128
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36
+2023-04-26 04:24:11.915 +00:00 [WRN] [PUT /api/v1/user/unlock/2e28b32c-98be-416a-a2f3-8faaf7d4a314] Exceeded route performance, Duration: 20613ms, TraceId: 00-a7526eb84a5ac940f92a8a046613b41a-fe9339a6f3f9955d-00
+2023-04-26 04:24:43.335 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 04:24:46.800 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-26 04:26:08.877 +00:00 [WRN] [PUT /api/v1/user/unlock/2e28b32c-98be-416a-a2f3-8faaf7d4a314] Exceeded route performance, Duration: 82075ms, TraceId: 00-7f694b6005b061072403057cb596a445-3fbfcf02c31a08fb-00
+2023-04-26 04:30:25.777 +00:00 [WRN] [PUT /api/v1/user/unlock/6c7b025c-cedc-470a-adfa-c4fe905682af] Exceeded route performance, Duration: 22612ms, TraceId: 00-d126aaac304eda0fa5ecb406952298aa-846780f1704dde0e-00
+2023-04-26 04:35:02.282 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-26 04:39:25.465 +00:00 [WRN] Failed to determine the https port for redirect.

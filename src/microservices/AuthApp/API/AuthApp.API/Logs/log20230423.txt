@@ -284,3 +284,586 @@ LockoutEnd
    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
    at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36
+2023-04-23 05:28:22.540 +00:00 [ERR] ERROR0001: An unexpected error occurred, Endpoint: /api/v1/user, TraceId: 00-7d03d285e309a39e701c9d9f3aa174bf-493a1ac73b5de05c-00
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+User -> UserResponse
+AuthApp.Domain.User -> AuthApp.Application.Models.UserResponse
+
+Type Map configuration:
+User -> UserResponse
+AuthApp.Domain.User -> AuthApp.Application.Models.UserResponse
+
+Destination Member:
+LockoutEnd
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+DateTimeOffset -> DateTime
+System.DateTimeOffset -> System.DateTime
+
+Destination Member:
+LockoutEnd
+
+   at lambda_method343(Closure , DateTimeOffset , DateTime , ResolutionContext )
+   at lambda_method342(Closure , Object , UserResponse , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method342(Closure , Object , UserResponse , ResolutionContext )
+   at AuthApp.Application.Services.UserAppServices.GetUserInfoAsync(String sub) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 204
+   at AuthApp.API.Controllers.UserController.GetAsync() in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 115
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36
+2023-04-23 05:34:10.837 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 05:34:11.369 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 05:42:52.600 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 05:42:53.237 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 05:49:41.948 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 05:49:45.776 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 05:51:14.624 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 05:51:15.441 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 06:21:11.330 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 06:21:11.789 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 06:23:19.752 +00:00 [WRN] [GET /api/v1/user] Exceeded route performance, Duration: 14843ms, TraceId: 00-f99511b12011fd180a946c218c21c102-6a757d2334f835f1-00
+2023-04-23 23:18:25.285 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 23:22:06.743 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 23:31:40.741 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 23:37:11.762 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 23:40:39.751 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 23:41:05.569 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-78548fd75e92306a59cda718f922bc72-f48a23cf308d443c-00, TraceId: 00-78548fd75e92306a59cda718f922bc72-f48a23cf308d443c-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-78548fd75e92306a59cda718f922bc72-f48a23cf308d443c-00
+2023-04-23 23:41:27.079 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-d3cfed61f1f83695ba59ce6dac15721f-f0dcdd27fbbc7ed7-00, TraceId: 00-d3cfed61f1f83695ba59ce6dac15721f-f0dcdd27fbbc7ed7-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-d3cfed61f1f83695ba59ce6dac15721f-f0dcdd27fbbc7ed7-00
+2023-04-23 23:41:59.318 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-704d7234c37113bc8e8eda2c002a582b-1114e116dce4871b-00, TraceId: 00-704d7234c37113bc8e8eda2c002a582b-1114e116dce4871b-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-704d7234c37113bc8e8eda2c002a582b-1114e116dce4871b-00
+2023-04-23 23:42:35.840 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 23:42:47.664 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 23:42:56.444 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-18887892830bfc5b495867169283eaf4-0902236f48f9178d-00, TraceId: 00-18887892830bfc5b495867169283eaf4-0902236f48f9178d-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-18887892830bfc5b495867169283eaf4-0902236f48f9178d-00
+2023-04-23 23:43:40.481 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 23:43:43.164 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 23:43:50.021 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-b43639af4ee2db20e938f295c6c8962d-abc3c5ae90fbf3e5-00, TraceId: 00-b43639af4ee2db20e938f295c6c8962d-abc3c5ae90fbf3e5-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-b43639af4ee2db20e938f295c6c8962d-abc3c5ae90fbf3e5-00
+2023-04-23 23:45:55.516 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 23:45:55.988 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 23:46:03.760 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-5059190953208037c96a79b65240b959-49590b6d251b4a6f-00, TraceId: 00-5059190953208037c96a79b65240b959-49590b6d251b4a6f-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-5059190953208037c96a79b65240b959-49590b6d251b4a6f-00
+2023-04-23 23:46:29.305 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-47f5fe1def282a08daa53d0e98be8e87-b7946b06e3aef82f-00, TraceId: 00-47f5fe1def282a08daa53d0e98be8e87-b7946b06e3aef82f-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-47f5fe1def282a08daa53d0e98be8e87-b7946b06e3aef82f-00
+2023-04-23 23:47:11.395 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 23:47:11.840 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 23:47:19.094 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-de9533ebb9f7840c5bcd9b74d0683dcd-196cd758873c33b2-00, TraceId: 00-de9533ebb9f7840c5bcd9b74d0683dcd-196cd758873c33b2-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-de9533ebb9f7840c5bcd9b74d0683dcd-196cd758873c33b2-00
+2023-04-23 23:47:39.744 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-e1f4f622b54a14e98113c38ec9f7ac9c-59dbe74032571535-00, TraceId: 00-e1f4f622b54a14e98113c38ec9f7ac9c-59dbe74032571535-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-e1f4f622b54a14e98113c38ec9f7ac9c-59dbe74032571535-00
+2023-04-23 23:47:56.108 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-25c1d6c2f330407f337987983c9e648c-584f0683d02d27f4-00, TraceId: 00-25c1d6c2f330407f337987983c9e648c-584f0683d02d27f4-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-25c1d6c2f330407f337987983c9e648c-584f0683d02d27f4-00
+2023-04-23 23:48:31.055 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 23:48:34.835 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 23:48:38.397 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-11d97eeb4772b775953651560b0b26d7-2c954c7a1c4cc87b-00, TraceId: 00-11d97eeb4772b775953651560b0b26d7-2c954c7a1c4cc87b-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/PerformanceMiddleware.cs:line 36
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-11d97eeb4772b775953651560b0b26d7-2c954c7a1c4cc87b-00
+2023-04-23 23:52:13.795 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 23:52:22.289 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 23:52:32.737 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-1e08f014f4814b9cf2e82559bbdf1260-802df3c8854eec91-00, TraceId: 00-1e08f014f4814b9cf2e82559bbdf1260-802df3c8854eec91-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-1e08f014f4814b9cf2e82559bbdf1260-802df3c8854eec91-00
+2023-04-23 23:53:09.771 +00:00 [ERR] [POST /api/v1/user/register] AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-8de647a205e47b74f7f85ce7c8917605-fb39d0840c7a21b4-00, TraceId: 00-8de647a205e47b74f7f85ce7c8917605-fb39d0840c7a21b4-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-8de647a205e47b74f7f85ce7c8917605-fb39d0840c7a21b4-00
+2023-04-23 23:53:19.791 +00:00 [WRN] [POST /api/v1/user/register] Exceeded route performance, Duration: 13962ms, TraceId: 00-8de647a205e47b74f7f85ce7c8917605-fb39d0840c7a21b4-00
+2023-04-23 23:55:05.052 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-04-23 23:55:16.992 +00:00 [WRN] Failed to determine the https port for redirect.
+2023-04-23 23:55:21.031 +00:00 [ERR] [POST /api/v1/user/register] AUTH0005: User already exists, TraceId: 00-385df70faf27ba675f0e178d88a3f230-dc5322ed437a3e43-00
+AuthApp.Services.Exceptions.AuthException: AUTH0005: User already exists
+   at AuthApp.Services.UserServices.RegisterAsync(User user, String password, Boolean isLockout) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Services/AuthApp.Services/UserServices.cs:line 49
+   at AuthApp.Application.Services.UserAppServices.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/Application/AuthApp.Application/Services/UserAppServices.cs:line 66
+   at AuthApp.API.Controllers.UserController.RegisterAsync(RegisterRequest registerRequest) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthApp.API.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ellisonguimaraes/Documents/repos/egress-project/src/microservices/AuthApp/API/AuthApp.API/Middlewares/GlobalExceptionMiddleware.cs:line 36, TraceId: 00-385df70faf27ba675f0e178d88a3f230-dc5322ed437a3e43-00

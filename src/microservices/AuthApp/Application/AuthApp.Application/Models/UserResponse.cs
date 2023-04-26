@@ -20,6 +20,9 @@ public class UserResponse
     [JsonPropertyName("document_type")]
     public DocumentType DocumentType { get; set; }
 
+    [JsonPropertyName("person_id")]
+    public Guid? PersonId { get; set; }
+
     [JsonPropertyName("user_type")]
     public UserType UserType { get; set; }
 
@@ -27,7 +30,7 @@ public class UserResponse
     public bool EmailConfirmed { get; set; }
 
     [JsonPropertyName("lockout_end")]
-    public DateTime LockoutEnd { get; set; }
+    public DateTimeOffset? LockoutEnd { get; set; }
 
     [JsonPropertyName("lockout_enabled")]
     public bool LockoutEnabled { get; set; }
@@ -37,4 +40,7 @@ public class UserResponse
 
     [JsonPropertyName("edited_at")]
     public DateTime EditedAt { get; set; }
+
+    [JsonPropertyName("roles")]
+    public IEnumerable<string> Roles { get; set; }
 }

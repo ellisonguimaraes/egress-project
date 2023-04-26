@@ -39,7 +39,7 @@ public class GlobalExceptionMiddleware
         {
             var response = Responses.WithError(StatusCodes.Status400BadRequest, e.Message);
 
-            _logger.LogError(e, $"{ErrorCodeResource.BUSINESS_FAILURE}: {e.Message}, {ENDPOINT_NAME}: {context.Request.Path}, {TRACE_ID_NAME}: {response.TraceId}");
+            _logger.LogError(e, $"[{context.Request.Method} {context.Request.Path}] {ErrorCodeResource.BUSINESS_FAILURE}: {e.Message}, {TRACE_ID_NAME}: {response.TraceId}");
 
             await BuildResponseAsync(context, response.StatusCode, JsonSerializer.Serialize(response), CONTENT_TYPE);
         }
@@ -47,7 +47,7 @@ public class GlobalExceptionMiddleware
         {
             var response = Responses.WithError(StatusCodes.Status400BadRequest, e.Message);
 
-            _logger.LogError(e, $"{e}, {ENDPOINT_NAME}: {context.Request.Path}, {TRACE_ID_NAME}: {response.TraceId}");
+            _logger.LogError(e, $"[{context.Request.Method} {context.Request.Path}] {e.Message}, {TRACE_ID_NAME}: {response.TraceId}");
 
             await BuildResponseAsync(context, response.StatusCode, JsonSerializer.Serialize(response), CONTENT_TYPE);
         }
@@ -55,7 +55,7 @@ public class GlobalExceptionMiddleware
         {
             var response = Responses.WithError(StatusCodes.Status400BadRequest, e.Errors.Select(error => error.ErrorMessage));
 
-            _logger.LogError(e, $"{ErrorCodeResource.DATA_VALIDATION_FAILURE}, {ENDPOINT_NAME}: {context.Request.Path}, {TRACE_ID_NAME}: {response.TraceId}");
+            _logger.LogError(e, $"[{context.Request.Method} {context.Request.Path}] {ErrorCodeResource.DATA_VALIDATION_FAILURE}, {TRACE_ID_NAME}: {response.TraceId}");
 
             await BuildResponseAsync(context, response.StatusCode, JsonSerializer.Serialize(response), CONTENT_TYPE);
         }
@@ -63,7 +63,7 @@ public class GlobalExceptionMiddleware
         {
             var response = Responses.WithError(StatusCodes.Status400BadRequest, ErrorCodeResource.ERROR_GENERATING_TOKENS);
 
-            _logger.LogError(e, $"{ErrorCodeResource.ERROR_GENERATING_TOKENS_MESSAGE}, {ENDPOINT_NAME}: {context.Request.Path}, {TRACE_ID_NAME}: {response.TraceId}");
+            _logger.LogError(e, $"[{context.Request.Method} {context.Request.Path}] {ErrorCodeResource.ERROR_GENERATING_TOKENS_MESSAGE}, {TRACE_ID_NAME}: {response.TraceId}");
 
             await BuildResponseAsync(context, response.StatusCode, JsonSerializer.Serialize(response), CONTENT_TYPE);
         }
@@ -71,7 +71,7 @@ public class GlobalExceptionMiddleware
         {
             var response = Responses.WithError(StatusCodes.Status400BadRequest, ErrorCodeResource.UNEXPECTED_ERROR_OCURRED);
 
-            _logger.LogError(e, $"{ErrorCodeResource.UNEXPECTED_ERROR_OCURRED}, {ENDPOINT_NAME}: {context.Request.Path}, {TRACE_ID_NAME}: {response.TraceId}");
+            _logger.LogError(e, $"[{context.Request.Method} {context.Request.Path}] {ErrorCodeResource.UNEXPECTED_ERROR_OCURRED}, {TRACE_ID_NAME}: {response.TraceId}");
 
             await BuildResponseAsync(context, response.StatusCode, JsonSerializer.Serialize(response), CONTENT_TYPE);
         }
